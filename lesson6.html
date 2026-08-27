@@ -69,6 +69,57 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
+.sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
+.sheetbox-sub{font-size:12.5px;color:#5b6672;margin-top:3px;line-height:1.7;}
+.sheetbox-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.sheetbox-btn{background:#0f7b57;color:#fff;border:none;border-radius:8px;padding:11px 20px;
+ font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.sheetbox-btn:hover{background:#0c6547;}
+.sheetbox-btn:disabled{opacity:.6;cursor:default;}
+.sheetbox-btn.ghost{background:#fff;color:#0f7b57;border:1.5px solid #0f7b57;}
+.sheetbox-btn.link{display:inline-block;text-decoration:none;text-align:center;line-height:1.4;}
+.sheetbox-btn.link:hover{background:#0c6547;color:#fff;}
+.sheetbox-url{display:inline-block;background:#fff;border:1px solid #cfe3da;border-radius:6px;
+ padding:2px 8px;font-size:11.5px;word-break:break-all;color:#3d4753;}
+.sheetbox-btn.ghost:hover{background:#e6f4ed;}
+.sheetbox-btn:focus-visible{outline:3px solid #9ad3bd;outline-offset:2px;}
+.sheetbox-note{font-size:13.5px;margin:0 0 12px;color:#1b1f24;line-height:1.85;}
+.sheetbox-msg{font-size:13.5px;margin:0 0 12px;padding:11px 14px;border-radius:8px;line-height:1.8;}
+.sheetbox-msg.ok{background:#e6f4ed;border:1px solid #bfe3d3;}
+.sheetbox-msg.ng{background:#fff8e8;border:1px solid #f0dcae;}
+.sheetbox-msg ol{margin:7px 0 0;padding-left:20px;}
+.sheetbox-msg li{margin-bottom:4px;}
+.sheetbox details{margin-top:6px;}
+.sheetbox summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#0f7b57;padding:5px 0;}
+.sheetbox-scroll{overflow-x:auto;background:#fff;border-radius:8px;border:1px solid #cfe3da;margin-top:10px;}
+.sheetbox table{border-collapse:collapse;font-size:12.5px;margin:0;min-width:100%;}
+.sheetbox th,.sheetbox td{border:1px solid #dde3e9;padding:7px 10px;vertical-align:top;
+ white-space:pre-wrap;text-align:left;}
+.sheetbox th{background:#1a3a6b;color:#fff;font-weight:700;white-space:nowrap;}
+.sheetbox td.k{background:#fff8e7;font-weight:700;width:230px;}
+.sheetbox td.ex{color:#8a94a0;font-style:italic;background:#f7f9fb;}
+.sheetbox td.in{background:#fff;min-width:120px;}
+.sheetbox td.sec{background:#1a3a6b;color:#fff;font-weight:700;}
+.sheetbox td.cap{background:#fbfcfe;color:#3d4753;font-weight:700;}
+.sheetbox-nodl{background:#fff8e8;border:1px solid #f0dcae;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-nodl b{color:#8a5a00;}
+.sheetbox-gs{background:#e8f5ee;border:1px solid #bfe3d3;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-gs b{color:#0c6547;}
+.sheetbox-gs .sub{color:#5b6672;font-size:12.5px;line-height:1.8;}
+.sheetbox-en{display:inline-block;background:#1b1f24;color:#fff;border-radius:5px;
+ padding:1px 9px;margin:0 3px;font-size:12.5px;font-weight:700;letter-spacing:.2px;}
+.sheetbox-warn{color:#b3261e;font-weight:700;}
+.sheetbox-steps{font-size:13.5px;line-height:1.85;margin:10px 0 0;padding-left:20px;}
+.sheetbox-steps li{margin-bottom:5px;}
+.sheetbox-ta{width:100%;box-sizing:border-box;height:150px;margin-top:9px;padding:10px 12px;
+ font-size:12px;line-height:1.7;border:1px solid #cfe3da;border-radius:8px;background:#fff;
+ font-family:"Yu Gothic UI","Meiryo",monospace;white-space:pre;overflow:auto;}
+
 </style>
 </head>
 <body>
@@ -211,26 +262,289 @@ KDPの画面は<b>途中で止まると入力が消えることがあります�
 申告しても、出版できなくなったり、表示上不利になったりはしません。
 </div>
 
-<h2>7. 価格とKindle Unlimited</h2>
+<h2>7. 価格を決める</h2>
+<div class="win">
+<b>1冊目のおすすめは 298円です。</b>500円を超えないところから始めてください。
+</div>
+<p>理由は3つあります。</p>
+<ul>
+<li><b>読まれた実績のない本に高い値段をつけても、止まります。</b>まず読まれることを優先します</li>
+<li>298円は<b>70%のロイヤリティが選べる価格帯</b>に入っています（下の表）</li>
+<li>同じジャンルの本が並んだとき、<b>安いほうが試し読みされやすい</b></li>
+</ul>
+
+<h3>KDPで選べる価格の範囲（Amazon.co.jp・2026-08-27時点の公式ヘルプ）</h3>
 <div class="scroll"><table>
-<tr><th></th><th>考え方</th></tr>
-<tr><td>価格</td><td>1冊目は<b>低めから入る</b>のが基本。読まれた実績のない本に高い値段をつけても止まります</td></tr>
-<tr><td>ロイヤリティ</td><td>価格帯によって選べる率が変わります。画面の説明どおりに選べば問題ありません</td></tr>
-<tr><td>Kindle Unlimited（KDPセレクト）</td><td>入れると読み放題の対象になり、読まれたページ数で収益が出ます。
-そのかわり<b>他の電子書店で売れなくなります</b>（独占）。1冊目は入れて構いません</td></tr>
+<tr><th>ロイヤリティ</th><th>設定できる価格</th><th>配信コスト</th></tr>
+<tr><td><b>70%</b></td><td><b>250円 〜 1,650円</b></td><td><b>引かれる</b>（1MBあたり1円・最低1円）</td></tr>
+<tr><td>35%</td><td>99円 〜 20,000円</td><td>引かれない</td></tr>
+</table></div>
+<div class="trap"><b>250円未満にすると70%が選べません。</b>
+たとえば99円にすると35%になり、手取りは大きく下がります。
+<b>安くしたいなら250円が下限</b>だと考えてください。</div>
+
+<h3>298円だと手取りはいくらか</h3>
+<p>計算式は <code>70% ×（価格 − 消費税 − 配信コスト）</code> です。
+文章だけの本はだいたい1〜2MBなので、配信コストは1〜2円です。</p>
+<div class="scroll"><table>
+<tr><th>価格</th><th>ロイヤリティ</th><th>1冊あたりの手取り（目安）</th></tr>
+<tr><td><b>298円</b></td><td>70%</td><td><b>約188円</b></td></tr>
+<tr><td>500円</td><td>70%</td><td>約317円</td></tr>
+<tr><td>99円</td><td>35%</td><td>約31円</td></tr>
+</table></div>
+<p style="font-size:13.5px;color:var(--sub);">※ 消費税10%を差し引いた計算です。実際の金額はKDPの画面に表示されます。</p>
+
+<div class="win"><b>画像の多い本ほど、日本では配信コストが有利になります。</b>
+Amazon.co.jpでは、<b>10MB以上の本には配信コストがかかりません。</b>
+漫画入りの本（2冊目）は10MBを超えることが多いので、ここは心配しなくて大丈夫です。</div>
+
+<h2>8. Kindle Unlimited（KDPセレクト）</h2>
+<div class="scroll"><table>
+<tr><th></th><th>内容</th></tr>
+<tr><td>入れると</td><td>読み放題の対象になり、<b>読まれたページ数に応じて</b>収益が出ます。売れなくても読まれれば入ります</td></tr>
+<tr><td>そのかわり</td><td><b>他の電子書店で売れなくなります</b>（Amazon独占）。期間は90日ごとの更新</td></tr>
+<tr><td>1冊目は</td><td><b>入れて構いません。</b>読まれる機会が増えるほうが大事です</td></tr>
 </table></div>
 <div class="trap"><b>Kindle Unlimitedのことを、キーワードやA+コンテンツに書かないでください。</b>
-プログラム名の記載は規約で禁止されています。価格や読み放題の話は、<b>登録画面の設定でやること</b>で、
-文章に書くことではありません。</div>
+プログラム名を書くこと自体が規約で禁止されています。
+読み放題は<b>登録画面で設定すること</b>であって、文章に書くことではありません。</div>
 
-<h2>8. 審査</h2>
+<h2>9. 審査</h2>
 <ul>
 <li>審査は通常<b>72時間以内</b>。長いときもあるので、出版日を約束しない</li>
 <li>落ちるとメールが来ます。<b>文面をそのまま読んで、書いてある箇所だけ直す</b></li>
 <li>心当たりがないときは、内容紹介の文字数・キーワード・表紙の3つを疑う（この3つが大半）</li>
 </ul>
 
-<h2>9. 提出物</h2>
+<!--SHEET-->
+<div class="sheetbox">
+  <div class="sheetbox-head">
+    <div>
+      <div class="sheetbox-title">&#128196; 記入シート</div>
+      <div class="sheetbox-sub"><span id="sub_E38090E7ACAC36">保存されるファイル：<b>【第6回 宿題】KDP登録情報シート.csv</b>（ExcelでもGoogleスプレッドシートでも開けます）</span></div>
+    </div>
+    <div class="sheetbox-btns">
+      
+      <button type="button" id="dl_E38090E7ACAC36" class="sheetbox-btn ghost">&#11015; ダウンロード</button>
+      <button type="button" id="cp_E38090E7ACAC36" class="sheetbox-btn ghost">表をコピー</button>
+    </div>
+  </div>
+  <div id="nodl_E38090E7ACAC36" class="sheetbox-nodl" style="display:none">
+    <b>&#128241; この画面では、ファイルの保存ができません。</b>
+    （スマホ・タブレットで開いたときに起こります。押しても何も出ません）<br>
+    かわりに下の<b>「表をコピー」</b>を押して、<b>Googleスプレッドシートのアプリ</b>を開き、いちばん左上のマスを長押しして「貼り付け」を選んでください。同じ表になります。<br>パソコンが使える方は、<b>このページをパソコンで開くのがいちばん簡単です。</b>
+  </div>
+  
+  <p class="sheetbox-note" id="note_E38090E7ACAC36">
+    <b>表を自分で作る必要はありません。</b>「ダウンロード」を押すと、<b>画面のまん中に英語の窓</b>が出ます。
+    <span class="sheetbox-en">Let this Artifact download a file?</span>
+    <b>右下の黒い［Save file］を押してください。</b>これで保存されます。
+    <span class="sheetbox-warn">左の［Cancel］を押すと保存されません。</span><br>
+    この窓が出ないとき・スマホのときは、下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開けば、同じ表がそのまま手に入ります。
+  </p>
+  <div id="msg_E38090E7ACAC36" class="sheetbox-msg ok" style="display:none"></div>
+  <details id="tbl_E38090E7ACAC36">
+    <summary>表の中身をここで見る（印刷して手書きでもOK）</summary>
+    <div class="sheetbox-scroll"><table><tr><td class="cap" colspan="3">【第6回 宿題】KDP登録情報シート</td></tr><tr><td class="cap" colspan="3">KDPの画面は途中で止まると入力が消えます。先にここを全部埋めて、貼るだけの状態にしてから開いてください。</td></tr><tr><td class="k"></td><td class="in">▼ ここに書いてください</td><td class="in">記入例（見本）</td></tr><tr><td class="sec" colspan="3">1　本の情報</td></tr><tr><td class="k">① タイトル</td><td class="in"></td><td class="ex">40代からの、AIではじめる小さな再出発</td></tr><tr><td class="k">② タイトルのふりがな</td><td class="in"></td><td class="ex">ヨンジュウダイカラノ エーアイデハジメルチイサナサイシュッパツ</td></tr><tr><td class="k">③ タイトルのローマ字</td><td class="in"></td><td class="ex">Yonjudai Karano Ai De Hajimeru Chiisana Saishuppatsu</td></tr><tr><td class="k">④ サブタイトル</td><td class="in"></td><td class="ex">何から始めればいいか分からない人へ</td></tr><tr><td class="k">⑤ サブタイトルのふりがな</td><td class="in"></td><td class="ex">ナニカラハジメレバイイカワカラナイヒトヘ</td></tr><tr><td class="k">⑥ サブタイトルのローマ字</td><td class="in"></td><td class="ex">Nanikara Hajimereba Iika Wakaranai Hito He</td></tr><tr><td class="k">⑦ 著者名</td><td class="in"></td><td class="ex">片岡 達哉</td></tr><tr><td class="k">⑧ 著者名のふりがな</td><td class="in"></td><td class="ex">カタオカ タツヤ</td></tr><tr><td class="k">⑨ 著者名のローマ字</td><td class="in"></td><td class="ex">Kataoka Tatsuya</td></tr><tr><td class="cap" colspan="3">★ふりがな欄とローマ字欄には、記号も数字も入れられません。読み方を文字にしてください（50代→ゴジュウダイ／Gojudai　AI→エーアイ／Ai）。著者名は姓名を分けず、間に半角スペース1つです。</td></tr><tr><td class="sec" colspan="3">2　内容紹介</td></tr><tr><td class="cap" colspan="3">★KDPは改行1つを4文字として数えます。改行キーを押さず、&lt;br&gt; を直接書いてください。上限4,000字ですが、3,500〜3,950字で運用します。</td></tr><tr><td class="k">⑩ 内容紹介の本文（&lt;br&gt;で改行を書く）</td><td class="in"></td><td class="ex">「このままでいいのか」と思いながら、また同じ1年が終わろうとしていませんか。&lt;br&gt;……（このセルに全文を貼ってください）</td></tr><tr><td class="k">⑪ 文字数（&lt;br&gt;も含めて数えた数）</td><td class="in"></td><td class="ex">3720</td></tr><tr><td class="k">⑫ 改行キーを使っていないか確認した</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="sec" colspan="3">3　キーワード7つ</td></tr><tr><td class="cap" colspan="3">★入れてはいけないもの：他の著者名／他の本のタイトル／ブランド名／「Kindle Unlimited」などのプログラム名／ランキング・受賞・主観的な評価／本の内容と関係のない言葉／引用符／わざとの誤字。迷ったら入れないでください。</td></tr><tr><td class="k">⑬ キーワード1</td><td class="in"></td><td class="ex">生成AI 活用</td></tr><tr><td class="k">⑭ キーワード2</td><td class="in"></td><td class="ex">働き方 見直し</td></tr><tr><td class="k">⑮ キーワード3</td><td class="in"></td><td class="ex">将来不安 40代</td></tr><tr><td class="k">⑯ キーワード4</td><td class="in"></td><td class="ex">会社員 初心者</td></tr><tr><td class="k">⑰ キーワード5</td><td class="in"></td><td class="ex">自己啓発 入門</td></tr><tr><td class="k">⑱ キーワード6</td><td class="in"></td><td class="ex">時短 習慣化</td></tr><tr><td class="k">⑲ キーワード7</td><td class="in"></td><td class="ex">図解 わかりやすい</td></tr><tr><td class="k">⑳ 禁止ワードが入っていないか確認した</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="sec" colspan="3">4　カテゴリー3つ</td></tr><tr><td class="cap" colspan="3">★カテゴリー名は正式名称です。「個人金融」のような直感的な名前は存在しません。記憶で書かず、KDPの画面に実在するものを確認してから書いてください。</td></tr><tr><td class="k">㉑ カテゴリー1（本のど真ん中）</td><td class="in"></td><td class="ex">自己啓発に関する電子書籍</td></tr><tr><td class="cap" colspan="3">㉒ カテゴリー2（読者の属性）</td></tr><tr><td class="cap" colspan="3">㉓ カテゴリー3（競争のゆるいところ）</td></tr><tr><td class="k">㉔ 3つとも画面で実在を確認した</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="sec" colspan="3">5　価格と読み放題</td></tr><tr><td class="cap" colspan="3">1冊目のおすすめは298円です。70%のロイヤリティを選べるのは250円〜1,650円の範囲（Amazon.co.jp・2026-08-27時点）。250円未満だと35%になり、手取りが大きく下がります。</td></tr><tr><td class="k">㉕ 価格</td><td class="in"></td><td class="ex">298</td></tr><tr><td class="k">㉖ ロイヤリティ</td><td class="in"></td><td class="ex">70%</td></tr><tr><td class="k">㉗ Kindle Unlimited（KDPセレクト）</td><td class="in"></td><td class="ex">入れる</td></tr><tr><td class="cap" colspan="3">★Kindle Unlimitedのことは、キーワードにもA+コンテンツにも書かないでください。プログラム名を書くこと自体が規約違反です。ここは画面での設定です。</td></tr><tr><td class="sec" colspan="3">6　提出前の最終チェック</td></tr><tr><td class="k">㉘ 表紙はJPEGで、2560×1600・300PPI・RGBになっている</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">㉙ 原稿はEPUBで、言語がjaになっている</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">㉚ 目次のリンクを全部タップして確認した</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">㉛ AI生成コンテンツの申告を「はい」にした</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="cap" colspan="3">★AI生成の申告は任意ではありません。申告しないこと自体が規約違反です。申告しても、出版できなくなったり不利になったりはしません。</td></tr></table></div>
+  </details>
+  <details id="pst_E38090E7ACAC36">
+    <summary>&#128203; ダウンロードできないときは、ここから貼り付け（スマホもOK）</summary>
+    <ol class="sheetbox-steps">
+      <li>下の枠の中を1回クリックして、<b>Ctrl+A</b>（Macは&#8984;+A）→ <b>Ctrl+C</b>（Macは&#8984;+C）</li>
+      <li>ExcelかGoogleスプレッドシートを開いて、いちばん左上のマスをクリック</li>
+      <li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け → 同じ表になります</li>
+    </ol>
+    <textarea id="ta_E38090E7ACAC36" class="sheetbox-ta" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script>
+(function () {
+  var KEY = "E38090E7ACAC36";
+  var XNAME = "【第6回 宿題】KDP登録情報シート.xlsx", CNAME = "【第6回 宿題】KDP登録情報シート.csv";
+  var CSV = "【第6回 宿題】KDP登録情報シート,,\nKDPの画面は途中で止まると入力が消えます。先にここを全部埋めて、貼るだけの状態にしてから開いてください。,,\n,▼ ここに書いてください,記入例（見本）\n1　本の情報,,\n① タイトル,,40代からの、AIではじめる小さな再出発\n② タイトルのふりがな,,ヨンジュウダイカラノ エーアイデハジメルチイサナサイシュッパツ\n③ タイトルのローマ字,,Yonjudai Karano Ai De Hajimeru Chiisana Saishuppatsu\n④ サブタイトル,,何から始めればいいか分からない人へ\n⑤ サブタイトルのふりがな,,ナニカラハジメレバイイカワカラナイヒトヘ\n⑥ サブタイトルのローマ字,,Nanikara Hajimereba Iika Wakaranai Hito He\n⑦ 著者名,,片岡 達哉\n⑧ 著者名のふりがな,,カタオカ タツヤ\n⑨ 著者名のローマ字,,Kataoka Tatsuya\n★ふりがな欄とローマ字欄には、記号も数字も入れられません。読み方を文字にしてください（50代→ゴジュウダイ／Gojudai　AI→エーアイ／Ai）。著者名は姓名を分けず、間に半角スペース1つです。,,\n2　内容紹介,,\n\"★KDPは改行1つを4文字として数えます。改行キーを押さず、<br> を直接書いてください。上限4,000字ですが、3,500〜3,950字で運用します。\",,\n⑩ 内容紹介の本文（<br>で改行を書く）,,「このままでいいのか」と思いながら、また同じ1年が終わろうとしていませんか。<br>……（このセルに全文を貼ってください）\n⑪ 文字数（<br>も含めて数えた数）,,3720\n⑫ 改行キーを使っていないか確認した,,確認した\n3　キーワード7つ,,\n★入れてはいけないもの：他の著者名／他の本のタイトル／ブランド名／「Kindle Unlimited」などのプログラム名／ランキング・受賞・主観的な評価／本の内容と関係のない言葉／引用符／わざとの誤字。迷ったら入れないでください。,,\n⑬ キーワード1,,生成AI 活用\n⑭ キーワード2,,働き方 見直し\n⑮ キーワード3,,将来不安 40代\n⑯ キーワード4,,会社員 初心者\n⑰ キーワード5,,自己啓発 入門\n⑱ キーワード6,,時短 習慣化\n⑲ キーワード7,,図解 わかりやすい\n⑳ 禁止ワードが入っていないか確認した,,確認した\n4　カテゴリー3つ,,\n★カテゴリー名は正式名称です。「個人金融」のような直感的な名前は存在しません。記憶で書かず、KDPの画面に実在するものを確認してから書いてください。,,\n㉑ カテゴリー1（本のど真ん中）,,自己啓発に関する電子書籍\n㉒ カテゴリー2（読者の属性）,,\n㉓ カテゴリー3（競争のゆるいところ）,,\n㉔ 3つとも画面で実在を確認した,,確認した\n5　価格と読み放題,,\n\"1冊目のおすすめは298円です。70%のロイヤリティを選べるのは250円〜1,650円の範囲（Amazon.co.jp・2026-08-27時点）。250円未満だと35%になり、手取りが大きく下がります。\",,\n㉕ 価格,,298\n㉖ ロイヤリティ,,70%\n㉗ Kindle Unlimited（KDPセレクト）,,入れる\n★Kindle Unlimitedのことは、キーワードにもA+コンテンツにも書かないでください。プログラム名を書くこと自体が規約違反です。ここは画面での設定です。,,\n6　提出前の最終チェック,,\n㉘ 表紙はJPEGで、2560×1600・300PPI・RGBになっている,,確認した\n㉙ 原稿はEPUBで、言語がjaになっている,,確認した\n㉚ 目次のリンクを全部タップして確認した,,確認した\n㉛ AI生成コンテンツの申告を「はい」にした,,確認した\n★AI生成の申告は任意ではありません。申告しないこと自体が規約違反です。申告しても、出版できなくなったり不利になったりはしません。,,", TSV = "【第6回 宿題】KDP登録情報シート\t\t\nKDPの画面は途中で止まると入力が消えます。先にここを全部埋めて、貼るだけの状態にしてから開いてください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\n1　本の情報\t\t\n① タイトル\t\t40代からの、AIではじめる小さな再出発\n② タイトルのふりがな\t\tヨンジュウダイカラノ エーアイデハジメルチイサナサイシュッパツ\n③ タイトルのローマ字\t\tYonjudai Karano Ai De Hajimeru Chiisana Saishuppatsu\n④ サブタイトル\t\t何から始めればいいか分からない人へ\n⑤ サブタイトルのふりがな\t\tナニカラハジメレバイイカワカラナイヒトヘ\n⑥ サブタイトルのローマ字\t\tNanikara Hajimereba Iika Wakaranai Hito He\n⑦ 著者名\t\t片岡 達哉\n⑧ 著者名のふりがな\t\tカタオカ タツヤ\n⑨ 著者名のローマ字\t\tKataoka Tatsuya\n★ふりがな欄とローマ字欄には、記号も数字も入れられません。読み方を文字にしてください（50代→ゴジュウダイ／Gojudai　AI→エーアイ／Ai）。著者名は姓名を分けず、間に半角スペース1つです。\t\t\n2　内容紹介\t\t\n★KDPは改行1つを4文字として数えます。改行キーを押さず、<br> を直接書いてください。上限4,000字ですが、3,500〜3,950字で運用します。\t\t\n⑩ 内容紹介の本文（<br>で改行を書く）\t\t「このままでいいのか」と思いながら、また同じ1年が終わろうとしていませんか。<br>……（このセルに全文を貼ってください）\n⑪ 文字数（<br>も含めて数えた数）\t\t3720\n⑫ 改行キーを使っていないか確認した\t\t確認した\n3　キーワード7つ\t\t\n★入れてはいけないもの：他の著者名／他の本のタイトル／ブランド名／「Kindle Unlimited」などのプログラム名／ランキング・受賞・主観的な評価／本の内容と関係のない言葉／引用符／わざとの誤字。迷ったら入れないでください。\t\t\n⑬ キーワード1\t\t生成AI 活用\n⑭ キーワード2\t\t働き方 見直し\n⑮ キーワード3\t\t将来不安 40代\n⑯ キーワード4\t\t会社員 初心者\n⑰ キーワード5\t\t自己啓発 入門\n⑱ キーワード6\t\t時短 習慣化\n⑲ キーワード7\t\t図解 わかりやすい\n⑳ 禁止ワードが入っていないか確認した\t\t確認した\n4　カテゴリー3つ\t\t\n★カテゴリー名は正式名称です。「個人金融」のような直感的な名前は存在しません。記憶で書かず、KDPの画面に実在するものを確認してから書いてください。\t\t\n㉑ カテゴリー1（本のど真ん中）\t\t自己啓発に関する電子書籍\n㉒ カテゴリー2（読者の属性）\t\t\n㉓ カテゴリー3（競争のゆるいところ）\t\t\n㉔ 3つとも画面で実在を確認した\t\t確認した\n5　価格と読み放題\t\t\n1冊目のおすすめは298円です。70%のロイヤリティを選べるのは250円〜1,650円の範囲（Amazon.co.jp・2026-08-27時点）。250円未満だと35%になり、手取りが大きく下がります。\t\t\n㉕ 価格\t\t298\n㉖ ロイヤリティ\t\t70%\n㉗ Kindle Unlimited（KDPセレクト）\t\t入れる\n★Kindle Unlimitedのことは、キーワードにもA+コンテンツにも書かないでください。プログラム名を書くこと自体が規約違反です。ここは画面での設定です。\t\t\n6　提出前の最終チェック\t\t\n㉘ 表紙はJPEGで、2560×1600・300PPI・RGBになっている\t\t確認した\n㉙ 原稿はEPUBで、言語がjaになっている\t\t確認した\n㉚ 目次のリンクを全部タップして確認した\t\t確認した\n㉛ AI生成コンテンツの申告を「はい」にした\t\t確認した\n★AI生成の申告は任意ではありません。申告しないこと自体が規約違反です。申告しても、出版できなくなったり不利になったりはしません。\t\t", B64 = "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";
+  var dl = document.getElementById("dl_" + KEY);
+  var cp = document.getElementById("cp_" + KEY);
+  var msg = document.getElementById("msg_" + KEY);
+  var pst = document.getElementById("pst_" + KEY);
+  var ta = document.getElementById("ta_" + KEY);
+  if (!dl) return;
+  if (ta) ta.value = TSV;
+
+  function say(text, ok) {
+    msg.style.display = "block";
+    msg.className = "sheetbox-msg " + (ok ? "ok" : "ng");
+    msg.innerHTML = text;
+  }
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var el = document.createElement("textarea");
+        el.value = t; el.style.position = "fixed"; el.style.top = "-1000px";
+        document.body.appendChild(el); el.focus(); el.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(el); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  // ★どの失敗経路に落ちても「手が止まらない」ようにする。
+  //   貼り付け欄を開いて・中身を選択して・手順を出す。ここまでやって初めて受講生は先へ進める。
+  function openFallback(head) {
+    if (pst) pst.open = true;
+    if (ta) { try { ta.focus(); ta.select(); } catch (e) {} }
+    copyText(TSV).then(function (ok) {
+      var steps = "<ol>"
+        + "<li>ExcelかGoogleスプレッドシートを開く</li>"
+        + "<li>いちばん左上のマスをクリック</li>"
+        + "<li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け</li></ol>";
+      if (ok) {
+        say(head + "<b>かわりに表をコピーしました。</b>" + steps, false);
+      } else {
+        say(head + "下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開きました。"
+            + "枠の中で <b>Ctrl+A</b> → <b>Ctrl+C</b> を押してから、" + steps, false);
+      }
+      if (pst && pst.scrollIntoView) { try { pst.scrollIntoView({block: "center"}); } catch (e) {} }
+    });
+  }
+  function blobSave() {
+    try {
+      var bin = atob(B64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+      var a = document.createElement("a");
+      a.href = url; a.download = XNAME; a.rel = "noopener";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  // ★Artifactのビューアが黙って返事をしないことがある（スマホ・共有リンクなど）。
+  //   待ちっぱなしにすると「押しても何も起きない」になる。必ず時間で切って案内に落とす。
+  function withTimeout(p, ms, tag) {
+    return new Promise(function (res, rej) {
+      var fin = false;
+      var t = setTimeout(function () {
+        if (!fin) { fin = true; rej({code: "timeout", tag: tag}); }
+      }, ms);
+      Promise.resolve(p).then(function (v) {
+        if (!fin) { fin = true; clearTimeout(t); res(v); }
+      }, function (e) {
+        if (!fin) { fin = true; clearTimeout(t); rej(e || {code: "error", tag: tag}); }
+      });
+    });
+  }
+
+  // Artifact（claude.ai でURLを開いた状態）かどうか。ここではBlob保存が黙って失敗する。
+  var inArtifact = !!(window.claude && typeof window.claude.use === "function");
+  var sub = document.getElementById("sub_" + KEY);
+  if (sub && !inArtifact) {
+    sub.innerHTML = "保存されるファイル：<b>" + XNAME + "</b>（Excelで開けます）";
+  }
+
+  // ★スマホでは保存機能そのものが動かない。押しても何も起きない＝手が止まる。
+  //   2026-08-27、受講生がスマホで詰まった。押す前に分かるようにする。
+  //   ページを開いた時点で使えるか調べ、駄目なら最初からボタンを止めて案内に切り替える。
+  var nodl = document.getElementById("nodl_" + KEY);
+  var note = document.getElementById("note_" + KEY);
+  var dlObj = null;
+  function markNoDownload() {
+    dlObj = null;
+    dl.disabled = true;
+    dl.textContent = "この画面では保存できません";
+    dl.style.background = "#c8cdd2";
+    if (cp) { cp.className = "sheetbox-btn"; }
+    if (nodl) nodl.style.display = "block";
+    if (note) note.style.display = "none";
+    if (sub) sub.innerHTML = "この画面ではファイルを保存できません。下の「表をコピー」を使ってください。";
+  }
+  if (inArtifact) {
+    withTimeout(Promise.resolve(window.claude.use("downloads")), 8000, "probe").then(
+      function (d) { if (d && d.save) { dlObj = d; } else { markNoDownload(); } },
+      function () { markNoDownload(); });
+  }
+
+  dl.addEventListener("click", function () {
+    dl.disabled = true;
+    var fin = function () { dl.disabled = false; };
+
+    if (!inArtifact) {
+      if (blobSave()) {
+        say("ダウンロードしました。<b>" + XNAME + "</b> をExcelで開いてください。", true);
+      } else { openFallback("この画面ではファイルの保存ができませんでした。"); }
+      return fin();
+    }
+
+    // ★英語の確認ダイアログが「まん中」に出る。これを知らないと受講生はCancelを押す。
+    //   2026-08-27、実機で確認：Let this Artifact download a file? / Cancel / Save file
+    say("<b>画面のまん中に、英語の窓が出ます。</b>"
+        + "<span class=\"sheetbox-en\">Let this Artifact download a file?</span>"
+        + "<b>右下の黒い［Save file］</b>を押してください。"
+        + "<span class=\"sheetbox-warn\">［Cancel］を押すと保存されません。</span>", true);
+
+    // ★人が押すのを待つ部分に制限時間を付けてはいけない。
+    //   英語の窓を読んでいる間に「失敗しました」と出てしまう（2026-08-27に実際に出た）。
+    //   時間で切るのは「ビューアが返事をするかどうか」の部分だけ。
+    function trySave(d, name, data) {
+      return d.save({filename: name, data: data}).then(function () {
+        say("ダウンロードしました。パソコンの<b>「ダウンロード」フォルダ</b>に入っている "
+            + "<b>" + name + "</b> を、ExcelかGoogleスプレッドシートで開いてください。", true);
+      }, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "extension_not_enabled" || code === "rejected_extension") {
+          return d.save({filename: name.replace(/\.csv$/, ".txt"), data: data}).then(function () {
+            say("ダウンロードしました。ファイル名の末尾を <b>.txt</b> から <b>.csv</b> に変えてから、"
+                + "ExcelかGoogleスプレッドシートで開いてください。", true);
+          });
+        }
+        return Promise.reject(e);
+      });
+    }
+
+    var body = "\uFEFF" + CSV;
+    var getDL = dlObj ? Promise.resolve(dlObj)
+      : withTimeout(Promise.resolve(window.claude.use("downloads")), 12000, "use");
+    getDL
+      .then(function (d) {
+        if (!d || !d.save) return Promise.reject({code: "unavailable"});
+        return trySave(d, CNAME, body);
+      })
+      .then(null, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "declined") {
+          say("ダウンロードを取りやめました（［Cancel］を押しました）。"
+              + "もう一度「ダウンロード」を押すと、また同じ窓が出ます。"
+              + "<b>今度は右下の黒い［Save file］</b>を押してください。", false);
+          return;
+        }
+        var head = (code === "timeout" || code === "unavailable")
+          ? "この画面ではファイルの保存ができないようです（スマホや、共有リンクで開いたときに起きます）。"
+          : "この画面ではファイルの保存ができませんでした。";
+        openFallback(head);
+      })
+      .then(fin, fin);
+  });
+
+  cp.addEventListener("click", function () {
+    copyText(TSV).then(function (ok) {
+      var old = "表をコピー";
+      cp.textContent = ok ? "コピーしました" : "コピーできません";
+      if (ok) {
+        say("表をコピーしました。ExcelかGoogleスプレッドシートを開いて、"
+            + "いちばん左上のマスで <b>Ctrl+V</b>（Macは&#8984;+V）を押してください。", true);
+      } else {
+        openFallback("コピーがブロックされました。");
+      }
+      setTimeout(function () { cp.textContent = old; }, 2400);
+    });
+  });
+})();
+</script>
+<!--/SHEET-->
+
+<h2>10. 提出物</h2>
 <div class="win"><b>出版済みのASIN（AmazonのページのURLでも可）。</b></div>
 <ul class="check">
 <li>ふりがな・ローマ字に記号と数字が入っていない</li>
@@ -250,7 +564,7 @@ KDPの画面は<b>途中で止まると入力が消えることがあります�
 2冊目からは<b>読まれる本にする技術</b>に入ります。
 </div>
 
-<h2>9. 質問メモ欄</h2>
+<h2>10. 質問メモ欄</h2>
 <p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
 <div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
 

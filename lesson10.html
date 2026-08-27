@@ -69,6 +69,57 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
+.sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
+.sheetbox-sub{font-size:12.5px;color:#5b6672;margin-top:3px;line-height:1.7;}
+.sheetbox-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.sheetbox-btn{background:#0f7b57;color:#fff;border:none;border-radius:8px;padding:11px 20px;
+ font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.sheetbox-btn:hover{background:#0c6547;}
+.sheetbox-btn:disabled{opacity:.6;cursor:default;}
+.sheetbox-btn.ghost{background:#fff;color:#0f7b57;border:1.5px solid #0f7b57;}
+.sheetbox-btn.link{display:inline-block;text-decoration:none;text-align:center;line-height:1.4;}
+.sheetbox-btn.link:hover{background:#0c6547;color:#fff;}
+.sheetbox-url{display:inline-block;background:#fff;border:1px solid #cfe3da;border-radius:6px;
+ padding:2px 8px;font-size:11.5px;word-break:break-all;color:#3d4753;}
+.sheetbox-btn.ghost:hover{background:#e6f4ed;}
+.sheetbox-btn:focus-visible{outline:3px solid #9ad3bd;outline-offset:2px;}
+.sheetbox-note{font-size:13.5px;margin:0 0 12px;color:#1b1f24;line-height:1.85;}
+.sheetbox-msg{font-size:13.5px;margin:0 0 12px;padding:11px 14px;border-radius:8px;line-height:1.8;}
+.sheetbox-msg.ok{background:#e6f4ed;border:1px solid #bfe3d3;}
+.sheetbox-msg.ng{background:#fff8e8;border:1px solid #f0dcae;}
+.sheetbox-msg ol{margin:7px 0 0;padding-left:20px;}
+.sheetbox-msg li{margin-bottom:4px;}
+.sheetbox details{margin-top:6px;}
+.sheetbox summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#0f7b57;padding:5px 0;}
+.sheetbox-scroll{overflow-x:auto;background:#fff;border-radius:8px;border:1px solid #cfe3da;margin-top:10px;}
+.sheetbox table{border-collapse:collapse;font-size:12.5px;margin:0;min-width:100%;}
+.sheetbox th,.sheetbox td{border:1px solid #dde3e9;padding:7px 10px;vertical-align:top;
+ white-space:pre-wrap;text-align:left;}
+.sheetbox th{background:#1a3a6b;color:#fff;font-weight:700;white-space:nowrap;}
+.sheetbox td.k{background:#fff8e7;font-weight:700;width:230px;}
+.sheetbox td.ex{color:#8a94a0;font-style:italic;background:#f7f9fb;}
+.sheetbox td.in{background:#fff;min-width:120px;}
+.sheetbox td.sec{background:#1a3a6b;color:#fff;font-weight:700;}
+.sheetbox td.cap{background:#fbfcfe;color:#3d4753;font-weight:700;}
+.sheetbox-nodl{background:#fff8e8;border:1px solid #f0dcae;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-nodl b{color:#8a5a00;}
+.sheetbox-gs{background:#e8f5ee;border:1px solid #bfe3d3;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-gs b{color:#0c6547;}
+.sheetbox-gs .sub{color:#5b6672;font-size:12.5px;line-height:1.8;}
+.sheetbox-en{display:inline-block;background:#1b1f24;color:#fff;border-radius:5px;
+ padding:1px 9px;margin:0 3px;font-size:12.5px;font-weight:700;letter-spacing:.2px;}
+.sheetbox-warn{color:#b3261e;font-weight:700;}
+.sheetbox-steps{font-size:13.5px;line-height:1.85;margin:10px 0 0;padding-left:20px;}
+.sheetbox-steps li{margin-bottom:5px;}
+.sheetbox-ta{width:100%;box-sizing:border-box;height:150px;margin-top:9px;padding:10px 12px;
+ font-size:12px;line-height:1.7;border:1px solid #cfe3da;border-radius:8px;background:#fff;
+ font-family:"Yu Gothic UI","Meiryo",monospace;white-space:pre;overflow:auto;}
+
 </style>
 </head>
 <body>
@@ -195,6 +246,234 @@ A+は画像と一緒に流し読みされる場所です。読ませる場所で
 </table></div>
 <div class="win"><b>却下されたら、そのパターンを記録しておいてください。</b>
 次に同じことをしないための一番いい資料になります。</div>
+
+<!--SHEET-->
+<div class="sheetbox">
+  <div class="sheetbox-head">
+    <div>
+      <div class="sheetbox-title">&#128196; 記入シート</div>
+      <div class="sheetbox-sub"><span id="sub_E38090E7ACAC31">保存されるファイル：<b>【第10回 宿題】A+コンテンツシート.csv</b>（ExcelでもGoogleスプレッドシートでも開けます）</span></div>
+    </div>
+    <div class="sheetbox-btns">
+      
+      <button type="button" id="dl_E38090E7ACAC31" class="sheetbox-btn ghost">&#11015; ダウンロード</button>
+      <button type="button" id="cp_E38090E7ACAC31" class="sheetbox-btn ghost">表をコピー</button>
+    </div>
+  </div>
+  <div id="nodl_E38090E7ACAC31" class="sheetbox-nodl" style="display:none">
+    <b>&#128241; この画面では、ファイルの保存ができません。</b>
+    （スマホ・タブレットで開いたときに起こります。押しても何も出ません）<br>
+    かわりに下の<b>「表をコピー」</b>を押して、<b>Googleスプレッドシートのアプリ</b>を開き、いちばん左上のマスを長押しして「貼り付け」を選んでください。同じ表になります。<br>パソコンが使える方は、<b>このページをパソコンで開くのがいちばん簡単です。</b>
+  </div>
+  
+  <p class="sheetbox-note" id="note_E38090E7ACAC31">
+    <b>表を自分で作る必要はありません。</b>「ダウンロード」を押すと、<b>画面のまん中に英語の窓</b>が出ます。
+    <span class="sheetbox-en">Let this Artifact download a file?</span>
+    <b>右下の黒い［Save file］を押してください。</b>これで保存されます。
+    <span class="sheetbox-warn">左の［Cancel］を押すと保存されません。</span><br>
+    この窓が出ないとき・スマホのときは、下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開けば、同じ表がそのまま手に入ります。
+  </p>
+  <div id="msg_E38090E7ACAC31" class="sheetbox-msg ok" style="display:none"></div>
+  <details id="tbl_E38090E7ACAC31">
+    <summary>表の中身をここで見る（印刷して手書きでもOK）</summary>
+    <div class="sheetbox-scroll"><table><tr><td class="cap" colspan="3">【第10回 宿題】A+コンテンツシート</td></tr><tr><td class="cap" colspan="3">A+は審査がいちばん厳しい場所です。書く前に、いちばん下の禁止リストを読んでください。</td></tr><tr><td class="k"></td><td class="in">▼ ここに書いてください</td><td class="in">記入例（見本）</td></tr><tr><td class="sec" colspan="3">0　書く前に読む（禁止リスト）</td></tr><tr><td class="cap" colspan="3">★A+に入れてはいけないもの：金額（価格だけでなく、制度の金額も「0円」も却下）／「Kindle Unlimited」への言及／ランキング・受賞／割引・期間限定などの時間で変わる表現／外部リンク・URL・SNSのID／レビューの引用。★画像の中に書かれた文字も、すべて審査対象です。</td></tr><tr><td class="sec" colspan="3">1　全体の見出し（40字以内）</td></tr><tr><td class="k">① 全体の見出し</td><td class="in"></td><td class="ex">何から始めればいいか分からなかった、40代のあなたへ</td></tr><tr><td class="k">② 文字数</td><td class="in"></td><td class="ex">25</td></tr><tr><td class="sec" colspan="3">2　カード① どん底</td></tr><tr><td class="cap" colspan="3">読者の今の状態を言葉にします。「これ自分だ」と思わせるところです。</td></tr><tr><td class="k">③ カード①の見出し（15字以内）</td><td class="in"></td><td class="ex">また同じ1年が終わる</td></tr><tr><td class="k">④ カード①の本文（120〜180字）</td><td class="in"></td><td class="ex">朝起きて、同じ電車に乗って、同じ席に座る。……（120〜180字で書いてください）</td></tr><tr><td class="k">⑤ 使う漫画のページ番号とコマ</td><td class="in"></td><td class="ex">P5 の 3コマ目</td></tr><tr><td class="sec" colspan="3">3　カード② 覚醒</td></tr><tr><td class="cap" colspan="3">何かに気づく場面です。方法を知って、半信半疑になるところ。</td></tr><tr><td class="k">⑥ カード②の見出し（15字以内）</td><td class="in"></td><td class="ex">やり方を知らなかっただけ</td></tr><tr><td class="cap" colspan="3">⑦ カード②の本文（120〜180字）</td></tr><tr><td class="k">⑧ 使う漫画のページ番号とコマ</td><td class="in"></td><td class="ex">P8 の 4コマ目</td></tr><tr><td class="sec" colspan="3">4　カード③ 変化</td></tr><tr><td class="cap" colspan="3">やってみて、少しずつ変わる場面です。</td></tr><tr><td class="k">⑨ カード③の見出し（15字以内）</td><td class="in"></td><td class="ex">15分だけ、やってみた</td></tr><tr><td class="cap" colspan="3">⑩ カード③の本文（120〜180字）</td></tr><tr><td class="k">⑪ 使う漫画のページ番号とコマ</td><td class="in"></td><td class="ex">P14 の 2コマ目</td></tr><tr><td class="sec" colspan="3">5　カード④ 成功</td></tr><tr><td class="cap" colspan="3">その先にある景色と、読者へのバトンです。</td></tr><tr><td class="k">⑫ カード④の見出し（15字以内）</td><td class="in"></td><td class="ex">1年後の自分が変わる</td></tr><tr><td class="cap" colspan="3">⑬ カード④の本文（120〜180字）</td></tr><tr><td class="k">⑭ 使う漫画のページ番号とコマ</td><td class="in"></td><td class="ex">P19 の 1コマ目</td></tr><tr><td class="sec" colspan="3">6　提出前チェック</td></tr><tr><td class="k">⑮ 全体の見出しが40字以内</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑯ カードの見出しが全部15字以内</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑰ カードの本文が全部120〜180字</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑱ 金額がどこにも書かれていない（画像の中も見た）</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑲ 「Kindle Unlimited」「読み放題」と書いていない</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑳ ランキング・受賞・割引・外部リンク・レビュー引用がない</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">㉑ 画像は本編の漫画から選んだ（新しく作っていない）</td><td class="in"></td><td class="ex">確認した</td></tr></table></div>
+  </details>
+  <details id="pst_E38090E7ACAC31">
+    <summary>&#128203; ダウンロードできないときは、ここから貼り付け（スマホもOK）</summary>
+    <ol class="sheetbox-steps">
+      <li>下の枠の中を1回クリックして、<b>Ctrl+A</b>（Macは&#8984;+A）→ <b>Ctrl+C</b>（Macは&#8984;+C）</li>
+      <li>ExcelかGoogleスプレッドシートを開いて、いちばん左上のマスをクリック</li>
+      <li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け → 同じ表になります</li>
+    </ol>
+    <textarea id="ta_E38090E7ACAC31" class="sheetbox-ta" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script>
+(function () {
+  var KEY = "E38090E7ACAC31";
+  var XNAME = "【第10回 宿題】A+コンテンツシート.xlsx", CNAME = "【第10回 宿題】A+コンテンツシート.csv";
+  var CSV = "【第10回 宿題】A+コンテンツシート,,\nA+は審査がいちばん厳しい場所です。書く前に、いちばん下の禁止リストを読んでください。,,\n,▼ ここに書いてください,記入例（見本）\n0　書く前に読む（禁止リスト）,,\n★A+に入れてはいけないもの：金額（価格だけでなく、制度の金額も「0円」も却下）／「Kindle Unlimited」への言及／ランキング・受賞／割引・期間限定などの時間で変わる表現／外部リンク・URL・SNSのID／レビューの引用。★画像の中に書かれた文字も、すべて審査対象です。,,\n1　全体の見出し（40字以内）,,\n① 全体の見出し,,何から始めればいいか分からなかった、40代のあなたへ\n② 文字数,,25\n2　カード① どん底,,\n読者の今の状態を言葉にします。「これ自分だ」と思わせるところです。,,\n③ カード①の見出し（15字以内）,,また同じ1年が終わる\n④ カード①の本文（120〜180字）,,朝起きて、同じ電車に乗って、同じ席に座る。……（120〜180字で書いてください）\n⑤ 使う漫画のページ番号とコマ,,P5 の 3コマ目\n3　カード② 覚醒,,\n何かに気づく場面です。方法を知って、半信半疑になるところ。,,\n⑥ カード②の見出し（15字以内）,,やり方を知らなかっただけ\n⑦ カード②の本文（120〜180字）,,\n⑧ 使う漫画のページ番号とコマ,,P8 の 4コマ目\n4　カード③ 変化,,\nやってみて、少しずつ変わる場面です。,,\n⑨ カード③の見出し（15字以内）,,15分だけ、やってみた\n⑩ カード③の本文（120〜180字）,,\n⑪ 使う漫画のページ番号とコマ,,P14 の 2コマ目\n5　カード④ 成功,,\nその先にある景色と、読者へのバトンです。,,\n⑫ カード④の見出し（15字以内）,,1年後の自分が変わる\n⑬ カード④の本文（120〜180字）,,\n⑭ 使う漫画のページ番号とコマ,,P19 の 1コマ目\n6　提出前チェック,,\n⑮ 全体の見出しが40字以内,,確認した\n⑯ カードの見出しが全部15字以内,,確認した\n⑰ カードの本文が全部120〜180字,,確認した\n⑱ 金額がどこにも書かれていない（画像の中も見た）,,確認した\n⑲ 「Kindle Unlimited」「読み放題」と書いていない,,確認した\n⑳ ランキング・受賞・割引・外部リンク・レビュー引用がない,,確認した\n㉑ 画像は本編の漫画から選んだ（新しく作っていない）,,確認した", TSV = "【第10回 宿題】A+コンテンツシート\t\t\nA+は審査がいちばん厳しい場所です。書く前に、いちばん下の禁止リストを読んでください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\n0　書く前に読む（禁止リスト）\t\t\n★A+に入れてはいけないもの：金額（価格だけでなく、制度の金額も「0円」も却下）／「Kindle Unlimited」への言及／ランキング・受賞／割引・期間限定などの時間で変わる表現／外部リンク・URL・SNSのID／レビューの引用。★画像の中に書かれた文字も、すべて審査対象です。\t\t\n1　全体の見出し（40字以内）\t\t\n① 全体の見出し\t\t何から始めればいいか分からなかった、40代のあなたへ\n② 文字数\t\t25\n2　カード① どん底\t\t\n読者の今の状態を言葉にします。「これ自分だ」と思わせるところです。\t\t\n③ カード①の見出し（15字以内）\t\tまた同じ1年が終わる\n④ カード①の本文（120〜180字）\t\t朝起きて、同じ電車に乗って、同じ席に座る。……（120〜180字で書いてください）\n⑤ 使う漫画のページ番号とコマ\t\tP5 の 3コマ目\n3　カード② 覚醒\t\t\n何かに気づく場面です。方法を知って、半信半疑になるところ。\t\t\n⑥ カード②の見出し（15字以内）\t\tやり方を知らなかっただけ\n⑦ カード②の本文（120〜180字）\t\t\n⑧ 使う漫画のページ番号とコマ\t\tP8 の 4コマ目\n4　カード③ 変化\t\t\nやってみて、少しずつ変わる場面です。\t\t\n⑨ カード③の見出し（15字以内）\t\t15分だけ、やってみた\n⑩ カード③の本文（120〜180字）\t\t\n⑪ 使う漫画のページ番号とコマ\t\tP14 の 2コマ目\n5　カード④ 成功\t\t\nその先にある景色と、読者へのバトンです。\t\t\n⑫ カード④の見出し（15字以内）\t\t1年後の自分が変わる\n⑬ カード④の本文（120〜180字）\t\t\n⑭ 使う漫画のページ番号とコマ\t\tP19 の 1コマ目\n6　提出前チェック\t\t\n⑮ 全体の見出しが40字以内\t\t確認した\n⑯ カードの見出しが全部15字以内\t\t確認した\n⑰ カードの本文が全部120〜180字\t\t確認した\n⑱ 金額がどこにも書かれていない（画像の中も見た）\t\t確認した\n⑲ 「Kindle Unlimited」「読み放題」と書いていない\t\t確認した\n⑳ ランキング・受賞・割引・外部リンク・レビュー引用がない\t\t確認した\n㉑ 画像は本編の漫画から選んだ（新しく作っていない）\t\t確認した", B64 = "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";
+  var dl = document.getElementById("dl_" + KEY);
+  var cp = document.getElementById("cp_" + KEY);
+  var msg = document.getElementById("msg_" + KEY);
+  var pst = document.getElementById("pst_" + KEY);
+  var ta = document.getElementById("ta_" + KEY);
+  if (!dl) return;
+  if (ta) ta.value = TSV;
+
+  function say(text, ok) {
+    msg.style.display = "block";
+    msg.className = "sheetbox-msg " + (ok ? "ok" : "ng");
+    msg.innerHTML = text;
+  }
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var el = document.createElement("textarea");
+        el.value = t; el.style.position = "fixed"; el.style.top = "-1000px";
+        document.body.appendChild(el); el.focus(); el.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(el); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  // ★どの失敗経路に落ちても「手が止まらない」ようにする。
+  //   貼り付け欄を開いて・中身を選択して・手順を出す。ここまでやって初めて受講生は先へ進める。
+  function openFallback(head) {
+    if (pst) pst.open = true;
+    if (ta) { try { ta.focus(); ta.select(); } catch (e) {} }
+    copyText(TSV).then(function (ok) {
+      var steps = "<ol>"
+        + "<li>ExcelかGoogleスプレッドシートを開く</li>"
+        + "<li>いちばん左上のマスをクリック</li>"
+        + "<li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け</li></ol>";
+      if (ok) {
+        say(head + "<b>かわりに表をコピーしました。</b>" + steps, false);
+      } else {
+        say(head + "下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開きました。"
+            + "枠の中で <b>Ctrl+A</b> → <b>Ctrl+C</b> を押してから、" + steps, false);
+      }
+      if (pst && pst.scrollIntoView) { try { pst.scrollIntoView({block: "center"}); } catch (e) {} }
+    });
+  }
+  function blobSave() {
+    try {
+      var bin = atob(B64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+      var a = document.createElement("a");
+      a.href = url; a.download = XNAME; a.rel = "noopener";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  // ★Artifactのビューアが黙って返事をしないことがある（スマホ・共有リンクなど）。
+  //   待ちっぱなしにすると「押しても何も起きない」になる。必ず時間で切って案内に落とす。
+  function withTimeout(p, ms, tag) {
+    return new Promise(function (res, rej) {
+      var fin = false;
+      var t = setTimeout(function () {
+        if (!fin) { fin = true; rej({code: "timeout", tag: tag}); }
+      }, ms);
+      Promise.resolve(p).then(function (v) {
+        if (!fin) { fin = true; clearTimeout(t); res(v); }
+      }, function (e) {
+        if (!fin) { fin = true; clearTimeout(t); rej(e || {code: "error", tag: tag}); }
+      });
+    });
+  }
+
+  // Artifact（claude.ai でURLを開いた状態）かどうか。ここではBlob保存が黙って失敗する。
+  var inArtifact = !!(window.claude && typeof window.claude.use === "function");
+  var sub = document.getElementById("sub_" + KEY);
+  if (sub && !inArtifact) {
+    sub.innerHTML = "保存されるファイル：<b>" + XNAME + "</b>（Excelで開けます）";
+  }
+
+  // ★スマホでは保存機能そのものが動かない。押しても何も起きない＝手が止まる。
+  //   2026-08-27、受講生がスマホで詰まった。押す前に分かるようにする。
+  //   ページを開いた時点で使えるか調べ、駄目なら最初からボタンを止めて案内に切り替える。
+  var nodl = document.getElementById("nodl_" + KEY);
+  var note = document.getElementById("note_" + KEY);
+  var dlObj = null;
+  function markNoDownload() {
+    dlObj = null;
+    dl.disabled = true;
+    dl.textContent = "この画面では保存できません";
+    dl.style.background = "#c8cdd2";
+    if (cp) { cp.className = "sheetbox-btn"; }
+    if (nodl) nodl.style.display = "block";
+    if (note) note.style.display = "none";
+    if (sub) sub.innerHTML = "この画面ではファイルを保存できません。下の「表をコピー」を使ってください。";
+  }
+  if (inArtifact) {
+    withTimeout(Promise.resolve(window.claude.use("downloads")), 8000, "probe").then(
+      function (d) { if (d && d.save) { dlObj = d; } else { markNoDownload(); } },
+      function () { markNoDownload(); });
+  }
+
+  dl.addEventListener("click", function () {
+    dl.disabled = true;
+    var fin = function () { dl.disabled = false; };
+
+    if (!inArtifact) {
+      if (blobSave()) {
+        say("ダウンロードしました。<b>" + XNAME + "</b> をExcelで開いてください。", true);
+      } else { openFallback("この画面ではファイルの保存ができませんでした。"); }
+      return fin();
+    }
+
+    // ★英語の確認ダイアログが「まん中」に出る。これを知らないと受講生はCancelを押す。
+    //   2026-08-27、実機で確認：Let this Artifact download a file? / Cancel / Save file
+    say("<b>画面のまん中に、英語の窓が出ます。</b>"
+        + "<span class=\"sheetbox-en\">Let this Artifact download a file?</span>"
+        + "<b>右下の黒い［Save file］</b>を押してください。"
+        + "<span class=\"sheetbox-warn\">［Cancel］を押すと保存されません。</span>", true);
+
+    // ★人が押すのを待つ部分に制限時間を付けてはいけない。
+    //   英語の窓を読んでいる間に「失敗しました」と出てしまう（2026-08-27に実際に出た）。
+    //   時間で切るのは「ビューアが返事をするかどうか」の部分だけ。
+    function trySave(d, name, data) {
+      return d.save({filename: name, data: data}).then(function () {
+        say("ダウンロードしました。パソコンの<b>「ダウンロード」フォルダ</b>に入っている "
+            + "<b>" + name + "</b> を、ExcelかGoogleスプレッドシートで開いてください。", true);
+      }, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "extension_not_enabled" || code === "rejected_extension") {
+          return d.save({filename: name.replace(/\.csv$/, ".txt"), data: data}).then(function () {
+            say("ダウンロードしました。ファイル名の末尾を <b>.txt</b> から <b>.csv</b> に変えてから、"
+                + "ExcelかGoogleスプレッドシートで開いてください。", true);
+          });
+        }
+        return Promise.reject(e);
+      });
+    }
+
+    var body = "\uFEFF" + CSV;
+    var getDL = dlObj ? Promise.resolve(dlObj)
+      : withTimeout(Promise.resolve(window.claude.use("downloads")), 12000, "use");
+    getDL
+      .then(function (d) {
+        if (!d || !d.save) return Promise.reject({code: "unavailable"});
+        return trySave(d, CNAME, body);
+      })
+      .then(null, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "declined") {
+          say("ダウンロードを取りやめました（［Cancel］を押しました）。"
+              + "もう一度「ダウンロード」を押すと、また同じ窓が出ます。"
+              + "<b>今度は右下の黒い［Save file］</b>を押してください。", false);
+          return;
+        }
+        var head = (code === "timeout" || code === "unavailable")
+          ? "この画面ではファイルの保存ができないようです（スマホや、共有リンクで開いたときに起きます）。"
+          : "この画面ではファイルの保存ができませんでした。";
+        openFallback(head);
+      })
+      .then(fin, fin);
+  });
+
+  cp.addEventListener("click", function () {
+    copyText(TSV).then(function (ok) {
+      var old = "表をコピー";
+      cp.textContent = ok ? "コピーしました" : "コピーできません";
+      if (ok) {
+        say("表をコピーしました。ExcelかGoogleスプレッドシートを開いて、"
+            + "いちばん左上のマスで <b>Ctrl+V</b>（Macは&#8984;+V）を押してください。", true);
+      } else {
+        openFallback("コピーがブロックされました。");
+      }
+      setTimeout(function () { cp.textContent = old; }, 2400);
+    });
+  });
+})();
+</script>
+<!--/SHEET-->
 
 <h2>7. 提出物</h2>
 <div class="win"><b>A+コンテンツ4カード（文言＋画像4枚）。</b></div>

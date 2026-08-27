@@ -69,6 +69,57 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
+.sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
+.sheetbox-sub{font-size:12.5px;color:#5b6672;margin-top:3px;line-height:1.7;}
+.sheetbox-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.sheetbox-btn{background:#0f7b57;color:#fff;border:none;border-radius:8px;padding:11px 20px;
+ font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.sheetbox-btn:hover{background:#0c6547;}
+.sheetbox-btn:disabled{opacity:.6;cursor:default;}
+.sheetbox-btn.ghost{background:#fff;color:#0f7b57;border:1.5px solid #0f7b57;}
+.sheetbox-btn.link{display:inline-block;text-decoration:none;text-align:center;line-height:1.4;}
+.sheetbox-btn.link:hover{background:#0c6547;color:#fff;}
+.sheetbox-url{display:inline-block;background:#fff;border:1px solid #cfe3da;border-radius:6px;
+ padding:2px 8px;font-size:11.5px;word-break:break-all;color:#3d4753;}
+.sheetbox-btn.ghost:hover{background:#e6f4ed;}
+.sheetbox-btn:focus-visible{outline:3px solid #9ad3bd;outline-offset:2px;}
+.sheetbox-note{font-size:13.5px;margin:0 0 12px;color:#1b1f24;line-height:1.85;}
+.sheetbox-msg{font-size:13.5px;margin:0 0 12px;padding:11px 14px;border-radius:8px;line-height:1.8;}
+.sheetbox-msg.ok{background:#e6f4ed;border:1px solid #bfe3d3;}
+.sheetbox-msg.ng{background:#fff8e8;border:1px solid #f0dcae;}
+.sheetbox-msg ol{margin:7px 0 0;padding-left:20px;}
+.sheetbox-msg li{margin-bottom:4px;}
+.sheetbox details{margin-top:6px;}
+.sheetbox summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#0f7b57;padding:5px 0;}
+.sheetbox-scroll{overflow-x:auto;background:#fff;border-radius:8px;border:1px solid #cfe3da;margin-top:10px;}
+.sheetbox table{border-collapse:collapse;font-size:12.5px;margin:0;min-width:100%;}
+.sheetbox th,.sheetbox td{border:1px solid #dde3e9;padding:7px 10px;vertical-align:top;
+ white-space:pre-wrap;text-align:left;}
+.sheetbox th{background:#1a3a6b;color:#fff;font-weight:700;white-space:nowrap;}
+.sheetbox td.k{background:#fff8e7;font-weight:700;width:230px;}
+.sheetbox td.ex{color:#8a94a0;font-style:italic;background:#f7f9fb;}
+.sheetbox td.in{background:#fff;min-width:120px;}
+.sheetbox td.sec{background:#1a3a6b;color:#fff;font-weight:700;}
+.sheetbox td.cap{background:#fbfcfe;color:#3d4753;font-weight:700;}
+.sheetbox-nodl{background:#fff8e8;border:1px solid #f0dcae;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-nodl b{color:#8a5a00;}
+.sheetbox-gs{background:#e8f5ee;border:1px solid #bfe3d3;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-gs b{color:#0c6547;}
+.sheetbox-gs .sub{color:#5b6672;font-size:12.5px;line-height:1.8;}
+.sheetbox-en{display:inline-block;background:#1b1f24;color:#fff;border-radius:5px;
+ padding:1px 9px;margin:0 3px;font-size:12.5px;font-weight:700;letter-spacing:.2px;}
+.sheetbox-warn{color:#b3261e;font-weight:700;}
+.sheetbox-steps{font-size:13.5px;line-height:1.85;margin:10px 0 0;padding-left:20px;}
+.sheetbox-steps li{margin-bottom:5px;}
+.sheetbox-ta{width:100%;box-sizing:border-box;height:150px;margin-top:9px;padding:10px 12px;
+ font-size:12px;line-height:1.7;border:1px solid #cfe3da;border-radius:8px;background:#fff;
+ font-family:"Yu Gothic UI","Meiryo",monospace;white-space:pre;overflow:auto;}
+
 </style>
 </head>
 <body>
@@ -219,6 +270,234 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 <tr><td><b>正面バストアップの連続を避ける</b></td><td>単調になり、めくる手が止まる</td></tr>
 <tr><td><b>PC画面は肩越しカメラで指定</b></td><td>指定しないと蓋の裏を見る絵になる</td></tr>
 </table></div>
+
+<!--SHEET-->
+<div class="sheetbox">
+  <div class="sheetbox-head">
+    <div>
+      <div class="sheetbox-title">&#128196; 記入シート</div>
+      <div class="sheetbox-sub"><span id="sub_E38090E7ACAC38">保存されるファイル：<b>【第8回 宿題】漫画ネームシート.csv</b>（ExcelでもGoogleスプレッドシートでも開けます）</span></div>
+    </div>
+    <div class="sheetbox-btns">
+      
+      <button type="button" id="dl_E38090E7ACAC38" class="sheetbox-btn ghost">&#11015; ダウンロード</button>
+      <button type="button" id="cp_E38090E7ACAC38" class="sheetbox-btn ghost">表をコピー</button>
+    </div>
+  </div>
+  <div id="nodl_E38090E7ACAC38" class="sheetbox-nodl" style="display:none">
+    <b>&#128241; この画面では、ファイルの保存ができません。</b>
+    （スマホ・タブレットで開いたときに起こります。押しても何も出ません）<br>
+    かわりに下の<b>「表をコピー」</b>を押して、<b>Googleスプレッドシートのアプリ</b>を開き、いちばん左上のマスを長押しして「貼り付け」を選んでください。同じ表になります。<br>パソコンが使える方は、<b>このページをパソコンで開くのがいちばん簡単です。</b>
+  </div>
+  
+  <p class="sheetbox-note" id="note_E38090E7ACAC38">
+    <b>表を自分で作る必要はありません。</b>「ダウンロード」を押すと、<b>画面のまん中に英語の窓</b>が出ます。
+    <span class="sheetbox-en">Let this Artifact download a file?</span>
+    <b>右下の黒い［Save file］を押してください。</b>これで保存されます。
+    <span class="sheetbox-warn">左の［Cancel］を押すと保存されません。</span><br>
+    この窓が出ないとき・スマホのときは、下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開けば、同じ表がそのまま手に入ります。
+  </p>
+  <div id="msg_E38090E7ACAC38" class="sheetbox-msg ok" style="display:none"></div>
+  <details id="tbl_E38090E7ACAC38">
+    <summary>表の中身をここで見る（印刷して手書きでもOK）</summary>
+    <div class="sheetbox-scroll"><table><tr><td class="cap" colspan="3">【第8回 宿題】漫画ネームシート</td></tr><tr><td class="cap" colspan="3">書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。</td></tr><tr><td class="k"></td><td class="in">▼ ここに書いてください</td><td class="in">記入例（見本）</td></tr><tr><td class="sec" colspan="3">1　キャラクター設定（先に固定する）</td></tr><tr><td class="cap" colspan="3">★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。</td></tr><tr><td class="k">① 主人公の名前</td><td class="in"></td><td class="ex">田中 亮</td></tr><tr><td class="k">② 年齢・立場</td><td class="in"></td><td class="ex">42歳・中堅メーカーの係長</td></tr><tr><td class="k">③ 外見（髪型・髪色・服・体型・眼鏡）</td><td class="in"></td><td class="ex">短髪・黒・グレーのスーツ・中肉中背・眼鏡なし</td></tr><tr><td class="k">④ 口調（一人称・語尾・敬語かどうか）</td><td class="in"></td><td class="ex">一人称は「俺」。ぶっきらぼう。敬語は上司にだけ</td></tr><tr><td class="k">⑤ いま何に困っているか</td><td class="in"></td><td class="ex">後輩に先を越された。このままでいいのか分からない</td></tr><tr><td class="k">⑥ 物語の中でどう変わるか</td><td class="in"></td><td class="ex">何もできないと思っていた自分が、小さく1つ動き出す</td></tr><tr><td class="k">⑦ 2人目のキャラ（名前・外見・役割）</td><td class="in"></td><td class="ex">森田 さやか・30代・後輩・先に動いた人</td></tr><tr><td class="cap" colspan="3">⑧ 3人目のキャラ（いれば）</td></tr><tr><td class="sec" colspan="3">2　20ページの流れ（ネーム）</td></tr><tr><td class="cap" colspan="3">★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。</td></tr><tr><td class="sec" colspan="3">P1〜　日常</td></tr><tr><td class="k">P1　コマ割り（3〜4コマ）</td><td class="in"></td><td class="ex">①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる</td></tr><tr><td class="k">P1　セリフ（1吹き出し25字以内・句読点なし）</td><td class="in"></td><td class="ex">また今日も同じ景色だな</td></tr><tr><td class="k">P1　最後のコマの引き（次が気になるか）</td><td class="in"></td><td class="ex">スマホに知らない名前の通知が出る</td></tr><tr><td class="cap" colspan="3">P2　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P2　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P2　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P3　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P3　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P3　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">P4〜　事件（どん底）</td></tr><tr><td class="cap" colspan="3">P4　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P4　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P4　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P5　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P5　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P5　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P6　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P6　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P6　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">P7〜　出会い</td></tr><tr><td class="cap" colspan="3">P7　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P7　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P7　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P8　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P8　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P8　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P9　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P9　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P9　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">P10〜　試練</td></tr><tr><td class="cap" colspan="3">P10　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P10　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P10　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P11　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P11　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P11　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P12　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P12　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P12　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P13　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P13　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P13　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P14　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P14　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P14　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">P15〜　変化</td></tr><tr><td class="cap" colspan="3">P15　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P15　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P15　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P16　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P16　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P16　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P17　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P17　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P17　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P18　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P18　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P18　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">P19〜　着地</td></tr><tr><td class="cap" colspan="3">P19　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P19　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P19　最後のコマの引き（次が気になるか）</td></tr><tr><td class="cap" colspan="3">P20　コマ割り（3〜4コマ）</td></tr><tr><td class="cap" colspan="3">P20　セリフ（1吹き出し25字以内・句読点なし）</td></tr><tr><td class="cap" colspan="3">P20　最後のコマの引き（次が気になるか）</td></tr><tr><td class="sec" colspan="3">3　生成前チェック（1つでも×なら生成しない）</td></tr><tr><td class="cap" colspan="3">★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。</td></tr><tr><td class="k">⑨ すべてのセリフに句読点が入っていない</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑪ 1ページのコマ数が3〜4になっている</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑬ 各場面にフリがある（いきなり結論になっていない）</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑭ ページの最後に引きがある</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑮ 正面バストアップの連続になっていない</td><td class="in"></td><td class="ex">確認した</td></tr><tr><td class="k">⑯ PC画面のコマを「肩越しカメラ」で指定した</td><td class="in"></td><td class="ex">確認した</td></tr></table></div>
+  </details>
+  <details id="pst_E38090E7ACAC38">
+    <summary>&#128203; ダウンロードできないときは、ここから貼り付け（スマホもOK）</summary>
+    <ol class="sheetbox-steps">
+      <li>下の枠の中を1回クリックして、<b>Ctrl+A</b>（Macは&#8984;+A）→ <b>Ctrl+C</b>（Macは&#8984;+C）</li>
+      <li>ExcelかGoogleスプレッドシートを開いて、いちばん左上のマスをクリック</li>
+      <li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け → 同じ表になります</li>
+    </ol>
+    <textarea id="ta_E38090E7ACAC38" class="sheetbox-ta" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script>
+(function () {
+  var KEY = "E38090E7ACAC38";
+  var XNAME = "【第8回 宿題】漫画ネームシート.xlsx", CNAME = "【第8回 宿題】漫画ネームシート.csv";
+  var CSV = "【第8回 宿題】漫画ネームシート,,\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。,,\n,▼ ここに書いてください,記入例（見本）\n1　キャラクター設定（先に固定する）,,\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。,,\n① 主人公の名前,,田中 亮\n② 年齢・立場,,42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）,,短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）,,一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか,,後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか,,何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）,,森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）,,\n2　20ページの流れ（ネーム）,,\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。,,\nP1〜　日常,,\nP1　コマ割り（3〜4コマ）,,①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）,,また今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）,,スマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）,,\nP2　セリフ（1吹き出し25字以内・句読点なし）,,\nP2　最後のコマの引き（次が気になるか）,,\nP3　コマ割り（3〜4コマ）,,\nP3　セリフ（1吹き出し25字以内・句読点なし）,,\nP3　最後のコマの引き（次が気になるか）,,\nP4〜　事件（どん底）,,\nP4　コマ割り（3〜4コマ）,,\nP4　セリフ（1吹き出し25字以内・句読点なし）,,\nP4　最後のコマの引き（次が気になるか）,,\nP5　コマ割り（3〜4コマ）,,\nP5　セリフ（1吹き出し25字以内・句読点なし）,,\nP5　最後のコマの引き（次が気になるか）,,\nP6　コマ割り（3〜4コマ）,,\nP6　セリフ（1吹き出し25字以内・句読点なし）,,\nP6　最後のコマの引き（次が気になるか）,,\nP7〜　出会い,,\nP7　コマ割り（3〜4コマ）,,\nP7　セリフ（1吹き出し25字以内・句読点なし）,,\nP7　最後のコマの引き（次が気になるか）,,\nP8　コマ割り（3〜4コマ）,,\nP8　セリフ（1吹き出し25字以内・句読点なし）,,\nP8　最後のコマの引き（次が気になるか）,,\nP9　コマ割り（3〜4コマ）,,\nP9　セリフ（1吹き出し25字以内・句読点なし）,,\nP9　最後のコマの引き（次が気になるか）,,\nP10〜　試練,,\nP10　コマ割り（3〜4コマ）,,\nP10　セリフ（1吹き出し25字以内・句読点なし）,,\nP10　最後のコマの引き（次が気になるか）,,\nP11　コマ割り（3〜4コマ）,,\nP11　セリフ（1吹き出し25字以内・句読点なし）,,\nP11　最後のコマの引き（次が気になるか）,,\nP12　コマ割り（3〜4コマ）,,\nP12　セリフ（1吹き出し25字以内・句読点なし）,,\nP12　最後のコマの引き（次が気になるか）,,\nP13　コマ割り（3〜4コマ）,,\nP13　セリフ（1吹き出し25字以内・句読点なし）,,\nP13　最後のコマの引き（次が気になるか）,,\nP14　コマ割り（3〜4コマ）,,\nP14　セリフ（1吹き出し25字以内・句読点なし）,,\nP14　最後のコマの引き（次が気になるか）,,\nP15〜　変化,,\nP15　コマ割り（3〜4コマ）,,\nP15　セリフ（1吹き出し25字以内・句読点なし）,,\nP15　最後のコマの引き（次が気になるか）,,\nP16　コマ割り（3〜4コマ）,,\nP16　セリフ（1吹き出し25字以内・句読点なし）,,\nP16　最後のコマの引き（次が気になるか）,,\nP17　コマ割り（3〜4コマ）,,\nP17　セリフ（1吹き出し25字以内・句読点なし）,,\nP17　最後のコマの引き（次が気になるか）,,\nP18　コマ割り（3〜4コマ）,,\nP18　セリフ（1吹き出し25字以内・句読点なし）,,\nP18　最後のコマの引き（次が気になるか）,,\nP19〜　着地,,\nP19　コマ割り（3〜4コマ）,,\nP19　セリフ（1吹き出し25字以内・句読点なし）,,\nP19　最後のコマの引き（次が気になるか）,,\nP20　コマ割り（3〜4コマ）,,\nP20　セリフ（1吹き出し25字以内・句読点なし）,,\nP20　最後のコマの引き（次が気になるか）,,\n3　生成前チェック（1つでも×なら生成しない）,,\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。,,\n⑨ すべてのセリフに句読点が入っていない,,確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）,,確認した\n⑪ 1ページのコマ数が3〜4になっている,,確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）,,確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）,,確認した\n⑭ ページの最後に引きがある,,確認した\n⑮ 正面バストアップの連続になっていない,,確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した,,確認した", TSV = "【第8回 宿題】漫画ネームシート\t\t\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\n1　キャラクター設定（先に固定する）\t\t\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。\t\t\n① 主人公の名前\t\t田中 亮\n② 年齢・立場\t\t42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）\t\t短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）\t\t一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか\t\t後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか\t\t何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）\t\t森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）\t\t\n2　20ページの流れ（ネーム）\t\t\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。\t\t\nP1〜　日常\t\t\nP1　コマ割り（3〜4コマ）\t\t①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）\t\tまた今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）\t\tスマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）\t\t\nP2　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP2　最後のコマの引き（次が気になるか）\t\t\nP3　コマ割り（3〜4コマ）\t\t\nP3　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP3　最後のコマの引き（次が気になるか）\t\t\nP4〜　事件（どん底）\t\t\nP4　コマ割り（3〜4コマ）\t\t\nP4　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP4　最後のコマの引き（次が気になるか）\t\t\nP5　コマ割り（3〜4コマ）\t\t\nP5　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP5　最後のコマの引き（次が気になるか）\t\t\nP6　コマ割り（3〜4コマ）\t\t\nP6　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP6　最後のコマの引き（次が気になるか）\t\t\nP7〜　出会い\t\t\nP7　コマ割り（3〜4コマ）\t\t\nP7　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP7　最後のコマの引き（次が気になるか）\t\t\nP8　コマ割り（3〜4コマ）\t\t\nP8　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP8　最後のコマの引き（次が気になるか）\t\t\nP9　コマ割り（3〜4コマ）\t\t\nP9　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP9　最後のコマの引き（次が気になるか）\t\t\nP10〜　試練\t\t\nP10　コマ割り（3〜4コマ）\t\t\nP10　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP10　最後のコマの引き（次が気になるか）\t\t\nP11　コマ割り（3〜4コマ）\t\t\nP11　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP11　最後のコマの引き（次が気になるか）\t\t\nP12　コマ割り（3〜4コマ）\t\t\nP12　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP12　最後のコマの引き（次が気になるか）\t\t\nP13　コマ割り（3〜4コマ）\t\t\nP13　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP13　最後のコマの引き（次が気になるか）\t\t\nP14　コマ割り（3〜4コマ）\t\t\nP14　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP14　最後のコマの引き（次が気になるか）\t\t\nP15〜　変化\t\t\nP15　コマ割り（3〜4コマ）\t\t\nP15　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP15　最後のコマの引き（次が気になるか）\t\t\nP16　コマ割り（3〜4コマ）\t\t\nP16　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP16　最後のコマの引き（次が気になるか）\t\t\nP17　コマ割り（3〜4コマ）\t\t\nP17　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP17　最後のコマの引き（次が気になるか）\t\t\nP18　コマ割り（3〜4コマ）\t\t\nP18　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP18　最後のコマの引き（次が気になるか）\t\t\nP19〜　着地\t\t\nP19　コマ割り（3〜4コマ）\t\t\nP19　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP19　最後のコマの引き（次が気になるか）\t\t\nP20　コマ割り（3〜4コマ）\t\t\nP20　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP20　最後のコマの引き（次が気になるか）\t\t\n3　生成前チェック（1つでも×なら生成しない）\t\t\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。\t\t\n⑨ すべてのセリフに句読点が入っていない\t\t確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）\t\t確認した\n⑪ 1ページのコマ数が3〜4になっている\t\t確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）\t\t確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）\t\t確認した\n⑭ ページの最後に引きがある\t\t確認した\n⑮ 正面バストアップの連続になっていない\t\t確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した\t\t確認した", B64 = "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";
+  var dl = document.getElementById("dl_" + KEY);
+  var cp = document.getElementById("cp_" + KEY);
+  var msg = document.getElementById("msg_" + KEY);
+  var pst = document.getElementById("pst_" + KEY);
+  var ta = document.getElementById("ta_" + KEY);
+  if (!dl) return;
+  if (ta) ta.value = TSV;
+
+  function say(text, ok) {
+    msg.style.display = "block";
+    msg.className = "sheetbox-msg " + (ok ? "ok" : "ng");
+    msg.innerHTML = text;
+  }
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var el = document.createElement("textarea");
+        el.value = t; el.style.position = "fixed"; el.style.top = "-1000px";
+        document.body.appendChild(el); el.focus(); el.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(el); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  // ★どの失敗経路に落ちても「手が止まらない」ようにする。
+  //   貼り付け欄を開いて・中身を選択して・手順を出す。ここまでやって初めて受講生は先へ進める。
+  function openFallback(head) {
+    if (pst) pst.open = true;
+    if (ta) { try { ta.focus(); ta.select(); } catch (e) {} }
+    copyText(TSV).then(function (ok) {
+      var steps = "<ol>"
+        + "<li>ExcelかGoogleスプレッドシートを開く</li>"
+        + "<li>いちばん左上のマスをクリック</li>"
+        + "<li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け</li></ol>";
+      if (ok) {
+        say(head + "<b>かわりに表をコピーしました。</b>" + steps, false);
+      } else {
+        say(head + "下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開きました。"
+            + "枠の中で <b>Ctrl+A</b> → <b>Ctrl+C</b> を押してから、" + steps, false);
+      }
+      if (pst && pst.scrollIntoView) { try { pst.scrollIntoView({block: "center"}); } catch (e) {} }
+    });
+  }
+  function blobSave() {
+    try {
+      var bin = atob(B64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+      var a = document.createElement("a");
+      a.href = url; a.download = XNAME; a.rel = "noopener";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  // ★Artifactのビューアが黙って返事をしないことがある（スマホ・共有リンクなど）。
+  //   待ちっぱなしにすると「押しても何も起きない」になる。必ず時間で切って案内に落とす。
+  function withTimeout(p, ms, tag) {
+    return new Promise(function (res, rej) {
+      var fin = false;
+      var t = setTimeout(function () {
+        if (!fin) { fin = true; rej({code: "timeout", tag: tag}); }
+      }, ms);
+      Promise.resolve(p).then(function (v) {
+        if (!fin) { fin = true; clearTimeout(t); res(v); }
+      }, function (e) {
+        if (!fin) { fin = true; clearTimeout(t); rej(e || {code: "error", tag: tag}); }
+      });
+    });
+  }
+
+  // Artifact（claude.ai でURLを開いた状態）かどうか。ここではBlob保存が黙って失敗する。
+  var inArtifact = !!(window.claude && typeof window.claude.use === "function");
+  var sub = document.getElementById("sub_" + KEY);
+  if (sub && !inArtifact) {
+    sub.innerHTML = "保存されるファイル：<b>" + XNAME + "</b>（Excelで開けます）";
+  }
+
+  // ★スマホでは保存機能そのものが動かない。押しても何も起きない＝手が止まる。
+  //   2026-08-27、受講生がスマホで詰まった。押す前に分かるようにする。
+  //   ページを開いた時点で使えるか調べ、駄目なら最初からボタンを止めて案内に切り替える。
+  var nodl = document.getElementById("nodl_" + KEY);
+  var note = document.getElementById("note_" + KEY);
+  var dlObj = null;
+  function markNoDownload() {
+    dlObj = null;
+    dl.disabled = true;
+    dl.textContent = "この画面では保存できません";
+    dl.style.background = "#c8cdd2";
+    if (cp) { cp.className = "sheetbox-btn"; }
+    if (nodl) nodl.style.display = "block";
+    if (note) note.style.display = "none";
+    if (sub) sub.innerHTML = "この画面ではファイルを保存できません。下の「表をコピー」を使ってください。";
+  }
+  if (inArtifact) {
+    withTimeout(Promise.resolve(window.claude.use("downloads")), 8000, "probe").then(
+      function (d) { if (d && d.save) { dlObj = d; } else { markNoDownload(); } },
+      function () { markNoDownload(); });
+  }
+
+  dl.addEventListener("click", function () {
+    dl.disabled = true;
+    var fin = function () { dl.disabled = false; };
+
+    if (!inArtifact) {
+      if (blobSave()) {
+        say("ダウンロードしました。<b>" + XNAME + "</b> をExcelで開いてください。", true);
+      } else { openFallback("この画面ではファイルの保存ができませんでした。"); }
+      return fin();
+    }
+
+    // ★英語の確認ダイアログが「まん中」に出る。これを知らないと受講生はCancelを押す。
+    //   2026-08-27、実機で確認：Let this Artifact download a file? / Cancel / Save file
+    say("<b>画面のまん中に、英語の窓が出ます。</b>"
+        + "<span class=\"sheetbox-en\">Let this Artifact download a file?</span>"
+        + "<b>右下の黒い［Save file］</b>を押してください。"
+        + "<span class=\"sheetbox-warn\">［Cancel］を押すと保存されません。</span>", true);
+
+    // ★人が押すのを待つ部分に制限時間を付けてはいけない。
+    //   英語の窓を読んでいる間に「失敗しました」と出てしまう（2026-08-27に実際に出た）。
+    //   時間で切るのは「ビューアが返事をするかどうか」の部分だけ。
+    function trySave(d, name, data) {
+      return d.save({filename: name, data: data}).then(function () {
+        say("ダウンロードしました。パソコンの<b>「ダウンロード」フォルダ</b>に入っている "
+            + "<b>" + name + "</b> を、ExcelかGoogleスプレッドシートで開いてください。", true);
+      }, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "extension_not_enabled" || code === "rejected_extension") {
+          return d.save({filename: name.replace(/\.csv$/, ".txt"), data: data}).then(function () {
+            say("ダウンロードしました。ファイル名の末尾を <b>.txt</b> から <b>.csv</b> に変えてから、"
+                + "ExcelかGoogleスプレッドシートで開いてください。", true);
+          });
+        }
+        return Promise.reject(e);
+      });
+    }
+
+    var body = "\uFEFF" + CSV;
+    var getDL = dlObj ? Promise.resolve(dlObj)
+      : withTimeout(Promise.resolve(window.claude.use("downloads")), 12000, "use");
+    getDL
+      .then(function (d) {
+        if (!d || !d.save) return Promise.reject({code: "unavailable"});
+        return trySave(d, CNAME, body);
+      })
+      .then(null, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "declined") {
+          say("ダウンロードを取りやめました（［Cancel］を押しました）。"
+              + "もう一度「ダウンロード」を押すと、また同じ窓が出ます。"
+              + "<b>今度は右下の黒い［Save file］</b>を押してください。", false);
+          return;
+        }
+        var head = (code === "timeout" || code === "unavailable")
+          ? "この画面ではファイルの保存ができないようです（スマホや、共有リンクで開いたときに起きます）。"
+          : "この画面ではファイルの保存ができませんでした。";
+        openFallback(head);
+      })
+      .then(fin, fin);
+  });
+
+  cp.addEventListener("click", function () {
+    copyText(TSV).then(function (ok) {
+      var old = "表をコピー";
+      cp.textContent = ok ? "コピーしました" : "コピーできません";
+      if (ok) {
+        say("表をコピーしました。ExcelかGoogleスプレッドシートを開いて、"
+            + "いちばん左上のマスで <b>Ctrl+V</b>（Macは&#8984;+V）を押してください。", true);
+      } else {
+        openFallback("コピーがブロックされました。");
+      }
+      setTimeout(function () { cp.textContent = old; }, 2400);
+    });
+  });
+})();
+</script>
+<!--/SHEET-->
 
 <h2>9. 提出物</h2>
 <div class="win"><b>キャラクター設定表 ＋ 20ページ分のネーム。</b></div>
