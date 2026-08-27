@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第0回 準備 ─ AI出版スクール</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:44px;}
+header .inner{max-width:840px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:30px 0 10px;}
+h4{font-size:14.5px;margin:20px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.check{list-style:none;padding-left:0;margin:0 0 14px;}
+.check li{padding-left:32px;position:relative;margin-bottom:16px;}
+.check li::before{content:"";position:absolute;left:0;top:.4em;width:17px;height:17px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.check li b{display:block;font-size:15px;}
+.check li span{font-size:13.5px;color:var(--sub);display:block;}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.folder{background:#16202b;color:#dfe8f0;border-radius:10px;padding:20px 24px;font-size:13.5px;
+ line-height:2;font-family:"Consolas","Menlo",monospace;margin:14px 0;overflow-x:auto;}
+.folder .c{color:#8fa6bb;}
+.folder .d{color:#7fc4ff;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:22px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.phasebar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 24px;}
+.phasebar div{flex:1;min-width:180px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+.phasebar div.now{border-color:var(--p1);background:#f2f7fc;}
+.phasebar div h5{margin:0 0 4px;font-size:13px;color:var(--p1);letter-spacing:.06em;}
+.phasebar div p{margin:0;font-size:13.5px;}
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
+.sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
+.sheetbox-sub{font-size:12.5px;color:#5b6672;margin-top:3px;line-height:1.7;}
+.sheetbox-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.sheetbox-btn{background:#0f7b57;color:#fff;border:none;border-radius:8px;padding:11px 20px;
+ font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.sheetbox-btn:hover{background:#0c6547;}
+.sheetbox-btn:disabled{opacity:.6;cursor:default;}
+.sheetbox-btn.ghost{background:#fff;color:#0f7b57;border:1.5px solid #0f7b57;}
+.sheetbox-btn.link{display:inline-block;text-decoration:none;text-align:center;line-height:1.4;}
+.sheetbox-btn.link:hover{background:#0c6547;color:#fff;}
+.sheetbox-url{display:inline-block;background:#fff;border:1px solid #cfe3da;border-radius:6px;
+ padding:2px 8px;font-size:11.5px;word-break:break-all;color:#3d4753;}
+.sheetbox-btn.ghost:hover{background:#e6f4ed;}
+.sheetbox-btn:focus-visible{outline:3px solid #9ad3bd;outline-offset:2px;}
+.sheetbox-note{font-size:13.5px;margin:0 0 12px;color:#1b1f24;line-height:1.85;}
+.sheetbox-msg{font-size:13.5px;margin:0 0 12px;padding:11px 14px;border-radius:8px;line-height:1.8;}
+.sheetbox-msg.ok{background:#e6f4ed;border:1px solid #bfe3d3;}
+.sheetbox-msg.ng{background:#fff8e8;border:1px solid #f0dcae;}
+.sheetbox-msg ol{margin:7px 0 0;padding-left:20px;}
+.sheetbox-msg li{margin-bottom:4px;}
+.sheetbox details{margin-top:6px;}
+.sheetbox summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#0f7b57;padding:5px 0;}
+.sheetbox-scroll{overflow-x:auto;background:#fff;border-radius:8px;border:1px solid #cfe3da;margin-top:10px;}
+.sheetbox table{border-collapse:collapse;font-size:12.5px;margin:0;min-width:100%;}
+.sheetbox th,.sheetbox td{border:1px solid #dde3e9;padding:7px 10px;vertical-align:top;
+ white-space:pre-wrap;text-align:left;}
+.sheetbox th{background:#1a3a6b;color:#fff;font-weight:700;white-space:nowrap;}
+.sheetbox td.k{background:#fff8e7;font-weight:700;width:230px;}
+.sheetbox td.ex{color:#8a94a0;font-style:italic;background:#f7f9fb;}
+.sheetbox td.in{background:#fff;min-width:120px;}
+.sheetbox td.sec{background:#1a3a6b;color:#fff;font-weight:700;}
+.sheetbox td.cap{background:#fbfcfe;color:#3d4753;font-weight:700;}
+.sheetbox-nodl{background:#fff8e8;border:1px solid #f0dcae;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-nodl b{color:#8a5a00;}
+.sheetbox-gs{background:#e8f5ee;border:1px solid #bfe3d3;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-gs b{color:#0c6547;}
+.sheetbox-gs .sub{color:#5b6672;font-size:12.5px;line-height:1.8;}
+.sheetbox-en{display:inline-block;background:#1b1f24;color:#fff;border-radius:5px;
+ padding:1px 9px;margin:0 3px;font-size:12.5px;font-weight:700;letter-spacing:.2px;}
+.sheetbox-warn{color:#b3261e;font-weight:700;}
+.sheetbox-steps{font-size:13.5px;line-height:1.85;margin:10px 0 0;padding-left:20px;}
+.sheetbox-steps li{margin-bottom:5px;}
+.sheetbox-ta{width:100%;box-sizing:border-box;height:150px;margin-top:9px;padding:10px 12px;
+ font-size:12px;line-height:1.7;border:1px solid #cfe3da;border-radius:8px;background:#fff;
+ font-family:"Yu Gothic UI","Meiryo",monospace;white-space:pre;overflow:auto;}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 00</p>
+<h1>第0回　準備<br>─ 本を作れる状態を作る</h1>
+<p>この回でやるのは「作る」ことではなく、「あとで詰まらないようにしておく」ことです。ここを飛ばすと、出版の直前で必ず止まります。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>次回すぐテーマ決めに入れる状態にすること。</b></p>
+<p>とくに<b>KDPアカウントの開設は数日かかることがあります。</b>銀行口座やマイナンバーの登録が必要だからです。だからこれを一番最初にやります。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l0">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l0"></span></div>
+  <div id="termsmsg_l0"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l0";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. まず、これから何をやるのかを説明します</h2>
+
+<p>このスクールのゴールは「Kindle出版のやり方が分かった」ではありません。</p>
+<div class="win"><b>ゴール：あなたが自分の力で本を出し続けられるようになること。</b><br>
+そのために、<b>1冊目は文章だけで出し、2冊目で挿絵と漫画を手で入れ、3冊目からその作業をAIに任せます。</b>順番には理由があります。後で説明します。</div>
+
+<h3>3つの段階で進みます</h3>
+<div class="phasebar">
+  <div class="now"><h5>STEP 1 ／ 1冊目</h5><p><b>文章だけの本を出す</b><br>まずは出版を1周する</p></div>
+  <div><h5>STEP 2 ／ 2冊目</h5><p><b>挿絵と漫画を入れる</b><br>ここは全部、手で入れます</p></div>
+  <div><h5>STEP 3 ／ 3冊目〜</h5><p><b>手でやった作業をAIに任せる</b><br>自動化のプロンプトを使います</p></div>
+</div>
+
+<div class="note">
+<b>「漫画の本を作りたかったのに、1冊目は文章だけなの？」と思ったかもしれません。</b><br>
+そうです。理由があります。漫画から始めた人は、ほぼ全員が漫画の途中で止まります。そして<b>1冊も出版しないまま終わります。</b><br>
+1冊目の目的は「良い本を作ること」ではなく、<b>出版という行為を最後まで1回通すこと</b>です。<br>
+自分の名前の本がAmazonに並ぶ体験を先にしてしまうと、そのあとの学習の意味が全部変わります。漫画は2冊目からたっぷりやります。
+</div>
+
+<h3>1冊目に作るもの</h3>
+<div class="scroll">
+<table>
+<tr><th>作るもの</th><th>中身</th><th>担当する回</th></tr>
+<tr><td>テーマ</td><td>誰の・どんな悩みを解決する本か</td><td>第1回</td></tr>
+<tr><td>目次</td><td>章と節の構成</td><td>第2回</td></tr>
+<tr><td>本文</td><td>文章のみ（挿絵・漫画なし）</td><td>第3回</td></tr>
+<tr><td>表紙</td><td>1枚（JPEG）</td><td>第4回</td></tr>
+<tr><td>入稿データ</td><td>KDPに上げるファイル</td><td>第5回</td></tr>
+<tr><td>Amazonの登録情報</td><td>内容紹介・キーワード・カテゴリー</td><td>第6回</td></tr>
+</table>
+</div>
+
+<h3>★なぜ2冊目まで手でやるのか</h3>
+<p>正直に言うと、これから皆さんが手でやることの大部分は、3冊目からAIに任せられます。それでも最初は手でやってもらいます。理由があります。</p>
+<ol>
+  <li><b>★AIがうまくいかなかったとき、直せるようになるから。</b>ここが一番の理由です。<br>
+      <span style="font-size:13.5px;color:var(--sub);">一度自分の手で目次を入れ、章ごとに改ページし、画像の幅を揃えたことがあれば、
+      AIの出力を見た瞬間に「改ページが入っていない」「画像だけ幅が違う」と気づけます。
+      そして<b>それをAIに言葉で伝えられます。</b><br>
+      やったことがないと、何がおかしいのかも分からず、<b>出てきたものをそのまま出版してしまいます。</b></span></li>
+  <li><b>判断は自動化できないから。</b>AIが出すのは選択肢であって答えではありません。このテーマでいいのか、この表紙で売れるのかを決めるのは人間です</li>
+  <li><b>手が止まらなくなるから。</b>表紙のサイズで弾かれ、文字数で弾かれる——その経験を先にしておくと、AIが同じところで弾かれたときに慌てません</li>
+</ol>
+
+<h2>2. 準備チェックリスト</h2>
+<p>次回までに、この6つを全部埋めてください。</p>
+
+<ul class="check">
+  <li><b>① Amazonアカウント</b><span>普段の買い物で使っているもので構いません。</span></li>
+  <li><b>② KDPアカウントの開設</b><span>いちばん時間がかかります。手順は下で詳しく説明します。</span></li>
+  <li><b>③ 銀行口座の登録</b><span>印税の振込先です。KDPアカウントの中で登録します。</span></li>
+  <li><b>④ 税に関する情報の入力（税務インタビュー）</b><span>マイナンバーが必要です。ここで止まる人がとても多いです。</span></li>
+  <li><b>⑤ 作業フォルダの作成</b><span>下の構成のとおりに作ってください。<b>中の6つのサブフォルダまで作ります。</b></span></li>
+  <li><b>⑥ パソコンの空き容量を空けておく</b><span>本1冊で画像を数十枚〜百枚以上あつかいます。<b>「容量がいっぱいです」の警告が出ている状態だと、制作の途中で必ず止まります。</b>やり方は下の第6節で説明します。</span></li>
+</ul>
+<p style="font-size:14px;color:var(--sub);">※ AI環境（Claude Code Pro）はすでに登録済みなのでクリアです。何ができるツールなのかは第3節で説明します。</p>
+
+<h2>3. KDPアカウントの開設手順</h2>
+<p>KDPは <b>Kindle Direct Publishing</b> の略で、Amazonが用意している「誰でも電子書籍を出せる」仕組みです。出版社を通す必要はありません。登録も出版も無料で、売れたときにだけAmazonが手数料を取る形です。</p>
+<p>登録先： <code>kdp.amazon.co.jp</code></p>
+
+<ol class="steps">
+  <li><b>Amazonアカウントでサインインする</b>
+    <span>新しくアカウントを作る必要はありません。普段のアカウントでログインできます。</span></li>
+  <li><b>著者・出版社情報を入力する</b>
+    <span>氏名・住所・電話番号。<b>ここは必ず本名</b>です。本の表紙に出す名前（ペンネーム）とは別で、あとから自由に設定できます。</span></li>
+  <li><b>支払いの受け取り方法を登録する</b>
+    <span>印税の振込先の銀行口座です。銀行名・支店・口座番号・口座名義（カタカナ）を入力します。<b>ゆうちょ銀行は形式が特殊なので、他の銀行の普通口座が無難です。</b></span></li>
+  <li><b>税に関する情報を入力する（税務インタビュー）</b>
+    <span>Amazonはアメリカの会社なので、「日本に住んでいて、日本で納税します」という申告が必要です。画面の質問に答えていく形式で、<b>マイナンバー（個人番号）</b>を使います。手元に用意してから始めてください。<br>
+    これを出さないと、売上から高い税率が引かれてしまいます。<b>必ず完了させてください。</b></span></li>
+  <li><b>ダッシュボードが表示されたら完了</b>
+    <span>「本棚」「レポート」といったメニューが出る画面まで来たらOKです。この画面のスクリーンショットを撮って提出してください。</span></li>
+</ol>
+
+<div class="alert" style="background:#fdecea;border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;">
+<b style="color:#b3261e;">★★ マイナンバーは、絶対に誰にも見せないでください</b><br>
+税務インタビューで入力する「納税者証明番号」は<b>あなたのマイナンバー</b>です。<br>
+マイナンバーは法律で取り扱いが厳しく決められていて、<b>私（講師）を含め、他人が見たり預かったりしてはいけない番号</b>です。
+
+<p style="margin:12px 0 6px;"><b>なぜそこまで厳しいのか</b></p>
+<ul style="margin-top:0;">
+<li>マイナンバーは<b>あなたの収入・税・年金・住所がひもづいた「本人そのもの」の番号</b>です</li>
+<li>他人が集めたり保管したりすること自体が<b>法律で禁止</b>されています（渡した側でなく、持っている側が罰せられます）</li>
+<li>クレジットカードのように「止める」ことができません。<b>原則、一生変わらない番号</b>です</li>
+<li>名前・住所とセットで漏れると、なりすましに使われる危険があります</li>
+</ul>
+
+<p style="margin:14px 0 6px;"><b>やってはいけないこと</b></p>
+<ul style="margin-top:0;">
+<li><b>★ AI（ChatGPT・Claude・Geminiなど）に貼らない・画面を送らない。</b><br>
+    <span style="font-size:13.5px;">「この画面の入力、合ってますか？」と聞きたくなりますが、<b>その画面にマイナンバーが写っています。</b>
+    入力した内容がどこに保存されるか分からないので、絶対に投げないでください。
+    <b>聞きたいときは、番号の欄だけ黒く塗ってから</b>送れば大丈夫です。</span></li>
+<li>スクリーンショットをそのまま人に送らない（LINE・メール・チャットすべて）</li>
+<li>「確認してあげる」と言われても、番号そのものは渡さない（<b>正規の手続きでは、番号を人に見せる必要はありません</b>）</li>
+<li>番号を書いたメモを、机の上やクラウドに置きっぱなしにしない</li>
+</ul>
+
+<p style="margin:14px 0 6px;"><b>もし送ってしまったら</b></p>
+<ul style="margin-top:0;">
+<li>すぐ言ってください。<b>怒りません。こちらで削除します。</b>黙っているほうが危険です</li>
+<li>AIに投げてしまった場合も同じです。会話の削除で対応できます</li>
+</ul>
+<div style="margin-top:10px;padding:10px 12px;background:#fff;border-radius:6px;font-size:13.5px;">
+<b>覚え方：マイナンバーは「見せるもの」ではなく「入力するもの」。</b>
+公式の入力画面に自分で打ち込む以外、どこにも出さない。
+</div>
+</div>
+
+<div class="win" style="background:#eef8f3;border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;">
+<b style="color:#0f7b57;">完了したらここを見てください：源泉徴収が「0%」になっていればOK</b><br>
+アカウント → 税務情報 を開くと、こう表示されます。
+<div class="scroll"><table>
+<tr><th>お金地域</th><th>源泉徴収</th><th>ステータス</th><th>判定</th></tr>
+<tr><td>アメリカ合衆国</td><td><b>0%</b></td><td>完了</td><td><b>成功。何もしなくてOK</b></td></tr>
+<tr><td>アメリカ合衆国</td><td>30%</td><td>完了</td><td>申告が効いていない。<b>やり直す</b></td></tr>
+</table></div>
+<b>「アメリカ合衆国」と出ていても間違いではありません。</b>これは「どこから印税が支払われるか」を示す欄で、
+KDPの印税はAmazon.com（米国）から支払われるため、必ずこう表示されます。あなたの居住国のことではありません。<br>
+最後の画面で「<b>選択された国は、条約上の優遇措置を受けられます</b>」と緑のチェックが出ていれば、日米租税条約が効いています。
+</div>
+
+<div class="trap"><b>つまずきやすいポイント：</b>
+<ul>
+  <li>税務インタビューの途中で分からなくなったら、<b>そこで止めて連絡してください。</b>適当に進めると後で修正が面倒です</li>
+  <li>口座名義は<b>通帳どおりのカタカナ</b>で。1文字違うと振込が失敗します</li>
+  <li>氏名・住所は<b>ローマ字</b>で入力します。最後の署名欄は、上で入力した氏名と<b>1文字も違わないように</b>してください</li>
+  <li>「私は米国のTINを持っています」は<b>チェックしない</b>のが正解です（日本在住なら持っていません）</li>
+  <li>画面の文言はときどき変わります。ボタンの名前が説明と違っても、やることは同じです</li>
+</ul>
+</div>
+
+<h2>4. AI環境について（Claude Code Pro）</h2>
+<p>このスクールで原稿・画像・登録情報を作るのに使うのが <b>Claude Code</b> です。すでにPro版に登録済みなので、準備としてはクリアです。ここでは「何をしてくれる道具なのか」だけ押さえておきます。</p>
+
+<div class="scroll">
+<table>
+<tr><th>できること</th><th>このスクールでの使いどころ</th></tr>
+<tr><td>長い文章を書く</td><td>本文の執筆。節ごとに書かせていきます</td></tr>
+<tr><td>ファイルを直接作る・直す</td><td>原稿ファイル、入稿データ、登録情報のHTML</td></tr>
+<tr><td>調べ物をする</td><td>テーマのリサーチ、競合の調査、事実の裏取り</td></tr>
+<tr><td>作業を自動化する</td><td>3冊目以降、繰り返しになった作業をここでまとめます</td></tr>
+</table>
+</div>
+
+<h4>使ううえでの心構え</h4>
+<ul>
+  <li><b>丸投げしない。</b>「本を書いて」だけでは薄いものしか出てきません。誰向けか・何を伝えたいかを渡すほど良くなります</li>
+  <li><b>AIは自信満々に間違えます。</b>とくに数字・制度・金額。出てきた数字は全部疑って裏を取ります（第3回で詳しくやります）</li>
+  <li><b>1回で完璧を狙わない。</b>小さく出させて、直して、進む。これが結局いちばん速いです</li>
+</ul>
+
+<div class="trap"><b>費用の感覚について：</b>
+Proプランは定額ですが、使える量には上限があります。とくに画像をたくさん作る回（漫画・挿絵）は消費が大きく、<b>作り直しが増えるほど上限に早く当たります。</b><br>
+だからこのスクールでは、<b>作る前に確認する</b>順番を徹底します。遠回りに見えて、これが一番速くて安い進め方です。</div>
+
+<h2>5. 作業フォルダの作り方</h2>
+<p>本を1冊作ると、原稿・画像・表紙・入稿データで<b>数十個のファイル</b>ができます。適当に置くと、最後にファイルを集める段階で必ず行方不明になります。</p>
+<p><b>1冊＝1フォルダ。</b>そして中の構成は毎回同じにします。</p>
+
+<div class="folder">
+<span class="c"># 1冊ごとに、こういうフォルダを1つ作ります</span><br>
+<span class="d">📁 01_はじめての本</span>　<span class="c">← 本のタイトルが決まったら名前を変えてOK</span><br>
+　├─ <span class="d">📁 01_企画</span>　　<span class="c">テーマシート・目次・キーワード</span><br>
+　├─ <span class="d">📁 02_原稿</span>　　<span class="c">本文のファイル</span><br>
+　├─ <span class="d">📁 03_挿絵</span>　　<span class="c">挿絵の画像（1冊目は使いません）</span><br>
+　├─ <span class="d">📁 04_漫画</span>　　<span class="c">漫画のページ（1冊目は使いません）</span><br>
+　├─ <span class="d">📁 05_表紙</span>　　<span class="c">表紙のデータ</span><br>
+　└─ <span class="d">📁 06_入稿</span>　　<span class="c">最終的にKDPに上げるファイル</span>
+</div>
+
+<p><b>1冊目では 03 と 04 は空のままです。</b>それで構いません。2冊目から使います。最初から同じ形にしておくことで、2冊目に入ったときに迷わなくなります。</p>
+
+<h4>置き場所</h4>
+<p>デスクトップに置くと、他のファイルに埋もれて見失います。<b>ドキュメントの中に「Kindle出版」というフォルダを作って、その中に1冊ずつ入れていく</b>のがおすすめです。</p>
+
+<div class="trap"><b>ファイルの名前のつけ方（地味に効きます）：</b>
+<ul>
+  <li>日本語のファイル名で構いません。ただし <b>スペースと記号（！？＆など）は使わない</b></li>
+  <li>直したファイルは<b>上書きしない。</b><code>原稿_v2</code> のように番号を足して新しく保存する。<b>戻したくなったときに戻せます</b></li>
+  <li>完成した最終ファイルには <code>_最終</code> ではなく <code>_入稿</code> と付ける。「最終」は何個もできるので当てになりません</li>
+</ul>
+</div>
+
+<h2>6. 容量の準備（地味ですが、ここで詰まる人が多いです）</h2>
+<p>本を作ると、パソコンの容量をかなり使います。目安はこれくらいです。</p>
+<div class="scroll">
+<table>
+<tr><th></th><th>作るもの</th><th>目安の容量</th></tr>
+<tr><td>1冊目</td><td>文章＋表紙</td><td>数十MB</td></tr>
+<tr><td>2冊目</td><td>文章＋挿絵＋漫画20ページ</td><td><b>1冊あたり1〜3GB</b></td></tr>
+<tr><td>5冊も作ると</td><td></td><td><b>10GB以上</b></td></tr>
+</table>
+</div>
+<div class="trap"><b>とくに危ないのは、写真がクラウドを圧迫しているパターンです。</b>
+iCloudやGoogleフォトが「いっぱいです」と出ている状態だと、
+<b>新しく作った画像が保存できず、作業が途中で止まります。</b>しかもエラーの理由が分かりにくいので、原因探しで時間を溶かします。</div>
+
+<h3>対処のしかた（自分に合うものを1つ選べばOK）</h3>
+<div class="scroll">
+<table>
+<tr><th>方法</th><th>費用の目安</th><th>向いている人</th></tr>
+<tr><td><b>① 写真を外部メディアに移す</b><br>（SDカード・USBメモリ）</td><td>1,500〜4,000円</td><td>スマホの写真でクラウドが埋まっている人。<b>まずはこれで十分</b></td></tr>
+<tr><td><b>② 外付けハードディスク／SSD</b><br>（1TB〜）</td><td>7,000〜15,000円</td><td><b>これから何冊も作る人。いちばんおすすめ</b><br>完成した本のフォルダを丸ごと移せます</td></tr>
+<tr><td><b>③ クラウドの容量を増やす</b><br>（iCloud+ / Google One）</td><td>月130〜400円</td><td>機械の買い物をしたくない人</td></tr>
+<tr><td><b>④ 作業フォルダをクラウド同期から外す</b></td><td>0円</td><td>いますぐ空けたい人。<b>ただし自動バックアップが効かなくなる</b>ので、完成した本だけは別途どこかに残す</td></tr>
+</table>
+</div>
+
+<div class="win"><b>おすすめの組み合わせ：①か②で場所を作り、完成した本のフォルダだけクラウドに残す。</b><br>
+制作中の画像は数が多くて重いので手元に置き、<b>完成した「06_入稿」の中身だけをクラウドに置く</b>と、容量も安全もちょうどよくなります。</div>
+
+<div class="note"><b>実際に1期生がやった対処：</b>iCloudの写真がいっぱいだったので、<b>メモリーカードを買って写真を移す</b>ことにしたそうです。
+これは正しい判断です。<b>問題に気づいて、作業が止まる前に手を打つ</b>——制作でいちばん大事な動き方です。</div>
+
+<h2>7. 次回までの宿題</h2>
+<ol>
+  <li><b>チェックリストを全部埋める。</b>とくに税務インタビューまで完了させる</li>
+  <li><b>作業フォルダを作る。</b>作ったらスクリーンショットを1枚</li>
+  <li><b>検索ワードを1つだけ決めて、その検索結果の上位から5冊メモする。</b><br>
+      <span style="font-size:13.5px;color:var(--sub);">★ここが一番大事なので、条件を細かく書きます</span>
+
+      <div class="trap" style="margin:10px 0 0;">
+      <b>ステップ1：検索ワードを「1つだけ」決める</b><br>
+      Kindleストアの検索窓に打つ言葉を、<b>1つに決めてください。</b>たとえばこういうものです。
+      <div class="scroll"><table style="margin:10px 0 6px;">
+      <tr><th>検索ワードの例</th><th>どんな人向けの棚か</th></tr>
+      <tr><td><b>AI 副業</b></td><td>会社員が副業を始めたい</td></tr>
+      <tr><td><b>子どもの教育</b></td><td>子育て中の親</td></tr>
+      <tr><td><b>新NISA 初心者</b></td><td>投資を始めたい人</td></tr>
+      <tr><td><b>片づけ 部屋</b></td><td>暮らしを整えたい人</td></tr>
+      <tr><td><b>50代 定年</b></td><td>定年が近い会社員</td></tr>
+      </table></div>
+      <b>この5冊は、あなたの本が並ぶ「隣の席」です。</b><br>
+      あなたが本を出すと、検索結果のこの5冊の<b>すぐ隣に表示されます</b>。
+      だから、<b>この5冊に埋もれない表紙</b>を作らないといけません。棚が違う本を見ても参考になりません。
+      </div>
+
+      <div class="win" style="margin:14px 0;">
+      <b>★ 記入用のシートを用意しました。表は自分で作らなくて大丈夫です。</b><br>
+      <code>【第0回 宿題】表紙リサーチシート.xlsx</code> をお渡しします。<br>
+      <b>5冊を横に並べて見比べられる形</b>になっていて、記入例も入っています。
+      「色は何色？」「スマホで読めた？」などは<b>選ぶだけ</b>（ドロップダウン）です。<br>
+      2枚目のシートに<b>各項目の書き方の説明</b>を入れてあるので、迷ったらそちらを見てください。
+      </div>
+
+      <p style="margin:14px 0 6px;font-size:14px;"><b>ステップ2：1冊につき、この項目を埋める</b>（シートの通りに書けばOK）</p>
+      <div class="scroll"><table>
+      <tr><th>見るところ</th><th>何を書くか</th><th>書き方の例</th></tr>
+      <tr><td>① タイトル</td><td>そのまま書き写す</td><td>—</td></tr>
+      <tr><td>② レビュー件数／ページ数</td><td>商品ページに出ています。<b>「不明」で済ませない</b></td><td>234件／208ページ</td></tr>
+      <tr><td>③ <b>文字の大きさ</b></td><td>いちばん大きい語を<b>1つだけ</b>抜き出す。<br>2番目に大きい語も書く</td><td>1番＝「AI」／2番＝「副業」</td></tr>
+      <tr><td>④ <b>色</b></td><td>使っている色を数える。<br><b>背景／文字／目立つ色</b>の3つに分けて書く</td><td>背景＝白／文字＝紺／目立つ色＝赤（3色）</td></tr>
+      <tr><td>⑤ <b>バランス（どこに何があるか）</b></td><td>表紙を上・中・下の3段に分けて、<br>それぞれに何があるか</td><td>上＝あおり文／中＝タイトルと人物／下＝赤い帯</td></tr>
+      <tr><td>⑥ <b>キャラクター・イラスト</b></td><td>人物やイラストが「ある／ない」。<br>あるなら<b>顔が大きいか小さいか</b></td><td>あり・胸から上で大きい</td></tr>
+      <tr><td>⑦ <b>ぱっと見のインパクト</b></td><td>0.5秒見て、<b>最初に目に入ったもの</b>を1つ</td><td>赤い帯の「月10万円」</td></tr>
+      <tr><td>⑧ この表紙から<b>借りたいもの</b></td><td>「文字の置き方」「色の組み合わせ」<br>「帯の作り方」のどれか1つ</td><td>色の組み合わせ</td></tr>
+      </table></div>
+
+      <div class="note" style="margin-top:10px;"><b>③〜⑧は「感想」ではなく「分解」です。</b>
+      「おしゃれ」「かわいい」は<b>結果</b>であって、<b>理由</b>ではありません。<br>
+      「おしゃれに見えた」→ <b>なぜ？</b> → 「色が3色しか使われていないから」「文字が全部同じ書体だから」<br>
+      ここまで分解できると、<b>自分の表紙を作るときにそのまま真似できます。</b></div>
+
+      <div class="trap" style="margin-top:10px;"><b>ステップ3：検索結果の画面を、そのまま5冊並べて見る。</b><br>
+      スマホの検索結果では、表紙は<b>親指の爪くらいの大きさ</b>（幅115pxほど）しかありません。<br>
+      その状態で <b>タイトルが読める本／読めない本</b> を分けてメモしてください。<br>
+      <b>これが一番の学びになります。</b>大きい画面で美しく見える表紙が、スマホでは何も読めない——これが本当によくあります。</div>
+
+      <p style="margin:14px 0 6px;font-size:14px;"><b>ステップ4：5冊を見比べて気づいたことを、3行書く</b></p>
+      <div class="note" style="margin-top:0;">
+      1冊ずつの観察が終わったら、<b>5冊を横に並べて</b>見てください。そして気づいたことを3行だけ書きます。
+      <ul style="margin:8px 0 0;">
+      <li>5冊に<b>共通していたこと</b>（例：全部、数字が入っていた）</li>
+      <li>1冊だけ<b>違っていたこと</b>（例：1冊だけ人物がいなかった）</li>
+      <li>自分が<b>一番手に取りたくなった本と、その理由</b></li>
+      </ul>
+      <b>この3行が、あなたの表紙の設計図になります。</b>
+      </div>
+      </li>
+  <li><b>「自分は誰の、どんな悩みを解決する本を書きたいか」を1〜2行で書いてくる</b></li>
+</ol>
+
+<div class="note"><b>4つ目は、まとまっていなくて大丈夫です。</b><br>
+「40代で転職を考えている人の役に立ちたい」くらいのざっくりしたもので構いません。<b>第1回は、それを一緒に分解して、売れる形に組み替えるところから始めます。</b>むしろ、うまく書こうとしないでください。</div>
+
+<!--SHEET-->
+<div class="sheetbox">
+  <div class="sheetbox-head">
+    <div>
+      <div class="sheetbox-title">&#128196; 記入シート</div>
+      <div class="sheetbox-sub"><span id="sub_E38090E7ACAC30">保存されるファイル：<b>【第0回 宿題】表紙リサーチシート.csv</b>（ExcelでもGoogleスプレッドシートでも開けます）</span></div>
+    </div>
+    <div class="sheetbox-btns">
+      <a class="sheetbox-btn link" href="https://docs.google.com/spreadsheets/d/1i3lXu9PCUSWTWjXlw74qxU-M8wzb7XOZJT3V0T8CXZU/copy" target="_blank" rel="noopener">&#128203; スプレッドシートで開く</a>
+      <button type="button" id="dl_E38090E7ACAC30" class="sheetbox-btn ghost">&#11015; ダウンロード</button>
+      <button type="button" id="cp_E38090E7ACAC30" class="sheetbox-btn ghost">表をコピー</button>
+    </div>
+  </div>
+  <div id="nodl_E38090E7ACAC30" class="sheetbox-nodl" style="display:none">
+    <b>&#128241; この画面では、ファイルの保存ができません。</b>
+    （スマホ・タブレットで開いたときに起こります。押しても何も出ません）<br>
+    かわりに、上の緑の<b>「スプレッドシートで開く」</b>を押してください。スマホでもそのまま書けます。
+  </div>
+  <div class="sheetbox-gs"><b>&#128241; スマホの人は、こちらを使ってください。</b><br>上の緑の<b>「スプレッドシートで開く」</b>を押すと、<b>「コピーを作成」</b>という画面が出ます。そのボタンを押すと<b>あなた専用のシート</b>ができて、その場で書き込めます。ダウンロードは要りません。書いた内容は自動で保存され、<b>ほかの人には見えません。</b><br><span class="sub">※ 押すとこの画面が切り替わります。教材に戻るときは、ブラウザの<b>「←」（戻る）</b>を押してください。<br>※ Googleアカウント（Gmail）が必要です。持っていない人は「ダウンロード」か「表をコピー」を使ってください。<br>※ ボタンが開かないときは、このURLをコピーしてブラウザに貼ってください：<br><span class="sheetbox-url">https://docs.google.com/spreadsheets/d/1i3lXu9PCUSWTWjXlw74qxU-M8wzb7XOZJT3V0T8CXZU/copy</span></span></div>
+  <p class="sheetbox-note" id="note_E38090E7ACAC30">
+    <b>表を自分で作る必要はありません。</b>「ダウンロード」を押すと、<b>画面のまん中に英語の窓</b>が出ます。
+    <span class="sheetbox-en">Let this Artifact download a file?</span>
+    <b>右下の黒い［Save file］を押してください。</b>これで保存されます。
+    <span class="sheetbox-warn">左の［Cancel］を押すと保存されません。</span><br>
+    この窓が出ないとき・スマホのときは、下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開けば、同じ表がそのまま手に入ります。
+  </p>
+  <div id="msg_E38090E7ACAC30" class="sheetbox-msg ok" style="display:none"></div>
+  <details id="tbl_E38090E7ACAC30">
+    <summary>表の中身をここで見る（印刷して手書きでもOK）</summary>
+    <div class="sheetbox-scroll"><table><tr><td class="cap" colspan="7">【第0回 宿題】表紙リサーチシート</td></tr><tr><td class="cap" colspan="7">Kindleストアで検索ワードを1つ決めて、その検索結果の上位から5冊を選びます。表は「行＝見るところ」「列＝1冊」です。C列からG列に、1冊ずつ縦に書いていってください。</td></tr><tr><td class="k">あなたが決めた検索ワード</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in">例：AI 副業 ／ 子どもの教育 ／ 新NISA 初心者 ／ 片づけ 部屋 ／ 50代 定年</td><td class="in"></td><td class="in"></td></tr><tr><th>見るところ</th><th>記入例（見本）</th><th>本①</th><th>本②</th><th>本③</th><th>本④</th><th>本⑤</th></tr><tr><td class="k">↓ 縦に見ると1冊分</td><td class="ex">← 見本。消さずに残してください</td><td class="in">▼ この5列に、1冊ずつ書いてください（本① = 検索結果の1番上の本）</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">① タイトル</td><td class="ex">努力の地図</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">② レビュー件数</td><td class="ex">234件</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">③ ページ数</td><td class="ex">208ページ</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">④ いちばん大きい文字</td><td class="ex">努力</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑤ 2番目に大きい文字</td><td class="ex">地図</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑥ 色 ─ 背景</td><td class="ex">白</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑦ 色 ─ 文字</td><td class="ex">濃い青</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑧ 色 ─ 目立つ色</td><td class="ex">オレンジ</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑨ 色は全部で何色？</td><td class="ex">3色</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑩ バランス ─ 上の段</td><td class="ex">「一歩ずつ進むための」のあおり文</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑪ バランス ─ 真ん中</td><td class="ex">タイトルと地図のイラスト</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑫ バランス ─ 下の段</td><td class="ex">オレンジの帯に「20万部突破」</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑬ キャラクター・イラスト</td><td class="ex">なし（地図のイラストのみ）</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑭ ぱっと見のインパクト
+（0.5秒で最初に目に入ったもの）</td><td class="ex">大きな「努力」の文字</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑮ スマホの一覧で読めた？</td><td class="ex">読めた</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">⑯ この表紙から借りたいもの</td><td class="ex">色の組み合わせ</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="cap" colspan="7">■ 5冊を横に並べて見比べて、気づいたことを書いてください（ここが一番大事）</td></tr><tr><td class="k">① 5冊に共通していたこと</td><td class="ex">例：全部、表紙に数字が入っていた</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">② 1冊だけ違っていたこと</td><td class="ex">例：1冊だけ人物のイラストが無かった</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="k">③ 自分が一番手に取りたく
+　なった本と、その理由</td><td class="ex">例：3冊目。文字が少なくて、何の本か一瞬で分かったから</td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td><td class="in"></td></tr><tr><td class="cap" colspan="7">※「おしゃれ」「かわいい」で止めないでください。それは結果であって理由ではありません。　なぜそう見えたのかを、色の数・文字の大きさ・配置に分けて書くのがコツです。</td></tr></table></div>
+  </details>
+  <details id="pst_E38090E7ACAC30">
+    <summary>&#128203; ダウンロードできないときは、ここから貼り付け（スマホもOK）</summary>
+    <ol class="sheetbox-steps">
+      <li>下の枠の中を1回クリックして、<b>Ctrl+A</b>（Macは&#8984;+A）→ <b>Ctrl+C</b>（Macは&#8984;+C）</li>
+      <li>ExcelかGoogleスプレッドシートを開いて、いちばん左上のマスをクリック</li>
+      <li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け → 同じ表になります</li>
+    </ol>
+    <textarea id="ta_E38090E7ACAC30" class="sheetbox-ta" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script>
+(function () {
+  var KEY = "E38090E7ACAC30";
+  var XNAME = "【第0回 宿題】表紙リサーチシート.xlsx", CNAME = "【第0回 宿題】表紙リサーチシート.csv";
+  var CSV = "【第0回 宿題】表紙リサーチシート,,,,,,\nKindleストアで検索ワードを1つ決めて、その検索結果の上位から5冊を選びます。表は「行＝見るところ」「列＝1冊」です。C列からG列に、1冊ずつ縦に書いていってください。,,,,,,\nあなたが決めた検索ワード,,,,例：AI 副業 ／ 子どもの教育 ／ 新NISA 初心者 ／ 片づけ 部屋 ／ 50代 定年,,\n見るところ,記入例（見本）,本①,本②,本③,本④,本⑤\n↓ 縦に見ると1冊分,← 見本。消さずに残してください,▼ この5列に、1冊ずつ書いてください（本① = 検索結果の1番上の本）,,,,\n① タイトル,努力の地図,,,,,\n② レビュー件数,234件,,,,,\n③ ページ数,208ページ,,,,,\n④ いちばん大きい文字,努力,,,,,\n⑤ 2番目に大きい文字,地図,,,,,\n⑥ 色 ─ 背景,白,,,,,\n⑦ 色 ─ 文字,濃い青,,,,,\n⑧ 色 ─ 目立つ色,オレンジ,,,,,\n⑨ 色は全部で何色？,3色,,,,,\n⑩ バランス ─ 上の段,「一歩ずつ進むための」のあおり文,,,,,\n⑪ バランス ─ 真ん中,タイトルと地図のイラスト,,,,,\n⑫ バランス ─ 下の段,オレンジの帯に「20万部突破」,,,,,\n⑬ キャラクター・イラスト,なし（地図のイラストのみ）,,,,,\n⑭ ぱっと見のインパクト （0.5秒で最初に目に入ったもの）,大きな「努力」の文字,,,,,\n⑮ スマホの一覧で読めた？,読めた,,,,,\n⑯ この表紙から借りたいもの,色の組み合わせ,,,,,\n■ 5冊を横に並べて見比べて、気づいたことを書いてください（ここが一番大事）,,,,,,\n① 5冊に共通していたこと,例：全部、表紙に数字が入っていた,,,,,\n② 1冊だけ違っていたこと,例：1冊だけ人物のイラストが無かった,,,,,\n③ 自分が一番手に取りたく 　なった本と、その理由,例：3冊目。文字が少なくて、何の本か一瞬で分かったから,,,,,\n※「おしゃれ」「かわいい」で止めないでください。それは結果であって理由ではありません。　なぜそう見えたのかを、色の数・文字の大きさ・配置に分けて書くのがコツです。,,,,,,", TSV = "【第0回 宿題】表紙リサーチシート\t\t\t\t\t\t\nKindleストアで検索ワードを1つ決めて、その検索結果の上位から5冊を選びます。表は「行＝見るところ」「列＝1冊」です。C列からG列に、1冊ずつ縦に書いていってください。\t\t\t\t\t\t\nあなたが決めた検索ワード\t\t\t\t例：AI 副業 ／ 子どもの教育 ／ 新NISA 初心者 ／ 片づけ 部屋 ／ 50代 定年\t\t\n見るところ\t記入例（見本）\t本①\t本②\t本③\t本④\t本⑤\n↓ 縦に見ると1冊分\t← 見本。消さずに残してください\t▼ この5列に、1冊ずつ書いてください（本① = 検索結果の1番上の本）\t\t\t\t\n① タイトル\t努力の地図\t\t\t\t\t\n② レビュー件数\t234件\t\t\t\t\t\n③ ページ数\t208ページ\t\t\t\t\t\n④ いちばん大きい文字\t努力\t\t\t\t\t\n⑤ 2番目に大きい文字\t地図\t\t\t\t\t\n⑥ 色 ─ 背景\t白\t\t\t\t\t\n⑦ 色 ─ 文字\t濃い青\t\t\t\t\t\n⑧ 色 ─ 目立つ色\tオレンジ\t\t\t\t\t\n⑨ 色は全部で何色？\t3色\t\t\t\t\t\n⑩ バランス ─ 上の段\t「一歩ずつ進むための」のあおり文\t\t\t\t\t\n⑪ バランス ─ 真ん中\tタイトルと地図のイラスト\t\t\t\t\t\n⑫ バランス ─ 下の段\tオレンジの帯に「20万部突破」\t\t\t\t\t\n⑬ キャラクター・イラスト\tなし（地図のイラストのみ）\t\t\t\t\t\n⑭ ぱっと見のインパクト\n（0.5秒で最初に目に入ったもの）\t大きな「努力」の文字\t\t\t\t\t\n⑮ スマホの一覧で読めた？\t読めた\t\t\t\t\t\n⑯ この表紙から借りたいもの\t色の組み合わせ\t\t\t\t\t\n■ 5冊を横に並べて見比べて、気づいたことを書いてください（ここが一番大事）\t\t\t\t\t\t\n① 5冊に共通していたこと\t例：全部、表紙に数字が入っていた\t\t\t\t\t\n② 1冊だけ違っていたこと\t例：1冊だけ人物のイラストが無かった\t\t\t\t\t\n③ 自分が一番手に取りたく\n　なった本と、その理由\t例：3冊目。文字が少なくて、何の本か一瞬で分かったから\t\t\t\t\t\n※「おしゃれ」「かわいい」で止めないでください。それは結果であって理由ではありません。　なぜそう見えたのかを、色の数・文字の大きさ・配置に分けて書くのがコツです。\t\t\t\t\t\t", B64 = "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";
+  var dl = document.getElementById("dl_" + KEY);
+  var cp = document.getElementById("cp_" + KEY);
+  var msg = document.getElementById("msg_" + KEY);
+  var pst = document.getElementById("pst_" + KEY);
+  var ta = document.getElementById("ta_" + KEY);
+  if (!dl) return;
+  if (ta) ta.value = TSV;
+
+  function say(text, ok) {
+    msg.style.display = "block";
+    msg.className = "sheetbox-msg " + (ok ? "ok" : "ng");
+    msg.innerHTML = text;
+  }
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var el = document.createElement("textarea");
+        el.value = t; el.style.position = "fixed"; el.style.top = "-1000px";
+        document.body.appendChild(el); el.focus(); el.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(el); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  // ★どの失敗経路に落ちても「手が止まらない」ようにする。
+  //   貼り付け欄を開いて・中身を選択して・手順を出す。ここまでやって初めて受講生は先へ進める。
+  function openFallback(head) {
+    if (pst) pst.open = true;
+    if (ta) { try { ta.focus(); ta.select(); } catch (e) {} }
+    copyText(TSV).then(function (ok) {
+      var steps = "<ol>"
+        + "<li>ExcelかGoogleスプレッドシートを開く</li>"
+        + "<li>いちばん左上のマスをクリック</li>"
+        + "<li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け</li></ol>";
+      if (ok) {
+        say(head + "<b>かわりに表をコピーしました。</b>" + steps, false);
+      } else {
+        say(head + "下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開きました。"
+            + "枠の中で <b>Ctrl+A</b> → <b>Ctrl+C</b> を押してから、" + steps, false);
+      }
+      if (pst && pst.scrollIntoView) { try { pst.scrollIntoView({block: "center"}); } catch (e) {} }
+    });
+  }
+  function blobSave() {
+    try {
+      var bin = atob(B64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+      var a = document.createElement("a");
+      a.href = url; a.download = XNAME; a.rel = "noopener";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  // ★Artifactのビューアが黙って返事をしないことがある（スマホ・共有リンクなど）。
+  //   待ちっぱなしにすると「押しても何も起きない」になる。必ず時間で切って案内に落とす。
+  function withTimeout(p, ms, tag) {
+    return new Promise(function (res, rej) {
+      var fin = false;
+      var t = setTimeout(function () {
+        if (!fin) { fin = true; rej({code: "timeout", tag: tag}); }
+      }, ms);
+      Promise.resolve(p).then(function (v) {
+        if (!fin) { fin = true; clearTimeout(t); res(v); }
+      }, function (e) {
+        if (!fin) { fin = true; clearTimeout(t); rej(e || {code: "error", tag: tag}); }
+      });
+    });
+  }
+
+  // Artifact（claude.ai でURLを開いた状態）かどうか。ここではBlob保存が黙って失敗する。
+  var inArtifact = !!(window.claude && typeof window.claude.use === "function");
+  var sub = document.getElementById("sub_" + KEY);
+  if (sub && !inArtifact) {
+    sub.innerHTML = "保存されるファイル：<b>" + XNAME + "</b>（Excelで開けます）";
+  }
+
+  // ★スマホでは保存機能そのものが動かない。押しても何も起きない＝手が止まる。
+  //   2026-08-27、受講生がスマホで詰まった。押す前に分かるようにする。
+  //   ページを開いた時点で使えるか調べ、駄目なら最初からボタンを止めて案内に切り替える。
+  var nodl = document.getElementById("nodl_" + KEY);
+  var note = document.getElementById("note_" + KEY);
+  var dlObj = null;
+  function markNoDownload() {
+    dlObj = null;
+    dl.disabled = true;
+    dl.textContent = "この画面では保存できません";
+    dl.style.background = "#c8cdd2";
+    if (cp) { cp.className = "sheetbox-btn"; }
+    if (nodl) nodl.style.display = "block";
+    if (note) note.style.display = "none";
+    if (sub) sub.innerHTML = "この画面ではファイルを保存できません。下の「表をコピー」を使ってください。";
+  }
+  if (inArtifact) {
+    withTimeout(Promise.resolve(window.claude.use("downloads")), 8000, "probe").then(
+      function (d) { if (d && d.save) { dlObj = d; } else { markNoDownload(); } },
+      function () { markNoDownload(); });
+  }
+
+  dl.addEventListener("click", function () {
+    dl.disabled = true;
+    var fin = function () { dl.disabled = false; };
+
+    if (!inArtifact) {
+      if (blobSave()) {
+        say("ダウンロードしました。<b>" + XNAME + "</b> をExcelで開いてください。", true);
+      } else { openFallback("この画面ではファイルの保存ができませんでした。"); }
+      return fin();
+    }
+
+    // ★英語の確認ダイアログが「まん中」に出る。これを知らないと受講生はCancelを押す。
+    //   2026-08-27、実機で確認：Let this Artifact download a file? / Cancel / Save file
+    say("<b>画面のまん中に、英語の窓が出ます。</b>"
+        + "<span class=\"sheetbox-en\">Let this Artifact download a file?</span>"
+        + "<b>右下の黒い［Save file］</b>を押してください。"
+        + "<span class=\"sheetbox-warn\">［Cancel］を押すと保存されません。</span>", true);
+
+    // ★人が押すのを待つ部分に制限時間を付けてはいけない。
+    //   英語の窓を読んでいる間に「失敗しました」と出てしまう（2026-08-27に実際に出た）。
+    //   時間で切るのは「ビューアが返事をするかどうか」の部分だけ。
+    function trySave(d, name, data) {
+      return d.save({filename: name, data: data}).then(function () {
+        say("ダウンロードしました。パソコンの<b>「ダウンロード」フォルダ</b>に入っている "
+            + "<b>" + name + "</b> を、ExcelかGoogleスプレッドシートで開いてください。", true);
+      }, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "extension_not_enabled" || code === "rejected_extension") {
+          return d.save({filename: name.replace(/\.csv$/, ".txt"), data: data}).then(function () {
+            say("ダウンロードしました。ファイル名の末尾を <b>.txt</b> から <b>.csv</b> に変えてから、"
+                + "ExcelかGoogleスプレッドシートで開いてください。", true);
+          });
+        }
+        return Promise.reject(e);
+      });
+    }
+
+    var body = "\uFEFF" + CSV;
+    var getDL = dlObj ? Promise.resolve(dlObj)
+      : withTimeout(Promise.resolve(window.claude.use("downloads")), 12000, "use");
+    getDL
+      .then(function (d) {
+        if (!d || !d.save) return Promise.reject({code: "unavailable"});
+        return trySave(d, CNAME, body);
+      })
+      .then(null, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "declined") {
+          say("ダウンロードを取りやめました（［Cancel］を押しました）。"
+              + "もう一度「ダウンロード」を押すと、また同じ窓が出ます。"
+              + "<b>今度は右下の黒い［Save file］</b>を押してください。", false);
+          return;
+        }
+        var head = (code === "timeout" || code === "unavailable")
+          ? "この画面ではファイルの保存ができないようです（スマホや、共有リンクで開いたときに起きます）。"
+          : "この画面ではファイルの保存ができませんでした。";
+        openFallback(head);
+      })
+      .then(fin, fin);
+  });
+
+  cp.addEventListener("click", function () {
+    copyText(TSV).then(function (ok) {
+      var old = "表をコピー";
+      cp.textContent = ok ? "コピーしました" : "コピーできません";
+      if (ok) {
+        say("表をコピーしました。ExcelかGoogleスプレッドシートを開いて、"
+            + "いちばん左上のマスで <b>Ctrl+V</b>（Macは&#8984;+V）を押してください。", true);
+      } else {
+        openFallback("コピーがブロックされました。");
+      }
+      setTimeout(function () { cp.textContent = old; }, 2400);
+    });
+  });
+})();
+</script>
+<!--/SHEET-->
+
+<h2>8. 質問メモ欄</h2>
+<p>準備を進めていて分からなかったこと・詰まったことを、遠慮なくここに書き出して持ってきてください。<b>詰まった場所こそがいちばん大事な情報です。</b></p>
+<div style="border:1px dashed var(--line);border-radius:8px;height:130px;margin:8px 0 0;"></div>
+
+<footer>AI出版スクール 第0回 準備 v3 ／ 2026-08-27 更新（記入シートの保存手順を明記） ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+
+</body>
+</html>

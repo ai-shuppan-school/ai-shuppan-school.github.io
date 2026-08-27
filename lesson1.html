@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第1回 テーマを決める</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
+.sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+.sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
+.sheetbox-sub{font-size:12.5px;color:#5b6672;margin-top:3px;line-height:1.7;}
+.sheetbox-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.sheetbox-btn{background:#0f7b57;color:#fff;border:none;border-radius:8px;padding:11px 20px;
+ font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+.sheetbox-btn:hover{background:#0c6547;}
+.sheetbox-btn:disabled{opacity:.6;cursor:default;}
+.sheetbox-btn.ghost{background:#fff;color:#0f7b57;border:1.5px solid #0f7b57;}
+.sheetbox-btn.link{display:inline-block;text-decoration:none;text-align:center;line-height:1.4;}
+.sheetbox-btn.link:hover{background:#0c6547;color:#fff;}
+.sheetbox-url{display:inline-block;background:#fff;border:1px solid #cfe3da;border-radius:6px;
+ padding:2px 8px;font-size:11.5px;word-break:break-all;color:#3d4753;}
+.sheetbox-btn.ghost:hover{background:#e6f4ed;}
+.sheetbox-btn:focus-visible{outline:3px solid #9ad3bd;outline-offset:2px;}
+.sheetbox-note{font-size:13.5px;margin:0 0 12px;color:#1b1f24;line-height:1.85;}
+.sheetbox-msg{font-size:13.5px;margin:0 0 12px;padding:11px 14px;border-radius:8px;line-height:1.8;}
+.sheetbox-msg.ok{background:#e6f4ed;border:1px solid #bfe3d3;}
+.sheetbox-msg.ng{background:#fff8e8;border:1px solid #f0dcae;}
+.sheetbox-msg ol{margin:7px 0 0;padding-left:20px;}
+.sheetbox-msg li{margin-bottom:4px;}
+.sheetbox details{margin-top:6px;}
+.sheetbox summary{cursor:pointer;font-size:13.5px;font-weight:700;color:#0f7b57;padding:5px 0;}
+.sheetbox-scroll{overflow-x:auto;background:#fff;border-radius:8px;border:1px solid #cfe3da;margin-top:10px;}
+.sheetbox table{border-collapse:collapse;font-size:12.5px;margin:0;min-width:100%;}
+.sheetbox th,.sheetbox td{border:1px solid #dde3e9;padding:7px 10px;vertical-align:top;
+ white-space:pre-wrap;text-align:left;}
+.sheetbox th{background:#1a3a6b;color:#fff;font-weight:700;white-space:nowrap;}
+.sheetbox td.k{background:#fff8e7;font-weight:700;width:230px;}
+.sheetbox td.ex{color:#8a94a0;font-style:italic;background:#f7f9fb;}
+.sheetbox td.in{background:#fff;min-width:120px;}
+.sheetbox td.sec{background:#1a3a6b;color:#fff;font-weight:700;}
+.sheetbox td.cap{background:#fbfcfe;color:#3d4753;font-weight:700;}
+.sheetbox-nodl{background:#fff8e8;border:1px solid #f0dcae;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-nodl b{color:#8a5a00;}
+.sheetbox-gs{background:#e8f5ee;border:1px solid #bfe3d3;border-radius:9px;
+ padding:13px 16px;margin:0 0 13px;font-size:13.5px;line-height:1.9;}
+.sheetbox-gs b{color:#0c6547;}
+.sheetbox-gs .sub{color:#5b6672;font-size:12.5px;line-height:1.8;}
+.sheetbox-en{display:inline-block;background:#1b1f24;color:#fff;border-radius:5px;
+ padding:1px 9px;margin:0 3px;font-size:12.5px;font-weight:700;letter-spacing:.2px;}
+.sheetbox-warn{color:#b3261e;font-weight:700;}
+.sheetbox-steps{font-size:13.5px;line-height:1.85;margin:10px 0 0;padding-left:20px;}
+.sheetbox-steps li{margin-bottom:5px;}
+.sheetbox-ta{width:100%;box-sizing:border-box;height:150px;margin-top:9px;padding:10px 12px;
+ font-size:12px;line-height:1.7;border:1px solid #cfe3da;border-radius:8px;background:#fff;
+ font-family:"Yu Gothic UI","Meiryo",monospace;white-space:pre;overflow:auto;}
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 01</p>
+<h1>第1回　テーマを決める</h1>
+<p>ここで決めたことが、本が売れるかどうかの8割を決めます。いちばん時間をかけていい回です。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>「この本は、＿＿＿な人が、＿＿＿な状態から、＿＿＿できるようになる本です」と、1行で言い切れる状態。</b></p>
+<p>これが言えないまま書き始めると、途中で必ず迷子になります。逆に、ここさえ決まれば本文は勝手に進みます。</p>
+</div>
+
+<div class="win" style="margin-top:18px;"><b>この回から、プロンプトを用意しました。</b><br>
+ゼロから考えるところは1つもありません。<b><a href="#prompts">下のプロンプト集</a></b>をコピーして、
+自分のClaudeに貼ってください。【　】の中を自分のことに書き換えるだけで動きます。<br>
+決めるのはあなた、ひねり出すのはClaude。<b>その代わり、出てきたものを鵜呑みにしないでください。</b>
+「そこは違う」と言い返した回数だけ、あなたのClaudeはこの本のことを覚えていきます。</div>
+<!--TERMS-->
+<div class="terms" id="terms_l1">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l1"></span></div>
+  <div id="termsmsg_l1"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l1";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. なぜテーマで8割決まるのか</h2>
+<p>文章がうまいから売れるわけではありません。<b>「読みたい人がいるテーマ」を選んだから売れる</b>のです。</p>
+<p>どれだけいい本を書いても、それを探している人がいなければ届きません。逆に、悩んでいる人が多いテーマなら、多少ぎこちない文章でも読まれます。</p>
+
+<div class="trap"><b>初心者がいちばんやりがちな失敗：</b>
+<b>「自分が書きたいこと」から始めてしまうことです。</b><br>
+書きたい気持ちは大事ですが、それだけで決めると、誰も探していないテーマになります。<br>
+この回では逆から入ります。<b>まず「読者」を決めて、その人の悩みからテーマを引き出します。</b></div>
+
+<h2>2. 5つのステップで決めます</h2>
+<p>考え込む必要はありません。<b>記入シートを上から埋めていけば決まります。</b></p>
+
+<div class="stepbox">
+<h3><span class="n">STEP 1</span>読者を「たった1人」に決める</h3>
+<p><b>「30〜50代の男女」ではダメです。</b>実在する1人を思い浮かべてください。</p>
+<div class="quote">
+<b>おすすめは「3年前の自分」です。</b><br>
+悩みも、使っていた言葉も、何を試して何がダメだったかも、全部リアルに書けます。
+自分が抜け出せた道なら、説得力も出ます。
+</div>
+<p>年齢・性別・仕事・家族構成・平日の1日・自由になる時間とお金・ふだん見ているもの。ここまで決めます。</p>
+<div class="note"><b>なぜ1人に絞るのか。</b>「みんなに読んでほしい」と思って書いた本は、<b>誰にも刺さりません</b>。
+1人に向けて手紙を書くつもりで書いた本のほうが、結果的にたくさんの人に読まれます。</div>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 2</span>その人の「悩み」を書き出す</h3>
+<p>解決策ではなく、<b>悩みそのものを、その人が使う言葉で</b>書きます。3つ出して、いちばん痛いものを1つ選びます。</p>
+<div class="win"><b>この回でいちばん大事な質問はこれです。</b><br>
+<b>「その人が夜、眠れなくなるとしたら、何を考えているときですか？」</b><br><br>
+人が本を買うのは「困っているから」ではありません。<b>その困りごとが頭から離れないから</b>です。<br>
+ここに書いた言葉が、あとで<b>表紙のキャッチコピー</b>になります。</div>
+<p>あわせて「すでに試したこと」と「なぜそれで解決しなかったか」も書きます。<b>ここがあなたの本の存在理由</b>になります。</p>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 3</span>かけ合わせて、勝てる場所にずらす</h3>
+<p>大きなテーマだけでは、大手出版社の本と正面からぶつかって勝てません。</p>
+<div class="scroll">
+<table>
+<tr><th></th><th>テーマ</th><th>どうなるか</th></tr>
+<tr><td>❌</td><td>AI活用</td><td>強い本が何百冊もある。埋もれる</td></tr>
+<tr><td>⭕</td><td><b>AI活用 × 40代の会社員</b></td><td>競合が一気に減る。<b>小さい場所で1番になれる</b></td></tr>
+</table>
+</div>
+<p><b>絞る軸は4つのどれかです。</b></p>
+<ul>
+  <li><b>年代</b>（30代／40代／50代）</li>
+  <li><b>職業・立場</b>（会社員／主婦／個人事業主）</li>
+  <li><b>状況</b>（転職を考えている／子育て中／定年が近い）</li>
+  <li><b>方法</b>（1日10分で／スマホだけで／お金をかけずに）</li>
+</ul>
+<div class="trap"><b>ここで第0回の宿題が効いてきます。</b>
+調べた5冊の中に、<b>今かけ合わせたテーマと同じ本があったかどうか</b>を確認してください。<br>
+似た本が2冊以上あったら、<b>軸を変えてもう一度ずらします</b>。年代で被るなら、状況でずらす——という具合です。</div>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 4</span>検索キーワードを7つ決める</h3>
+<p>読者がAmazonで打ちそうな言葉を7つ出します。<b>本を書く前に決めます。</b>これが目次の道しるべになります。</p>
+<div class="scroll">
+<table>
+<tr><th>枠</th><th>何を入れるか</th><th>例</th></tr>
+<tr><td>①</td><td>メインのテーマ</td><td>生成AI 活用</td></tr>
+<tr><td>②</td><td>別の角度のテーマ</td><td>働き方 見直し</td></tr>
+<tr><td>③</td><td>読者の悩み</td><td>将来不安 40代</td></tr>
+<tr><td>④</td><td>読者の属性・状況</td><td>会社員 初心者</td></tr>
+<tr><td>⑤</td><td>似たジャンル</td><td>自己啓発 入門</td></tr>
+<tr><td>⑥</td><td>読んだ後どうなるか</td><td>時短 習慣化</td></tr>
+<tr><td>⑦</td><td>本の形式・読み方</td><td>図解 わかりやすい</td></tr>
+</table>
+</div>
+<p>1つにつき<b>1〜2語・15字以内</b>。長い文章を詰め込まないでください。</p>
+
+<div class="alert"><b>★ここは規約違反が起きやすい場所です。必ず読んでください。</b>
+<p style="margin:10px 0 6px;">Amazonが<b>公式に「避けるべきキーワード」を一覧で出しています。</b>
+次のものは入れられません。</p>
+<ul style="margin:0;">
+<li><b>タイトルや著者名にすでに入っている言葉</b><br>
+    <span style="font-size:13px;">→ うっかりやりがちです。同じ語を重ねても効きません</span></li>
+<li><b>自分が持っていない・使う許可のないブランド名</b>（ChatGPT／Gemini／Claude／Canva など）<br>
+    → <b>「AI」「生成AI」「対話型AI」</b>のような一般的な言葉に言い換える</li>
+<li><b>その本の制作に関わっていない著者の名前／他の人の本のタイトル</b></li>
+<li><b>Amazonのプログラム名</b>（「Kindle Unlimited」「KDPセレクト」）</li>
+<li>品質についての主観的な言い方（「過去最高の本」など）</li>
+<li>時間に関する言葉（「新刊」「販売中」「配信中」など）</li>
+<li>カテゴリーにすでに入っている言葉／その分野に共通する言葉（「本」など）</li>
+<li><b>誤字</b>、スペースや複数形のゆれ、<b>引用符（" "）</b></li>
+</ul>
+<p style="margin:10px 0 4px;"><b>逆に、公式が「良い」としているのはこういうものです：</b>
+設定／登場人物のタイプ／登場人物の役割／テーマ／雰囲気。
+<b>「読者ならどう検索するか」</b>で考え、語順も自然にします（「時代小説」であって「小説 時代」ではない）。</p>
+<p style="margin:8px 0 0;font-size:13px;">出典：
+<a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G201298500" target="_blank" rel="noopener">KDP公式ヘルプ「キーワードを利用して本を見つけやすくする」</a>
+／ 詳しくは <b>「やってはいけない集」</b>を見てください</p>
+</div>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 5</span>仮のタイトルを3つ作る</h3>
+<p>3案出して、それぞれ<b>「誰に刺さるか」</b>も書きます。1案だけだと比べられません。</p>
+<div class="note"><b>この時点のタイトルは仮でOKです。</b>本文を書いているうちに、もっといい言葉が必ず見つかります。
+<b>第4回の表紙づくりのときに、あらためて決め直します。</b>今は3案出すだけで大丈夫です。</div>
+</div>
+
+<h2>3. 最後に、1行で言い切る</h2>
+<div class="lead">
+<p style="font-size:17px;"><b>「この本は、＿＿＿な人が、＿＿＿な状態から、＿＿＿できるようになる本です。」</b></p>
+<p>例：この本は、<b>40代で将来が不安な会社員</b>が、<b>何から始めればいいか分からない状態</b>から、<b>AIで小さな一歩を踏み出せる</b>ようになる本です。</p>
+<div class="win" style="margin-top:14px;"><b>★真ん中の「＿＿な状態から」を飛ばさないでください。</b><br>ここが<b>いちばん書きにくくて、いちばん効きます。</b>「変わる前」が書けていない本は、読者が「これは自分の話だ」と気づけません。<br>「ダイエット本」ではなく「<b>鏡を見るのが嫌になっている人</b>が、鏡の前で笑えるようになる本」。この差です。</div>
+</div>
+<div class="trap"><b>これが書けないときは、テーマがまだ絞れていないサインです。</b>
+無理に埋めないでください。<b>空のまま持ってきてもらえれば、一緒に絞り込みます。</b>
+ここで無理に決めると、第3回の本文執筆で必ず手が止まります。</div>
+
+<!--PROMPTS-->
+<h2 id="prompts">4. つまずいたら使うプロンプト集（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">考えるのは「決めること」だけ。ひねり出す作業はClaudeにやらせます。</p>
+<p class="pk-lead">ここから下のプロンプトは、<b>コピーして自分のClaudeに貼るだけ</b>で使えます。【　】の中を、自分のテーマや読者に書き換えてください。<b>まだテーマもターゲットも決まっていない人は、いちばん上の①から始めてください。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li>Claudeを開いて、<b>この本のためのチャットを1つ作ってください。</b>第1回の作業は、最後まで同じチャットの中で続けます。別のチャットを開くと、決めたことが全部リセットされます。</li>
+<li>上から順に使います。<b>①はテーマもターゲットも決まっていない人だけ</b>。決まっている人は②から始めてください。</li>
+<li><b>【　】ごと消して</b>、自分の言葉に置き換えてください。空欄のまま送ると、Claudeが勝手に決めてしまいます。</li>
+<li>出てきた答えを、そのまま使わないでください。<b>「そこは違う」「もっと具体的に」と言い返して出し直させてください。</b>やりとりを重ねるほど、あなたのClaudeはあなたの本を理解していきます。ここが一番大事です。</li>
+<li>決まったものは、上の<b>記入シートに書き写して</b>ください。提出するのはシートです。</li>
+<li>最後に⑧を使って「設定シート」を作り、手元に保存してください。<b>次回はそれを貼るところから始めます。</b></li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>テーマもターゲットも決まっていない人へ ─ 棚さがし</div>
+      <div class="p-when">何を書けばいいか全く分からない人が、いちばん最初に使うもの。決まっている人は飛ばしてください。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01">あなたはKindle電子書籍の企画を10年つくってきた編集者です。
+これから、私が1冊目に書くテーマと読者を、一緒に決めてください。
+
+# 私のこと
+- 年齢・性別：<b>【38歳 男性】</b>
+- 仕事：<b>【メーカー勤務の営業。10年目】</b>
+- いま関心があること：<b>【AI、お金、子どもとの時間】</b>
+- 人より少し詳しいこと・やってきたこと：<b>【転職を2回した／共働きで育児と仕事を両立している】</b>
+- 昔は困っていたが、いまは抜け出せていること：<b>【残業が月80時間だったが、定時で帰れるようになった】</b>
+- 書きたくないこと・避けたいこと：<b>【スピリチュアル、投資の断定的な話】</b>
+
+# やってほしいこと
+1. 上の情報から「読みたい人がいそうで、かつ私が書けるテーマ」を5つ出してください。
+   1つにつき必ず「テーマ × 読者」の形にしてください（例：AI活用 × 40代の会社員）。
+
+2. 5つそれぞれを、次の3つで10点満点で採点し、合計点を出してください。
+   ・その悩みを抱えている人の多さ
+   ・強い本が少なそうか
+   ・私が実感を持って書けるか
+
+3. 合計点の高い順に並べ、いちばんおすすめの1つと、その理由を書いてください。
+
+4. 5つそれぞれについて、読者がAmazonで打ちそうな検索ワードを1つずつ挙げてください。
+   私はそれを自分の目でAmazonで確かめます。
+
+5. 最後に、私に聞きたいことを3つまで質問してください。
+
+# ルール
+- 「売れます」と言い切らないでください。そう考えた理由を必ず添えてください。
+- 私が知らない前提の専門用語は使わないでください。
+- 表ではなく、見出しと箇条書きで書いてください。</pre></div>
+  <div class="p-foot"><b>注意：</b>Claudeは実際のAmazonの棚を見ていません。ここで出てくるのは「あたりをつける材料」です。気になったテーマは、必ず自分でAmazonを開いて確かめてください。そのとき<b>シークレットウィンドウ（Chromeなら Ctrl+Shift+N）</b>で開いてください。ふだんのアカウントのままだと、あなたの検索履歴が混ざって、ほかの人が見ている棚とは違うものが出ます。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>STEP1 ─ 読者を「たった1人」に決める</div>
+      <div class="p-when">テーマは決まったが、読者がぼんやりしているとき。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">あなたはKindle電子書籍の編集者です。この本の「たった1人の読者」を一緒に決めてください。
+
+# 決まっていること
+- テーマ：<b>【AIを使って残業を減らす】</b>
+- ざっくりした読者像：<b>【40代の会社員。3年前の自分】</b>
+
+# やってほしいこと
+実在する1人として、次の項目を埋めた「読者カード」を1枚つくってください。
+
+1. 名前（仮）と年齢
+2. 性別
+3. 仕事・役職・勤め先の規模
+4. 家族構成
+5. 平日の1日の流れ（起きてから寝るまで。時刻つきで）
+6. 自由に使える時間（1日どれくらい）と、自由に使えるお金（1か月いくら）
+7. ふだん見ているもの（SNS・YouTube・雑誌・本）
+8. 口ぐせ（その人が実際に言いそうな言葉を3つ）
+
+そのあとで、
+
+9. この読者像で「絞りすぎ」または「ぼやけすぎ」なところがあれば指摘してください。
+10. 私に確認したいことを3つまで質問してください。
+
+# ルール
+- 「30〜50代の男女」のようなまとめ方は禁止です。1人に決めてください。
+- 8の口ぐせは、本人が言う生の言葉にしてください。きれいにまとめないでください。</pre></div>
+  <div class="p-foot">読者に迷ったら<b>「3年前の自分」</b>にしてください。悩みも、使っていた言葉も、何を試して何がダメだったかも、全部リアルに書けます。出てきた読者カードは、次の③④⑤⑥で毎回貼って使います。<b>消さずに残しておいてください。</b></div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>STEP2 ─ その人の悩みを、その人の言葉で掘る</div>
+      <div class="p-when">「悩みを書き出す」で手が止まったとき。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03"><b>【ここに②でつくった読者カードをそのまま貼ってください】</b>
+
+上の読者について、悩みを掘り下げてください。
+
+# やってほしいこと
+1. この人が抱えている悩みを5つ、その人が使う言葉のまま書いてください。
+   「自己肯定感が低い」のような言葉ではなく、「朝、会社に行きたくない」のように書いてください。
+
+2. 5つのうち、いちばん痛いものを1つ選び、なぜそれがいちばん痛いのかを書いてください。
+
+3. その悩みについて「この人が夜、眠れなくなるとしたら、何を考えているときか」を、
+   140字以内のひとりごと（一人称）で書いてください。3案出してください。
+   3案は、それぞれ違う角度にしてください（お金の不安／時間の不安／人からどう見られるか）。
+
+4. この人がすでに試したことを3つと、それぞれ「なぜ、それでは解決しなかったか」を書いてください。
+
+5. 4をふまえて「だからこの本が必要だ」と言える一文を書いてください。
+
+# ルール
+- きれいごとにしないでください。かっこ悪い本音のままで構いません。
+- 5つの悩みは、できるだけ具体的な場面（時間・場所・相手）を入れてください。</pre></div>
+  <div class="p-foot"><b>3で出てきた言葉が、そのまま表紙のキャッチコピーになります。</b>人が本を買うのは「困っているから」ではなく、その困りごとが頭から離れないからです。3案のうち、読んで胸がざわっとしたものに丸をつけて、シートに書き写してください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">④</span>STEP3 ─ かけ合わせて、勝てる場所にずらす</div>
+      <div class="p-when">第0回の宿題（5冊のリサーチ）を手元に置いてから使ってください。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt04">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt04">テーマを、勝てる場所までずらしてください。
+
+# 前提
+- いまのテーマ：<b>【AI活用】</b>
+- 読者：<b>【②で決めた読者を1行で。例：42歳・営業・残業月60時間・子ども2人】</b>
+- Amazonで同じ棚を調べたら、こういう本が並んでいました：
+<b>【第0回の宿題で調べた5冊のタイトルを、そのまま貼ってください】</b>
+
+# やってほしいこと
+1. 次の4つの軸で3案ずつ、合計12案の「ずらし方」を出してください。
+   ・年代（30代／40代／50代 …）
+   ・職業・立場（会社員／主婦／個人事業主 …）
+   ・状況（転職を考えている／子育て中／定年が近い …）
+   ・方法（1日10分で／スマホだけで／お金をかけずに …）
+   12案は「テーマ × ずらし」の形で、20字以内にしてください。
+
+2. 12案それぞれに、上の5冊とかぶっているかを
+   「かぶる／半分かぶる／かぶらない」の3段階で書いてください。
+
+3. 「かぶらない」の中からおすすめを3つ選び、それぞれ
+   ・なぜ勝てそうか
+   ・その本を買う人が、買う直前に打ちそうな検索ワードを1つ
+   を書いてください。
+
+4. 最後に、私が自分でAmazonで確かめるべき検索ワードを3つにまとめてください。
+
+# ルール
+- 上の5冊と同じ言い回しは避けてください。
+- 「みんなに向けて」の方向に広げないでください。狭くする方向だけで考えてください。</pre></div>
+  <div class="p-foot">大きなテーマのままだと、大手出版社の本と正面からぶつかって埋もれます。<b>小さい場所で1番になれるところまで狭めるのが目的です。</b>4で出た3つの検索ワードは、必ず<b>シークレットウィンドウ</b>のAmazonで実際に打って、似た本が2冊以上あったら、もう一度別の軸でずらしてください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">⑤</span>STEP4 ─ 検索キーワードを7つ決める</div>
+      <div class="p-when">7つの枠がそのまま埋まる形で出てきます。規約の自己チェックまで一緒にやらせます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt05">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt05">Amazonの検索キーワードを7つ決めてください。
+
+# 前提
+- 本のテーマ：<b>【AI活用 × 40代の会社員】</b>
+- 読者：<b>【②で決めた読者を1行で】</b>
+- いちばん痛い悩み：<b>【③で選んだもの】</b>
+
+# 出力の形（この7つの枠を必ず守ってください）
+① メインのテーマ
+② 別の角度のテーマ
+③ 読者の悩み
+④ 読者の属性・状況
+⑤ 似たジャンル
+⑥ 読んだ後どうなるか
+⑦ 本の形式・読み方
+
+枠ごとに候補を3つずつ出してから、いちばん良いものを1つ選び、選んだ理由を1行で書いてください。
+
+# 条件
+- 1つにつき1〜2語。全角15字以内。文章にしないでください。
+- 語順は自然にしてください（「時代小説」であって「小説 時代」ではない）。
+- 次のものは絶対に入れないでください。Amazonが公式に「避けるべきキーワード」としています。
+  ・私のタイトルや著者名にすでに入っている言葉
+  ・自分が持っていない・使う許可のないブランド名
+    （ChatGPT／Gemini／Claude／Canva など）
+    → 「AI」「生成AI」「対話型AI」のような一般的な言葉に言い換えてください
+  ・その本の制作に関わっていない著者の名前／ほかの人の本のタイトル
+  ・Amazonのプログラム名（「Kindle Unlimited」「KDPセレクト」）
+  ・品質についての主観的な言い方（「過去最高の本」など）
+  ・時間に関する言葉（「新刊」「販売中」「配信中」「期間限定」など）
+  ・カテゴリーにすでにある言葉／その分野に共通する言葉（「本」など）
+  ・誤字、スペースや複数形のゆれ、引用符（&quot; &quot;）
+  ・金額（「月5万円」など）
+
+# 最後に
+7つを並べたあと、上の禁止リストに触れていないかを1つずつ「OK／NG」で自己チェックしてください。
+NGがあれば、言い換え案を出してください。</pre></div>
+  <div class="p-foot"><b>★ここは講義と本スクールで教え方が違うところです。</b>AICの講義（KDPへの出版手続き）では、<b>売れている本のタイトルや、その著者の名前をキーワードに入れると強い</b>と説明されています。たしかに検索には効きますが、<b>これはKDPの公式ヘルプで明確に禁止されています。</b><br>公式の言い方：「その本に関係のない情報（<b>本の制作に関与していない著者の名前</b>など）。宣伝または販売促進を目的としたメタデータや、ユーザーの誤解を招くようなメタデータは、一切使用できません」（<a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G201298500" target="_blank" rel="noopener">KDP公式・キーワード</a>）<br><b>本スクールでは使いません。あなたのアカウントを守るためです。</b><br>決まった7つは、<b>シークレットウィンドウのAmazon</b>で実際に打ってみて、サジェスト（打っている途中で下に出る候補）に近い言葉があるか確かめてください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">⑥</span>STEP5 ─ 仮タイトルを3案つくる</div>
+      <div class="p-when">5つの型から、違う方向に3案。表紙の一行までここで出しておきます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt06">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt06">仮のタイトルを3案つくってください。
+
+# 前提
+- テーマ：<b>【④で決まったもの】</b>
+- 読者：<b>【②で決めた読者を1行で】</b>
+- いちばん痛い悩み：<b>【③で選んだもの】</b>
+- キーワード7つ：<b>【⑤で決めた7つを貼ってください】</b>
+
+# タイトルの型（この5つのうち、違う型を3つ選んでください）
+A 教科書型 …「〇〇の教科書」「超入門」
+B 対比型 …「〇〇な人、〇〇な人」
+C 数字型 …「〇〇が9割」「たった5分で〇〇」（数字は奇数のほうが収まりが良い）
+D 問いかけ型 …「〇〇していますか？」
+E ギャップ型 … 常識をひっくり返す（「〇〇するな」）
+
+# 各案について書くこと
+1. メインタイトル（全角30字以内。最初の14字で目を止めさせる）
+2. サブタイトル（メインタイトルの40〜50%の長さ）
+3. 誰に刺さるか（1行）
+4. 表紙のいちばん上に置く一行
+   （「40代のための」「はじめての人へ」など、読者が「これは私のことだ」と思う言葉）
+5. 弱いところ（自分でダメ出しを1つ）
+
+# 条件
+- 金額・順位・「無料」「期間限定」などは入れないでください。表紙とタイトルでは規約違反になります。
+- 商品名・サービス名（ChatGPTなど）は入れないでください。
+- 3案は、できるだけ遠い方向に振ってください。似た3案は要りません。</pre></div>
+  <div class="p-foot"><b>いまは仮で大丈夫です。</b>本文を書いているうちに、もっといい言葉が必ず見つかります。第4回の表紙づくりのときに、あらためて決め直します。<br>ただし1つだけ覚えておいてください。<b>出版した後、メインタイトルと著者名だけは変更できません。</b>変えたい場合は、いったん本を取り下げて出し直すことになります。「4」で出てくる一行は、第4回でそのまま表紙のいちばん上に載せます。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">⑦</span>仕上げ ─ この本を1行で言い切る</div>
+      <div class="p-when">提出物の最後の1行。ここが書けたら第1回は終わりです。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt07">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt07">最後に、この本を1行にしてください。
+
+# 前提
+<b>【②〜⑥で決めたものを、まとめて貼ってください】</b>
+
+# やってほしいこと
+1. 「この本は、＿＿＿＿＿な人が、＿＿＿＿＿な状態から、＿＿＿＿＿できるようになる本です。」
+   この形で3案書いてください。真ん中の「＿＿な状態から」を必ず埋めてください。
+
+2. 3案のうち、いちばん具体的なものを選び、なぜそれが強いのかを書いてください。
+
+3. 選んだ1行から、本の目次を作ってください。章は5章、各章3節を目安にしてください（5〜8章の範囲なら構いません）。
+
+4. 1行と目次のあいだでズレているところがあれば、指摘してください。
+
+# 条件
+- 「＿＿な人」には、年齢・立場・状況のどれかを必ず入れてください。「悩んでいる人」は禁止です。
+- 「＿＿な状態から」は、③で出した「夜、眠れなくなる瞬間」の言葉を使ってください。
+  ここが読者が「これは自分の話だ」と気づく場所です。
+- 「＿＿できるようになる」は、目に見える行動にしてください。「前向きになれる」は禁止です。
+- 3案とも50字以内にしてください。</pre></div>
+  <div class="p-foot"><b>★真ん中の「＿＿な状態から」がいちばん大事です。</b>「ダイエット本」ではなく「<b>鏡を見るのが嫌になっている人</b>が、鏡の前で笑えるようになる本」。この差です。<br>これが書けないときは、テーマがまだ絞れていないサインです。<b>無理に埋めないでください。</b>空のまま持ってきてもらえれば、一緒に絞り込みます。ここで無理に決めると、第3回の本文執筆で必ず手が止まります。<br>3で出てくる目次は第2回で使います。<b>捨てないでください。</b></div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">⑧</span>次回への引き継ぎ ─ 設定シートを作らせる</div>
+      <div class="p-when">★これを飛ばさないでください。次回はこのシートを貼るところから始めます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt08">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt08">ここまで決めたことを、この本の「設定シート」として1枚にまとめてください。
+
+# まとめる項目
+1. 本のテーマ（1行）
+2. 読者（名前・年齢・仕事・家族・平日の1日・口ぐせ）
+3. いちばん痛い悩みと、夜眠れなくなる瞬間
+4. すでに試したこと／なぜ効かなかったか
+5. 差別化（同じ棚の本と、どこが違うか）
+6. 検索キーワード7つ
+7. 仮タイトル3案
+8. この本を1行で言うと
+9. 書くときのルール
+   （言い切らない／専門用語を使わない／読者の口ぐせを使う／その本にしか書けない具体例を入れる）
+
+# 出力の形
+- そのままコピーして、次のチャットの先頭に貼れる形にしてください。
+- 見出しは「#」で、中身は箇条書きにしてください。
+- 2000字以内にまとめてください。
+- 決まっていない項目は「未定」と書いてください。埋めなくて構いません。</pre></div>
+  <div class="p-foot">出てきた設定シートを、<b>メモ帳かWordに保存してください。</b>次のチャットの最初にこれを貼れば、いちいち説明し直さなくてよくなります。<br>Claudeの<b>「プロジェクト」</b>を使える人は、この本用のプロジェクトを作って、設定シートを説明欄に貼っておくと、以後どのチャットでも覚えていてくれます。回を追うごとに、あなたのClaudeはあなたの本の担当編集者に育っていきます。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
+
+<!--SHEET-->
+<div class="sheetbox">
+  <div class="sheetbox-head">
+    <div>
+      <div class="sheetbox-title">&#128196; 記入シート</div>
+      <div class="sheetbox-sub"><span id="sub_E38090E7ACAC31">保存されるファイル：<b>【第1回 宿題】テーマ設計シート.csv</b>（ExcelでもGoogleスプレッドシートでも開けます）</span></div>
+    </div>
+    <div class="sheetbox-btns">
+      <a class="sheetbox-btn link" href="https://docs.google.com/spreadsheets/d/1SonyB5H1XaoTF8k0gcqn4pm4-IDzcHXpKFt9SQ_ko6c/copy" target="_blank" rel="noopener">&#128203; スプレッドシートで開く</a>
+      <button type="button" id="dl_E38090E7ACAC31" class="sheetbox-btn ghost">&#11015; ダウンロード</button>
+      <button type="button" id="cp_E38090E7ACAC31" class="sheetbox-btn ghost">表をコピー</button>
+    </div>
+  </div>
+  <div id="nodl_E38090E7ACAC31" class="sheetbox-nodl" style="display:none">
+    <b>&#128241; この画面では、ファイルの保存ができません。</b>
+    （スマホ・タブレットで開いたときに起こります。押しても何も出ません）<br>
+    かわりに、上の緑の<b>「スプレッドシートで開く」</b>を押してください。スマホでもそのまま書けます。
+  </div>
+  <div class="sheetbox-gs"><b>&#128241; スマホの人は、こちらを使ってください。</b><br>上の緑の<b>「スプレッドシートで開く」</b>を押すと、<b>「コピーを作成」</b>という画面が出ます。そのボタンを押すと<b>あなた専用のシート</b>ができて、その場で書き込めます。ダウンロードは要りません。書いた内容は自動で保存され、<b>ほかの人には見えません。</b><br><span class="sub">※ 押すとこの画面が切り替わります。教材に戻るときは、ブラウザの<b>「←」（戻る）</b>を押してください。<br>※ Googleアカウント（Gmail）が必要です。持っていない人は「ダウンロード」か「表をコピー」を使ってください。<br>※ ボタンが開かないときは、このURLをコピーしてブラウザに貼ってください：<br><span class="sheetbox-url">https://docs.google.com/spreadsheets/d/1SonyB5H1XaoTF8k0gcqn4pm4-IDzcHXpKFt9SQ_ko6c/copy</span></span></div>
+  <p class="sheetbox-note" id="note_E38090E7ACAC31">
+    <b>表を自分で作る必要はありません。</b>「ダウンロード」を押すと、<b>画面のまん中に英語の窓</b>が出ます。
+    <span class="sheetbox-en">Let this Artifact download a file?</span>
+    <b>右下の黒い［Save file］を押してください。</b>これで保存されます。
+    <span class="sheetbox-warn">左の［Cancel］を押すと保存されません。</span><br>
+    この窓が出ないとき・スマホのときは、下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開けば、同じ表がそのまま手に入ります。
+  </p>
+  <div id="msg_E38090E7ACAC31" class="sheetbox-msg ok" style="display:none"></div>
+  <details id="tbl_E38090E7ACAC31">
+    <summary>表の中身をここで見る（印刷して手書きでもOK）</summary>
+    <div class="sheetbox-scroll"><table><tr><td class="cap" colspan="3">【第1回 宿題】テーマ設計シート</td></tr><tr><td class="cap" colspan="3">上から順に埋めていくと、あなたの本のテーマが決まります。考え込まず、思いついたことをそのまま書いてください。</td></tr><tr><td class="k"></td><td class="in">▼ ここに書いてください</td><td class="in">記入例（見本）</td></tr><tr><td class="sec" colspan="3">STEP 1　読者を「たった1人」に決める</td></tr><tr><td class="cap" colspan="3">「30〜50代の男女」ではダメです。実在する1人を思い浮かべてください。自分自身・友人・昔の同僚など、顔が浮かぶ人がベストです。</td></tr><tr><td class="k">① 年齢</td><td class="in"></td><td class="ex">42歳</td></tr><tr><td class="k">② 性別</td><td class="in"></td><td class="ex">男性</td></tr><tr><td class="k">③ 仕事・立場</td><td class="in"></td><td class="ex">中堅メーカーの係長。部下3人</td></tr><tr><td class="k">④ 家族構成</td><td class="in"></td><td class="ex">妻と小学生の子ども2人</td></tr><tr><td class="k">⑤ 平日の1日（ざっくり）</td><td class="in"></td><td class="ex">7時起き→通勤1時間→残業して21時帰宅→スマホ見て就寝</td></tr><tr><td class="k">⑥ 自由に使える時間・お金</td><td class="in"></td><td class="ex">平日30分／土日2時間　月1万円くらい</td></tr><tr><td class="k">⑦ ふだん見ているもの</td><td class="in"></td><td class="ex">YouTubeの解説動画、X、通勤中にKindle</td></tr><tr><td class="sec" colspan="3">STEP 2　その人の「悩み」を書き出す</td></tr><tr><td class="cap" colspan="3">解決策ではなく、悩みそのものを、その人が使う言葉で書いてください。</td></tr><tr><td class="k">⑧ 悩み 1つ目</td><td class="in"></td><td class="ex">このまま今の会社にいて大丈夫なのか分からない</td></tr><tr><td class="k">⑨ 悩み 2つ目</td><td class="in"></td><td class="ex">何か始めたいけど時間がない</td></tr><tr><td class="k">⑩ 悩み 3つ目</td><td class="in"></td><td class="ex">AIが気になるけど今さら手を出せない</td></tr><tr><td class="k">⑪ ★いちばん痛いのはどれ？</td><td class="in"></td><td class="ex">1つ目</td></tr><tr><td class="k">⑫ 夜、眠れなくなるとしたら
+　 何を考えているとき？</td><td class="in"></td><td class="ex">10年後も同じ仕事をしている自分を想像したとき</td></tr><tr><td class="k">⑬ すでに試したこと</td><td class="in"></td><td class="ex">副業の本を2冊読んだ。セミナーに1回行った</td></tr><tr><td class="k">⑭ なぜそれで解決しなかった？</td><td class="in"></td><td class="ex">読んだだけで、何も始められなかったから</td></tr><tr><td class="sec" colspan="3">STEP 3　かけ合わせて、勝てる場所にずらす</td></tr><tr><td class="cap" colspan="3">大きなテーマだけでは強い本に埋もれます。「大テーマ × 絞る軸」で、小さくても自分が1番になれる場所を作ります。</td></tr><tr><td class="k">⑮ 軸A：大きなテーマ</td><td class="in"></td><td class="ex">AI活用</td></tr><tr><td class="k">⑯ 軸B：絞る軸
+　 （年代／職業／状況／方法のどれか）</td><td class="in"></td><td class="ex">40代の会社員</td></tr><tr><td class="k">⑰ かけ合わせた一言</td><td class="in"></td><td class="ex">40代の会社員が、AIで小さく始める</td></tr><tr><td class="k">⑱ 第0回で調べた5冊の中に、
+　 これと同じ本はあった？</td><td class="in"></td><td class="ex">なかった</td></tr><tr><td class="sec" colspan="3">STEP 4　検索キーワードの候補を7つ出す</td></tr><tr><td class="cap" colspan="3">読者がAmazonで打ちそうな言葉を書きます。1つにつき1〜2語・15字以内。★ブランド名（ChatGPT・Gemini・Kindleなど）／「ベストセラー」「無料」などは規約違反なので絶対に入れないでください。</td></tr><tr><td class="k">⑲ ① メインのテーマ</td><td class="in"></td><td class="ex">生成AI 活用</td></tr><tr><td class="k">⑳ ② 別の角度のテーマ</td><td class="in"></td><td class="ex">働き方 見直し</td></tr><tr><td class="k">㉑ ③ 読者の悩み</td><td class="in"></td><td class="ex">将来不安 40代</td></tr><tr><td class="k">㉒ ④ 読者の属性・状況</td><td class="in"></td><td class="ex">会社員 初心者</td></tr><tr><td class="k">㉓ ⑤ 似たジャンル</td><td class="in"></td><td class="ex">自己啓発 入門</td></tr><tr><td class="k">㉔ ⑥ 読んだ後どうなるか</td><td class="in"></td><td class="ex">時短 習慣化</td></tr><tr><td class="k">㉕ ⑦ 本の形式・読み方</td><td class="in"></td><td class="ex">図解 わかりやすい</td></tr><tr><td class="k">㉖ ★NG自己チェック
+　 禁止ワードを入れていない？</td><td class="in"></td><td class="ex">確認した（ブランド名・ランキング語・販促語ゼロ）</td></tr><tr><td class="sec" colspan="3">STEP 5　仮のタイトルを3つ作る</td></tr><tr><td class="cap" colspan="3">この時点では仮でOKです。第4回の表紙づくりのときに、また見直します。</td></tr><tr><td class="k">㉗ タイトル案A</td><td class="in"></td><td class="ex">40代からの、AIではじめる小さな再出発</td></tr><tr><td class="k">㉘ 　案Aは誰に刺さる？</td><td class="in"></td><td class="ex">会社に不満はないが、将来が不安な人</td></tr><tr><td class="k">㉙ タイトル案B</td><td class="in"></td><td class="ex">今さらAI？と思っている40代へ</td></tr><tr><td class="k">㉚ 　案Bは誰に刺さる？</td><td class="in"></td><td class="ex">AIに苦手意識がある人</td></tr><tr><td class="k">㉛ タイトル案C</td><td class="in"></td><td class="ex">残業を減らして、10年後の自分を変える</td></tr><tr><td class="k">㉜ 　案Cは誰に刺さる？</td><td class="in"></td><td class="ex">時間がないことが一番の悩みの人</td></tr><tr><td class="sec" colspan="3">最後に　この本を1行で言い切る</td></tr><tr><td class="k">㉝ この本は、＿＿＿な人が、
+　 ＿＿＿な状態から、
+　 ＿＿＿できるようになる本です。</td><td class="in"></td><td class="ex">この本は、40代で将来が不安な会社員が、何から始めればいいか分からない状態から、AIで小さな一歩を踏み出せるようになる本です。</td></tr><tr><td class="cap" colspan="3">※真ん中の「＿＿な状態から」がいちばん書きにくくて、いちばん効きます。⑫「夜、眠れなくなるとき」に書いた言葉を、そのまま使ってください。</td></tr></table></div>
+  </details>
+  <details id="pst_E38090E7ACAC31">
+    <summary>&#128203; ダウンロードできないときは、ここから貼り付け（スマホもOK）</summary>
+    <ol class="sheetbox-steps">
+      <li>下の枠の中を1回クリックして、<b>Ctrl+A</b>（Macは&#8984;+A）→ <b>Ctrl+C</b>（Macは&#8984;+C）</li>
+      <li>ExcelかGoogleスプレッドシートを開いて、いちばん左上のマスをクリック</li>
+      <li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け → 同じ表になります</li>
+    </ol>
+    <textarea id="ta_E38090E7ACAC31" class="sheetbox-ta" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script>
+(function () {
+  var KEY = "E38090E7ACAC31";
+  var XNAME = "【第1回 宿題】テーマ設計シート.xlsx", CNAME = "【第1回 宿題】テーマ設計シート.csv";
+  var CSV = "【第1回 宿題】テーマ設計シート,,\n上から順に埋めていくと、あなたの本のテーマが決まります。考え込まず、思いついたことをそのまま書いてください。,,\n,▼ ここに書いてください,記入例（見本）\nSTEP 1　読者を「たった1人」に決める,,\n「30〜50代の男女」ではダメです。実在する1人を思い浮かべてください。自分自身・友人・昔の同僚など、顔が浮かぶ人がベストです。,,\n① 年齢,,42歳\n② 性別,,男性\n③ 仕事・立場,,中堅メーカーの係長。部下3人\n④ 家族構成,,妻と小学生の子ども2人\n⑤ 平日の1日（ざっくり）,,7時起き→通勤1時間→残業して21時帰宅→スマホ見て就寝\n⑥ 自由に使える時間・お金,,平日30分／土日2時間　月1万円くらい\n⑦ ふだん見ているもの,,YouTubeの解説動画、X、通勤中にKindle\nSTEP 2　その人の「悩み」を書き出す,,\n解決策ではなく、悩みそのものを、その人が使う言葉で書いてください。,,\n⑧ 悩み 1つ目,,このまま今の会社にいて大丈夫なのか分からない\n⑨ 悩み 2つ目,,何か始めたいけど時間がない\n⑩ 悩み 3つ目,,AIが気になるけど今さら手を出せない\n⑪ ★いちばん痛いのはどれ？,,1つ目\n⑫ 夜、眠れなくなるとしたら 　 何を考えているとき？,,10年後も同じ仕事をしている自分を想像したとき\n⑬ すでに試したこと,,副業の本を2冊読んだ。セミナーに1回行った\n⑭ なぜそれで解決しなかった？,,読んだだけで、何も始められなかったから\nSTEP 3　かけ合わせて、勝てる場所にずらす,,\n大きなテーマだけでは強い本に埋もれます。「大テーマ × 絞る軸」で、小さくても自分が1番になれる場所を作ります。,,\n⑮ 軸A：大きなテーマ,,AI活用\n⑯ 軸B：絞る軸 　 （年代／職業／状況／方法のどれか）,,40代の会社員\n⑰ かけ合わせた一言,,40代の会社員が、AIで小さく始める\n⑱ 第0回で調べた5冊の中に、 　 これと同じ本はあった？,,なかった\nSTEP 4　検索キーワードの候補を7つ出す,,\n読者がAmazonで打ちそうな言葉を書きます。1つにつき1〜2語・15字以内。★ブランド名（ChatGPT・Gemini・Kindleなど）／「ベストセラー」「無料」などは規約違反なので絶対に入れないでください。,,\n⑲ ① メインのテーマ,,生成AI 活用\n⑳ ② 別の角度のテーマ,,働き方 見直し\n㉑ ③ 読者の悩み,,将来不安 40代\n㉒ ④ 読者の属性・状況,,会社員 初心者\n㉓ ⑤ 似たジャンル,,自己啓発 入門\n㉔ ⑥ 読んだ後どうなるか,,時短 習慣化\n㉕ ⑦ 本の形式・読み方,,図解 わかりやすい\n㉖ ★NG自己チェック 　 禁止ワードを入れていない？,,確認した（ブランド名・ランキング語・販促語ゼロ）\nSTEP 5　仮のタイトルを3つ作る,,\nこの時点では仮でOKです。第4回の表紙づくりのときに、また見直します。,,\n㉗ タイトル案A,,40代からの、AIではじめる小さな再出発\n㉘ 　案Aは誰に刺さる？,,会社に不満はないが、将来が不安な人\n㉙ タイトル案B,,今さらAI？と思っている40代へ\n㉚ 　案Bは誰に刺さる？,,AIに苦手意識がある人\n㉛ タイトル案C,,残業を減らして、10年後の自分を変える\n㉜ 　案Cは誰に刺さる？,,時間がないことが一番の悩みの人\n最後に　この本を1行で言い切る,,\n㉝ この本は、＿＿＿な人が、 　 ＿＿＿な状態から、 　 ＿＿＿できるようになる本です。,,この本は、40代で将来が不安な会社員が、何から始めればいいか分からない状態から、AIで小さな一歩を踏み出せるようになる本です。\n※真ん中の「＿＿な状態から」がいちばん書きにくくて、いちばん効きます。⑫「夜、眠れなくなるとき」に書いた言葉を、そのまま使ってください。,,", TSV = "【第1回 宿題】テーマ設計シート\t\t\n上から順に埋めていくと、あなたの本のテーマが決まります。考え込まず、思いついたことをそのまま書いてください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\nSTEP 1　読者を「たった1人」に決める\t\t\n「30〜50代の男女」ではダメです。実在する1人を思い浮かべてください。自分自身・友人・昔の同僚など、顔が浮かぶ人がベストです。\t\t\n① 年齢\t\t42歳\n② 性別\t\t男性\n③ 仕事・立場\t\t中堅メーカーの係長。部下3人\n④ 家族構成\t\t妻と小学生の子ども2人\n⑤ 平日の1日（ざっくり）\t\t7時起き→通勤1時間→残業して21時帰宅→スマホ見て就寝\n⑥ 自由に使える時間・お金\t\t平日30分／土日2時間　月1万円くらい\n⑦ ふだん見ているもの\t\tYouTubeの解説動画、X、通勤中にKindle\nSTEP 2　その人の「悩み」を書き出す\t\t\n解決策ではなく、悩みそのものを、その人が使う言葉で書いてください。\t\t\n⑧ 悩み 1つ目\t\tこのまま今の会社にいて大丈夫なのか分からない\n⑨ 悩み 2つ目\t\t何か始めたいけど時間がない\n⑩ 悩み 3つ目\t\tAIが気になるけど今さら手を出せない\n⑪ ★いちばん痛いのはどれ？\t\t1つ目\n⑫ 夜、眠れなくなるとしたら\n　 何を考えているとき？\t\t10年後も同じ仕事をしている自分を想像したとき\n⑬ すでに試したこと\t\t副業の本を2冊読んだ。セミナーに1回行った\n⑭ なぜそれで解決しなかった？\t\t読んだだけで、何も始められなかったから\nSTEP 3　かけ合わせて、勝てる場所にずらす\t\t\n大きなテーマだけでは強い本に埋もれます。「大テーマ × 絞る軸」で、小さくても自分が1番になれる場所を作ります。\t\t\n⑮ 軸A：大きなテーマ\t\tAI活用\n⑯ 軸B：絞る軸\n　 （年代／職業／状況／方法のどれか）\t\t40代の会社員\n⑰ かけ合わせた一言\t\t40代の会社員が、AIで小さく始める\n⑱ 第0回で調べた5冊の中に、\n　 これと同じ本はあった？\t\tなかった\nSTEP 4　検索キーワードの候補を7つ出す\t\t\n読者がAmazonで打ちそうな言葉を書きます。1つにつき1〜2語・15字以内。★ブランド名（ChatGPT・Gemini・Kindleなど）／「ベストセラー」「無料」などは規約違反なので絶対に入れないでください。\t\t\n⑲ ① メインのテーマ\t\t生成AI 活用\n⑳ ② 別の角度のテーマ\t\t働き方 見直し\n㉑ ③ 読者の悩み\t\t将来不安 40代\n㉒ ④ 読者の属性・状況\t\t会社員 初心者\n㉓ ⑤ 似たジャンル\t\t自己啓発 入門\n㉔ ⑥ 読んだ後どうなるか\t\t時短 習慣化\n㉕ ⑦ 本の形式・読み方\t\t図解 わかりやすい\n㉖ ★NG自己チェック\n　 禁止ワードを入れていない？\t\t確認した（ブランド名・ランキング語・販促語ゼロ）\nSTEP 5　仮のタイトルを3つ作る\t\t\nこの時点では仮でOKです。第4回の表紙づくりのときに、また見直します。\t\t\n㉗ タイトル案A\t\t40代からの、AIではじめる小さな再出発\n㉘ 　案Aは誰に刺さる？\t\t会社に不満はないが、将来が不安な人\n㉙ タイトル案B\t\t今さらAI？と思っている40代へ\n㉚ 　案Bは誰に刺さる？\t\tAIに苦手意識がある人\n㉛ タイトル案C\t\t残業を減らして、10年後の自分を変える\n㉜ 　案Cは誰に刺さる？\t\t時間がないことが一番の悩みの人\n最後に　この本を1行で言い切る\t\t\n㉝ この本は、＿＿＿な人が、\n　 ＿＿＿な状態から、\n　 ＿＿＿できるようになる本です。\t\tこの本は、40代で将来が不安な会社員が、何から始めればいいか分からない状態から、AIで小さな一歩を踏み出せるようになる本です。\n※真ん中の「＿＿な状態から」がいちばん書きにくくて、いちばん効きます。⑫「夜、眠れなくなるとき」に書いた言葉を、そのまま使ってください。\t\t", B64 = "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";
+  var dl = document.getElementById("dl_" + KEY);
+  var cp = document.getElementById("cp_" + KEY);
+  var msg = document.getElementById("msg_" + KEY);
+  var pst = document.getElementById("pst_" + KEY);
+  var ta = document.getElementById("ta_" + KEY);
+  if (!dl) return;
+  if (ta) ta.value = TSV;
+
+  function say(text, ok) {
+    msg.style.display = "block";
+    msg.className = "sheetbox-msg " + (ok ? "ok" : "ng");
+    msg.innerHTML = text;
+  }
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var el = document.createElement("textarea");
+        el.value = t; el.style.position = "fixed"; el.style.top = "-1000px";
+        document.body.appendChild(el); el.focus(); el.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(el); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  // ★どの失敗経路に落ちても「手が止まらない」ようにする。
+  //   貼り付け欄を開いて・中身を選択して・手順を出す。ここまでやって初めて受講生は先へ進める。
+  function openFallback(head) {
+    if (pst) pst.open = true;
+    if (ta) { try { ta.focus(); ta.select(); } catch (e) {} }
+    copyText(TSV).then(function (ok) {
+      var steps = "<ol>"
+        + "<li>ExcelかGoogleスプレッドシートを開く</li>"
+        + "<li>いちばん左上のマスをクリック</li>"
+        + "<li><b>Ctrl+V</b>（Macは&#8984;+V）で貼り付け</li></ol>";
+      if (ok) {
+        say(head + "<b>かわりに表をコピーしました。</b>" + steps, false);
+      } else {
+        say(head + "下の<b>「ダウンロードできないときは、ここから貼り付け」</b>を開きました。"
+            + "枠の中で <b>Ctrl+A</b> → <b>Ctrl+C</b> を押してから、" + steps, false);
+      }
+      if (pst && pst.scrollIntoView) { try { pst.scrollIntoView({block: "center"}); } catch (e) {} }
+    });
+  }
+  function blobSave() {
+    try {
+      var bin = atob(B64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([buf], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+      var a = document.createElement("a");
+      a.href = url; a.download = XNAME; a.rel = "noopener";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+      return true;
+    } catch (e) { return false; }
+  }
+  // ★Artifactのビューアが黙って返事をしないことがある（スマホ・共有リンクなど）。
+  //   待ちっぱなしにすると「押しても何も起きない」になる。必ず時間で切って案内に落とす。
+  function withTimeout(p, ms, tag) {
+    return new Promise(function (res, rej) {
+      var fin = false;
+      var t = setTimeout(function () {
+        if (!fin) { fin = true; rej({code: "timeout", tag: tag}); }
+      }, ms);
+      Promise.resolve(p).then(function (v) {
+        if (!fin) { fin = true; clearTimeout(t); res(v); }
+      }, function (e) {
+        if (!fin) { fin = true; clearTimeout(t); rej(e || {code: "error", tag: tag}); }
+      });
+    });
+  }
+
+  // Artifact（claude.ai でURLを開いた状態）かどうか。ここではBlob保存が黙って失敗する。
+  var inArtifact = !!(window.claude && typeof window.claude.use === "function");
+  var sub = document.getElementById("sub_" + KEY);
+  if (sub && !inArtifact) {
+    sub.innerHTML = "保存されるファイル：<b>" + XNAME + "</b>（Excelで開けます）";
+  }
+
+  // ★スマホでは保存機能そのものが動かない。押しても何も起きない＝手が止まる。
+  //   2026-08-27、受講生がスマホで詰まった。押す前に分かるようにする。
+  //   ページを開いた時点で使えるか調べ、駄目なら最初からボタンを止めて案内に切り替える。
+  var nodl = document.getElementById("nodl_" + KEY);
+  var note = document.getElementById("note_" + KEY);
+  var dlObj = null;
+  function markNoDownload() {
+    dlObj = null;
+    dl.disabled = true;
+    dl.textContent = "この画面では保存できません";
+    dl.style.background = "#c8cdd2";
+    if (cp) { cp.className = "sheetbox-btn"; }
+    if (nodl) nodl.style.display = "block";
+    if (note) note.style.display = "none";
+    if (sub) sub.innerHTML = "この画面ではファイルを保存できません。下の「表をコピー」を使ってください。";
+  }
+  if (inArtifact) {
+    withTimeout(Promise.resolve(window.claude.use("downloads")), 8000, "probe").then(
+      function (d) { if (d && d.save) { dlObj = d; } else { markNoDownload(); } },
+      function () { markNoDownload(); });
+  }
+
+  dl.addEventListener("click", function () {
+    dl.disabled = true;
+    var fin = function () { dl.disabled = false; };
+
+    if (!inArtifact) {
+      if (blobSave()) {
+        say("ダウンロードしました。<b>" + XNAME + "</b> をExcelで開いてください。", true);
+      } else { openFallback("この画面ではファイルの保存ができませんでした。"); }
+      return fin();
+    }
+
+    // ★英語の確認ダイアログが「まん中」に出る。これを知らないと受講生はCancelを押す。
+    //   2026-08-27、実機で確認：Let this Artifact download a file? / Cancel / Save file
+    say("<b>画面のまん中に、英語の窓が出ます。</b>"
+        + "<span class=\"sheetbox-en\">Let this Artifact download a file?</span>"
+        + "<b>右下の黒い［Save file］</b>を押してください。"
+        + "<span class=\"sheetbox-warn\">［Cancel］を押すと保存されません。</span>", true);
+
+    // ★人が押すのを待つ部分に制限時間を付けてはいけない。
+    //   英語の窓を読んでいる間に「失敗しました」と出てしまう（2026-08-27に実際に出た）。
+    //   時間で切るのは「ビューアが返事をするかどうか」の部分だけ。
+    function trySave(d, name, data) {
+      return d.save({filename: name, data: data}).then(function () {
+        say("ダウンロードしました。パソコンの<b>「ダウンロード」フォルダ</b>に入っている "
+            + "<b>" + name + "</b> を、ExcelかGoogleスプレッドシートで開いてください。", true);
+      }, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "extension_not_enabled" || code === "rejected_extension") {
+          return d.save({filename: name.replace(/\.csv$/, ".txt"), data: data}).then(function () {
+            say("ダウンロードしました。ファイル名の末尾を <b>.txt</b> から <b>.csv</b> に変えてから、"
+                + "ExcelかGoogleスプレッドシートで開いてください。", true);
+          });
+        }
+        return Promise.reject(e);
+      });
+    }
+
+    var body = "\uFEFF" + CSV;
+    var getDL = dlObj ? Promise.resolve(dlObj)
+      : withTimeout(Promise.resolve(window.claude.use("downloads")), 12000, "use");
+    getDL
+      .then(function (d) {
+        if (!d || !d.save) return Promise.reject({code: "unavailable"});
+        return trySave(d, CNAME, body);
+      })
+      .then(null, function (e) {
+        var code = (e && e.code) || "";
+        if (code === "declined") {
+          say("ダウンロードを取りやめました（［Cancel］を押しました）。"
+              + "もう一度「ダウンロード」を押すと、また同じ窓が出ます。"
+              + "<b>今度は右下の黒い［Save file］</b>を押してください。", false);
+          return;
+        }
+        var head = (code === "timeout" || code === "unavailable")
+          ? "この画面ではファイルの保存ができないようです（スマホや、共有リンクで開いたときに起きます）。"
+          : "この画面ではファイルの保存ができませんでした。";
+        openFallback(head);
+      })
+      .then(fin, fin);
+  });
+
+  cp.addEventListener("click", function () {
+    copyText(TSV).then(function (ok) {
+      var old = "表をコピー";
+      cp.textContent = ok ? "コピーしました" : "コピーできません";
+      if (ok) {
+        say("表をコピーしました。ExcelかGoogleスプレッドシートを開いて、"
+            + "いちばん左上のマスで <b>Ctrl+V</b>（Macは&#8984;+V）を押してください。", true);
+      } else {
+        openFallback("コピーがブロックされました。");
+      }
+      setTimeout(function () { cp.textContent = old; }, 2400);
+    });
+  });
+})();
+</script>
+<!--/SHEET-->
+
+<h2>5. 提出物</h2>
+
+<div class="win"><b>提出するのは「テーマ設計シート」1枚だけです。</b><br>
+キーワード7つも、仮タイトル3案も、1行で言い切った文も、<b>すべてこのシートの中に入っています。</b>
+別々に用意する必要はありません。</div>
+
+<ul class="check">
+  <li><b>【第1回 宿題】テーマ設計シート</b><br>
+  <span style="font-size:13.5px;color:var(--sub);">埋められるところまででOKです。<b>空欄のまま持ってきてください。</b>
+  どこが埋まらなかったかが、いちばん大事な情報です。</span></li>
+</ul>
+
+<div class="note"><b>提出しなくていいけれど、消さずに残しておくもの</b>
+<ul style="margin:8px 0 0;">
+<li>プロンプト<b>⑦</b>で出てきた<b>目次（5章・各章3節）</b></li>
+<li>プロンプト<b>⑧</b>で作った<b>設定シート</b></li>
+</ul>
+<p style="margin:10px 0 0;"><b>次回は、この2つを貼るところから始めます。</b>
+チャットごと残しておくのがいちばん安全です。</p></div>
+
+<h2>6. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報です。</b></p>
+<div style="border:1px dashed var(--line);border-radius:8px;height:130px;margin:8px 0 0;"></div>
+
+<footer>AI出版スクール 第1回 テーマを決める ／ 2026-08-27 更新（記入シートの保存手順を明記） ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+
+</body>
+</html>

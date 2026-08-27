@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第4回 表紙をつくる</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(150deg,#16202b,#1a3a6b);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.prompt{position:relative;background:#16202b;color:#e8eef5;border-radius:10px;padding:22px 24px 24px;
+ font-size:13px;line-height:1.95;white-space:pre-wrap;word-break:break-word;margin:14px 0 8px;
+ font-family:"Consolas","Menlo","Courier New",monospace;}
+.prompt .tag{position:absolute;top:-11px;left:18px;background:var(--accent);color:#fff;
+ font-size:11px;letter-spacing:.1em;border-radius:5px;padding:3px 12px;font-family:inherit;}
+.fill{color:#ffd479;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:11px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.work{border:1px dashed var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;}
+.work h4{margin:0 0 10px;color:var(--accent);}
+.blank{border-bottom:1px solid var(--line);height:34px;margin:0 0 8px;}
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .prompt{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 04</p>
+<h1>第4回　表紙をつくる</h1>
+<p>本の中身と同じくらい売上を左右する工程です。ここだけは時間をかけてください。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>KDPにそのまま上げられる表紙が1枚できている。</b></p>
+<p>作り方は<b>ChatGPT（またはGemini）に指示を出して作らせる</b>だけです。デザインソフトは使いません。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l4">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l4"></span></div>
+  <div id="termsmsg_l4"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l4";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. なぜ表紙が一番大事なのか</h2>
+<p>Amazonの検索結果には何十冊も本が並びます。読者はまず表紙を見て、<b>興味を持つかどうかを一瞬で判断</b>します。中身がどれだけ良くても、表紙で止まってもらえなければ読まれません。</p>
+
+<div class="trap"><b>ただし、初心者がやってはいけないことが1つあります。</b><br>
+<b>デザインを一から勉強しようとしないでください。</b>色彩やレイアウトを学び始めると、そこで作業が止まります。<br>
+やることは<b>「売れている表紙のいいところを借りて組み替える」</b>だけです。これをモデリングと言います。</div>
+
+<h2>2. まず「お手本」を3冊集める</h2>
+<p>ゼロから考えません。<b>自分のテーマで実際に売れている本を3冊以上</b>探して、いいところを借ります。</p>
+
+<ol class="steps">
+  <li><b>Amazonで自分のテーマを検索する</b>
+    <span>Kindleストアで、自分が狙う読者が打ちそうな言葉で検索します</span></li>
+  <li><b>上位の表紙から3冊選ぶ</b>
+    <span>「自分の本もこういう見た目にしたい」と思えるものを選んでください</span></li>
+  <li><b>3冊から別々の要素を借りる</b>
+    <span>1冊目から<b>文字の置き方</b>／2冊目から<b>色の組み合わせ</b>／3冊目から<b>帯の作り方・人物の配置</b></span></li>
+</ol>
+
+<div class="alert"><b>1冊をそのまま真似るのは絶対にダメです。</b>
+著作権の問題になるだけでなく、<b>Amazonのアカウントに悪影響が出ることがあります。</b>
+必ず<b>3冊以上から別々の要素を借りて、新しい組み合わせ</b>にしてください。</div>
+
+<div class="win"><b>★第0回で調べた5冊を、ここで使います。</b><br>
+第0回の宿題で、同じ棚から5冊を調べて表に書きましたね。<b>あの5冊から2〜3冊を選んでください。</b>
+新しく探し直す必要はありません。<br>
+選ぶ基準は「<b>自分が一番手に取りたくなった本</b>」（シートの最後に書いたもの）から順に。<br>
+<b>調べるのは5冊、真似るのは2〜3冊。</b>5冊全部から借りると、まとまりのない表紙になります。</div>
+
+<div class="trap"><b>お手本に選んではいけない本：</b>
+<b>有名人・タレント・すでに知られている著者の本。</b><br>
+その本が売れているのは<b>名前で売れている</b>のであって、表紙が良いからとは限りません。
+真似ても同じようには売れません。<br>
+<b>無名の個人が出していて、それでも売れている本</b>を選んでください。そちらは
+<b>企画・タイトル・表紙で売れている</b>ので、参考になります。</div>
+
+<div class="work">
+<h4>ワーク：お手本3冊を書き出す</h4>
+<p style="font-size:13.5px;color:var(--sub);margin-bottom:10px;">タイトル／その表紙から何を借りるか</p>
+<div class="blank"></div><div class="blank"></div><div class="blank"></div>
+</div>
+
+<h2>2b. 表紙は5つの部品でできています</h2>
+<p>売れている表紙は、だいたいこの5つが揃っています。<b>逆に、どれかが抜けている表紙は情報が足りません。</b>
+自分の表紙を見直すときのチェックリストとしても使えます。</p>
+
+<div class="scroll">
+<table>
+<tr><th>部品</th><th>どこ</th><th>役割と決まり</th></tr>
+<tr><td><b>① トッパー</b></td><td>いちばん上</td>
+<td><b>ここが一番見られます。</b>「これは私のための本だ」と思わせる場所。<br>
+入れるのは <b>実績</b>（「◯人に聞いて分かった」「図解付き」）／<b>シリーズ名</b>（「50代のための」「はじめての人へ」）／
+<b>キャッチコピー</b> のどれか</td></tr>
+<tr><td><b>② タイトル</b></td><td>真ん中の上</td>
+<td><b>大きさで勝負します。</b>表紙全体の<b>3分の1</b>を使うつもりで。<br>
+スマホの一覧（親指の爪くらい）で読めるかが基準</td></tr>
+<tr><td><b>③ ボディ</b></td><td>真ん中</td>
+<td>イラストや人物。<b>すき間は作らない。でもごちゃごちゃさせない。</b><br>
+すき間が多いと「素人が作った」に見えます</td></tr>
+<tr><td><b>④ 著者名</b></td><td>下のほう</td>
+<td>表紙では<b>目立たなくて構いません。</b><br>
+大事なのは<b>KDPの申請画面のほうで「肩書き」を付けること</b>（第6回でやります）</td></tr>
+<tr><td><b>⑤ 帯</b></td><td>いちばん下</td>
+<td><b>デザインが苦手な人ほど必ず付けてください。</b>理由は下に</td></tr>
+</table>
+</div>
+
+<div class="win"><b>★なぜ帯を付けるのか（3つあります）</b>
+<ol style="margin:8px 0 0;">
+<li><b>本らしく見えます。</b>帯がないと、検索結果に並んだとき「本の画像」に見えず、押してもらえません</li>
+<li><b>メリハリが出ます。</b>帯で区切ると、上の6割とその下で別々に見てもらえます</li>
+<li><b>あとから帯だけ直せます。</b>全体のバランスを作り直さずに、下の一行だけ差し替えられます</li>
+</ol>
+<p style="margin:8px 0 0;">上下の比率は <b>6.5 : 3.5</b> くらい。帯に入れるのは
+<b>キャッチコピー1本</b>か、<b>「読めば分かること」を3行</b>のどちらかです。</p></div>
+
+<div class="alert"><b>ただし、帯に「特典付き」「ベストセラー」「今だけ」は入れません。</b>
+表紙への広告・キャンペーンの記述は、KDPの品質ガイドで問題とされています。
+帯には<b>サブタイトル寄りの言葉</b>を入れてください。</div>
+
+<h2>2c. 色は3〜4色まで</h2>
+<div class="scroll">
+<table>
+<tr><th>決まり</th><th>理由</th></tr>
+<tr><td><b>使う色は3〜4色まで</b></td><td>色が増えるほど、目立つどころか<b>見づらくなります。</b>統一感もなくなります</td></tr>
+<tr><td>背景／文字／目立つ色の<b>3つに分けて決める</b></td><td>先に役割を決めると、迷いません</td></tr>
+<tr><td>書体（フォント）は<b>1〜2種類</b>まで</td><td>種類が増えると、それだけで素人っぽく見えます</td></tr>
+<tr><td>文字や画像の<b>端をそろえる</b></td><td>そろっていないだけで雑に見えます</td></tr>
+</table>
+</div>
+<div class="note"><b>「おしゃれ」を目指さないでください。</b>
+表紙の仕事は<b>一秒で「何の本か」「自分に関係あるか」を伝えること</b>です。<br>
+Amazonでは読者が大量の表紙を高速でスクロールしています。<b>一瞬で伝わらなければ、飛ばされます。</b></div>
+
+<h2>3. 表紙に入れる文字を先に決める</h2>
+<p><b>絵より先に文字を決めます。</b>ここが決まっていないまま画像を作らせると、何度やり直しても決まりません。</p>
+
+<div class="scroll">
+<table>
+<tr><th>場所</th><th>入れるもの</th><th>例</th></tr>
+<tr><td><b>①上の帯</b></td><td>読者を名指しする1行</td><td>「50代でも、まだ間に合う」</td></tr>
+<tr><td><b>②メインタイトル</b></td><td><b>2行まで。</b>いちばん伝えたい言葉</td><td>「なぜ、寝ても疲れが取れないのか」</td></tr>
+<tr><td><b>③サブタイトル</b></td><td>1行。中身を補う</td><td>「回復力が落ちた体の、休み方」</td></tr>
+<tr><td><b>④下の帯</b></td><td>1行。読むとどうなるか</td><td>「眠り方ではなく、休養感を上げる」</td></tr>
+<tr><td><b>⑤著者名</b></td><td>小さくてよい</td><td>「著者：〇〇 〇〇」</td></tr>
+</table>
+</div>
+
+<div class="win"><b>文字は少ないほど強くなります。</b>
+迷ったら削ってください。①と④は無くても成立します。<b>②メインタイトルだけは絶対に外せません。</b></div>
+
+<h3>効かせ方の3つの決まり</h3>
+<ul>
+  <li><b>重要語だけ大きく・他は小さく。</b>全部同じ大きさにすると、何が大事か分からなくなります</li>
+  <li><b>色は3〜4色まで。</b>増やすほど安っぽくなります</li>
+  <li><b>数字は目を引きます。</b>「4人に1人」「3ステップ」「1日10分」があれば大きく置く</li>
+</ul>
+
+<h2>4. ChatGPTに作らせる（プロンプト）</h2>
+<p>下の文をコピーして、<b>黄色の部分を自分の本の内容に書き換えて</b>ChatGPTに貼ってください。画像を作る指示です。</p>
+
+<div class="prompt"><span class="tag">COPY ①  人物を入れる表紙</span>Kindle電子書籍の表紙を1枚つくってください。
+
+【サイズ】縦2560px × 横1600px（縦長）
+
+【表紙に入れる文字】※<b>これ以外の文字は絶対に入れないでください</b>
+・上の帯（1行）：<span class="fill">〇〇〇〇</span>
+・メインタイトル（2行）：<span class="fill">〇〇〇〇</span>
+・サブタイトル（1行）：<span class="fill">〇〇〇〇</span>
+・下の帯（1行）：<span class="fill">〇〇〇〇</span>
+・著者名：<span class="fill">〇〇 〇〇</span>
+
+【読者】<span class="fill">〇〇代の〇〇。〇〇で悩んでいる人</span>
+
+【デザイン】
+・色は3〜4色まで。<span class="fill">濃紺と赤と白</span>を基調にする
+・メインタイトルの「<span class="fill">〇〇</span>」だけ赤にして、残りは濃紺
+・文字は<b>太いゴシック体</b>。細い書体は使わない
+・人物は<span class="fill">〇〇代の男性。疲れた表情</span>。<b>胸から上を大きく</b>入れる
+・背景はシンプルに。細かい模様や装飾は入れない
+・アニメ調のイラストで、写真は使わない
+
+【いちばん大事な条件】
+・スマホの検索結果（幅115px）に縮小しても、<b>メインタイトルがはっきり読める</b>大きさにすること
+・日本語の文字を<b>1文字も崩さない、にじませない、間違えない</b>こと
+・上に書いた文字以外を勝手に足さないこと（英語・ローマ字・意味のない文字を入れない）
+・価格、「特典付き」「ベストセラー」などの宣伝文句は入れないこと</div>
+
+<p>人物を出さない本（お金・ノウハウ系など）はこちらを使ってください。</p>
+
+<div class="prompt"><span class="tag">COPY ②  文字中心の表紙</span>Kindle電子書籍の表紙を1枚つくってください。
+
+【サイズ】縦2560px × 横1600px（縦長）
+
+【表紙に入れる文字】※<b>これ以外の文字は絶対に入れないでください</b>
+・上の帯（1行）：<span class="fill">〇〇〇〇</span>
+・メインタイトル（2行）：<span class="fill">〇〇〇〇</span>
+・サブタイトル（1行）：<span class="fill">〇〇〇〇</span>
+・著者名：<span class="fill">〇〇 〇〇</span>
+
+【デザイン】
+・<b>文字が主役の表紙</b>にする。文字が全体の6割を占めるようにする
+・色は3〜4色まで。<span class="fill">黄色の地に濃紺の文字</span>
+・メインタイトルの「<span class="fill">〇〇</span>」だけ赤にする
+・文字は<b>太いゴシック体</b>。細い書体は使わない
+・背景は無地に近く。イラストを入れる場合は<span class="fill">〇〇</span>を小さく添える程度
+
+【いちばん大事な条件】
+・スマホの検索結果（幅115px）に縮小しても、<b>メインタイトルがはっきり読める</b>大きさにすること
+・日本語の文字を<b>1文字も崩さない、にじませない、間違えない</b>こと
+・上に書いた文字以外を勝手に足さないこと
+・価格、「特典付き」などの宣伝文句は入れないこと</div>
+
+<div class="note"><b>3案つくって比べてください。</b>1回の出力で決めないこと。方向性を変えて3回作ります。<br>
+①信頼感のある落ち着いた案　②初心者向けの親しみやすい案　③漫画・イラストを前面に出した案</div>
+
+<h2>5. できたら必ず確認する（ここが本番）</h2>
+<div class="alert"><b>AIは日本語の文字をよく間違えます。</b>
+「解決策」が「解決サクサク」になる、著者名がにじむ、といったことが普通に起きます。<b>作ったら必ず自分の目で確かめてください。</b></div>
+
+<ul class="check">
+  <li><b>拡大して</b>、誤字がないか1文字ずつ見た</li>
+  <li>文字がにじんだり崩れたりしていない</li>
+  <li>頼んでいない文字（英語・意味のない記号）が勝手に入っていない</li>
+  <li><b>画面を縮小して</b>、幅115pxくらいでもメインタイトルが読める</li>
+  <li>並べたとき、お手本3冊の中に置いても見劣りしない</li>
+  <li>価格や「特典付き」などの宣伝文句が入っていない</li>
+</ul>
+
+<h3>崩れていたときの直し方</h3>
+<ol class="steps">
+  <li><b>まず文字を減らして作り直す</b>
+    <span>上の帯と下の帯を消して、メインタイトルとサブタイトルだけにする。<b>文字が多いほど崩れます。</b>減らすだけで一気に成功率が上がります</span></li>
+  <li><b>それでも崩れるなら、絵と文字を分ける</b>
+    <span>ChatGPTに<b>「文字は一切入れず、絵だけ」</b>を作らせる。そのあと文字はCanvaで自分で入れます（下の補足）</span></li>
+</ol>
+
+<h2>6. 補足：Canvaを使う方法（できる人向け）</h2>
+<p>デザインソフトが平気な人は、こちらのほうが確実です。<b>文字が絶対に崩れません。</b></p>
+<ol>
+  <li>Canvaで<b>1600 × 2560px</b>のキャンバスを作る</li>
+  <li>ChatGPTで<b>文字なしの絵だけ</b>を作り、Canvaにアップロードして四隅をドラッグしてサイズを合わせる</li>
+  <li>「素材」から四角形を出して横に伸ばし、<b>帯</b>を作る</li>
+  <li>テキストで文字を入れる。重要語を大きく、色は3〜4色</li>
+  <li>縮小して読めるか確認</li>
+  <li>共有 → ダウンロード → <b>JPEG</b>を選び、表紙のページだけを書き出す</li>
+</ol>
+<div class="trap"><b>Canvaの注意：</b>王冠マークが付いた素材は<b>有料</b>です。無料プランだとダウンロードできません。最初から王冠マークのない素材だけを選んでください。無料素材だけで十分に作れます。</div>
+
+<h2>7. KDPの必要条件（ここを外すと弾かれます）</h2>
+<div class="scroll">
+<table>
+<tr><th>項目</th><th>条件</th></tr>
+<tr><td>ファイル形式</td><td><b>JPEG（.jpg/.jpeg）またはTIFF。PNGは使えません</b></td></tr>
+<tr><td>推奨サイズ</td><td><b>高さ2,560 × 幅1,600 px</b>（高さは2,500px以上にする）</td></tr>
+<tr><td>最小サイズ</td><td>高さ1,000 × 幅625 px　／　上限は縦横とも10,000px</td></tr>
+<tr><td>縦横比</td><td>1.6:1 以上（幅1,000pxなら高さ1,600px）</td></tr>
+<tr><td>解像度</td><td>DPIの指定は72dpi。<b>画質を良くするなら300PPIで作る</b></td></tr>
+<tr><td>カラー</td><td>RGB（赤・緑・青）</td></tr>
+<tr><td>ファイルサイズ</td><td>50MB未満。<b>圧縮しない</b>（圧縮するとKindleで粗く見えます）</td></tr>
+<tr><td>枠線</td><td><b>背景が白や薄い色のときは、3〜4pxの薄い灰色の枠線を付ける</b><br>
+<span style="font-size:13px;color:var(--sub);">Amazonの白い背景に溶けて、表紙の輪郭が見えなくなるため（公式がすすめています）</span></td></tr>
+</table>
+</div>
+<div class="alert"><b>表紙に宣伝文句を入れてはいけません。</b>
+KDPの品質ガイドが、表紙のよくある問題として
+<b>「広告やキャンペーンに関する記述が表紙に含まれている（「無料」など）」</b>を挙げています。<br>
+「特典付き！」「今だけ無料」「ベストセラー1位」などは入れないでください。<br>
+<span style="font-size:13px;">出典：<a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G200952510" target="_blank" rel="noopener">KDP公式・Kindleコンテンツの品質ガイド</a>
+／ <a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G200645690" target="_blank" rel="noopener">表紙画像の必要条件</a></span></div>
+
+<h2>8. 提出物</h2>
+<ul class="check">
+  <li>お手本3冊のメモ（タイトルと、何を借りたか）</li>
+  <li>表紙3案（比較したもの）</li>
+  <li>採用した表紙1枚（<b>JPEG・1600×2560</b>）</li>
+  <li>115pxに縮小した画像（読めることの確認用）</li>
+</ul>
+
+<h2>9. 質問メモ欄</h2>
+<div style="border:1px dashed var(--line);border-radius:8px;height:130px;margin:8px 0 0;"></div>
+
+<footer>AI出版スクール 第4回 表紙をつくる ／ 2026-08-26 更新（表紙の5要素・色・公式の必要条件） ／ 2026-08-23 ／ ツール開発/出版教育/01_カリキュラム/<br>
+出典：AIC講義 2026-07-24（表紙デザインの実践・モデリング手法）／KDP 電子書籍の表紙画像の必要条件</footer>
+</div>
+</body>
+</html>
