@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第7回 挿絵を入れる</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 07</p>
+<h1>第7回　挿絵を入れる</h1>
+<p>挿絵は飾りではありません。読者に何を分からせるための絵か。それを決めてから作ります。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>文章の理解を助ける挿絵が、章ごとに配置されている状態。</b></p>
+<p>ここからフェーズ2です。1冊目で出版の流れは掴んでいます。
+ここからは<b>「読まれる本」にする技術</b>に入ります。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l7">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l7"></span></div>
+  <div id="termsmsg_l7"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l7";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 挿絵は「図解」です</h2>
+<div class="alert">
+<b>きれいな絵を入れても、読了率は上がりません。</b>
+上がるのは<b>「文章だけでは分かりにくいところ」に絵が入ったとき</b>だけです。
+</div>
+<p>作る前に、その絵1枚につき1行で書いてください。</p>
+<div class="quote"><b>この絵は、読者の「＿＿＿が分からない」を解消するために置く。</b></div>
+<p>これが書けない絵は、入れなくていい絵です。</p>
+
+<div class="scroll"><table>
+<tr><th>入れる価値がある挿絵</th><th>入れても効かない挿絵</th></tr>
+<tr><td>手順の流れ（①→②→③）</td><td>章の扉に置いた、ただの風景</td></tr>
+<tr><td>2つを見比べる図（before / after）</td><td>本文をそのまま絵にしただけのもの</td></tr>
+<tr><td>関係の図（誰と誰がどうつながるか）</td><td>意味のないイメージカット</td></tr>
+<tr><td>数字の変化（グラフ・目盛り）</td><td>文章と関係のないキャラの立ち絵</td></tr>
+</table></div>
+
+<h2>2. 枚数と置き場所</h2>
+<ul>
+<li><b>1章につき2〜4枚</b>が目安。6章なら12〜24枚</li>
+<li>置くのは<b>その説明の直後</b>。章の頭にまとめて置かない</li>
+<li>同じページに2枚並べない（スマホでは片方が切れます）</li>
+</ul>
+
+<h2>3. 絵柄をそろえる（ここで素人っぽさが出ます）</h2>
+<div class="alert">
+<b>絵柄がバラバラだと、中身が良くても一気に素人臭くなります。</b>
+1枚ずつ別々に作ると、必ずバラバラになります。
+</div>
+<div class="win">
+<b>先に「絵柄の決め」を1つ作って、全部の絵で同じものを使う。</b><br>
+線の太さ・色数・塗り方・背景の有無・文字を入れるか。この5つを最初に決めて固定します。
+</div>
+<div class="scroll"><table>
+<tr><th>決めること</th><th>例</th></tr>
+<tr><td>線</td><td>細い黒線／太い線／線なし</td></tr>
+<tr><td>色数</td><td><b>3色まで</b>（本文の読みやすさが変わります）</td></tr>
+<tr><td>塗り</td><td>フラット塗り／グラデーションなし</td></tr>
+<tr><td>背景</td><td>白のまま（本文の背景と同じ）</td></tr>
+<tr><td>文字</td><td>絵の中に日本語を入れるか。<b>入れるなら全部の絵で入れる</b></td></tr>
+</table></div>
+
+<h2>4. キャラクターを出す場合</h2>
+<ul>
+<li><b>外見を先に固定する。</b>髪型・髪色・服・体型・年齢。曖昧だと途中で別人になります</li>
+<li>登場は2〜3人まで。多いと読者が覚えられません</li>
+<li>1冊を通して<b>同じ立ち絵を使い回す</b>のがいちばん崩れません</li>
+</ul>
+
+<h2>5. 拡大して確認する（絶対に飛ばさない）</h2>
+<div class="alert">
+<b>縮小した一覧では、手指の破綻や左右の崩れを必ず見落とします。</b>
+サムネイルで並べて「よさそう」と判断しないでください。
+<b>1枚ずつ、原寸まで拡大して見てください。</b>
+</div>
+<ul class="check">
+<li>指の本数がおかしくない</li>
+<li>左右対称のもの（目・靴・袖）が崩れていない</li>
+<li>文字が入っている絵で、文字化けや意味不明な文字列がない</li>
+<li>人の体の向きと顔の向きが噛み合っている</li>
+<li>前の絵と同じキャラが、同じ人に見える</li>
+</ul>
+
+<h2>6. ファイル形式とサイズ</h2>
+<div class="win">
+<b>挿絵と漫画はPNGのままでよい（画質重視）。JPEG必須なのは表紙だけです。</b>
+</div>
+<ul>
+<li>本文に入れるときの<b>幅は28cmで統一</b>。縦横比は保つ</li>
+<li>キャプション（絵の下の説明文）は<b>付けない</b>。Kindleでは位置がずれます</li>
+<li>絵の中で説明したいことは、絵の中に描き込む</li>
+</ul>
+
+<h2>7. 提出物</h2>
+<div class="win"><b>挿絵一式（PNG）＋「この絵は何を分からせるためか」の一覧。</b></div>
+<ul class="check">
+<li>すべての絵に「何を分からせるための絵か」が1行で書いてある</li>
+<li>絵柄の決め（線・色数・塗り・背景・文字）を先に決めて、全部で守った</li>
+<li>1枚ずつ拡大して確認した</li>
+<li>キャラを出したなら、外見の設定が固定されている</li>
+<li>PNGで保存されている</li>
+</ul>
+
+<h2>8. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第7回 挿絵を入れる ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

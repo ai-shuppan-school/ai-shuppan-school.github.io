@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第12回 自分のフォーマットを決める</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 12</p>
+<h1>第12回　自分のフォーマットを決める</h1>
+<p>2冊作った実感をもとに、3冊目以降どの形で出し続けるかを決めます。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>3冊目以降、自分がどの形で本を出し続けるかが決まっている状態。</b></p>
+<p>ここまでで、文章だけの本と、漫画入りの本を両方作りました。
+<b>やってみて分かったこと</b>があるはずです。それをもとに決めます。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l12">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l12"></span></div>
+  <div id="termsmsg_l12"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l12";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 4つの形</h2>
+<div class="scroll"><table>
+<tr><th>形</th><th>制作時間</th><th>費用</th><th>向いている人</th><th>読まれ方</th></tr>
+<tr><td><b>文章だけ</b></td><td>短い</td><td>ほぼゼロ</td><td>書くのが苦にならない／量を出したい</td><td>読み慣れた人向け。最後まで読まれにくい</td></tr>
+<tr><td><b>文章＋挿絵</b></td><td>やや長い</td><td>小</td><td>説明の多いテーマ／手順もの</td><td>理解が進む。読了率が上がる</td></tr>
+<tr><td><b>文章＋挿絵＋漫画</b></td><td>長い</td><td>中</td><td>感情に訴えるテーマ／初心者向け</td><td><b>いちばん読了率が高い</b>。ただし重い</td></tr>
+<tr><td><b>全編漫画</b></td><td>いちばん長い</td><td>大</td><td>ストーリーで語れるテーマ</td><td>棚で目立つ。中身は薄くなりやすい</td></tr>
+</table></div>
+
+<div class="win">
+<b>選ぶ基準はひとつです。「続けられるか」。</b><br>
+いちばん良い形を選ぶのではなく、<b>自分が月に1冊出し続けられる形</b>を選んでください。
+続かない形を選ぶと、3冊目で止まります。
+</div>
+
+<h2>2. 自分の2冊を振り返る</h2>
+<p>感覚ではなく、実際に起きたことで判断します。次を書き出してください。</p>
+<div class="scroll"><table>
+<tr><th>項目</th><th>1冊目（文章だけ）</th><th>2冊目（漫画入り）</th></tr>
+<tr><td>かかった日数</td><td></td><td></td></tr>
+<tr><td>かかった費用</td><td></td><td></td></tr>
+<tr><td>いちばん時間を食った工程</td><td></td><td></td></tr>
+<tr><td>いちばん楽しかった工程</td><td></td><td></td></tr>
+<tr><td>いちばん苦痛だった工程</td><td></td><td></td></tr>
+<tr><td>売上（30日）</td><td></td><td></td></tr>
+<tr><td>KENP（読まれたページ数）</td><td></td><td></td></tr>
+</table></div>
+<div class="quote"><b>「苦痛だった工程」を見てください。</b>
+そこが毎回来る形を選ぶと、続きません。逆に、そこが自動化できるなら選んでいい形です。</div>
+
+<h2>3. 数字の読み方</h2>
+<div class="scroll"><table>
+<tr><th>数字</th><th>何が分かるか</th><th>低いときに疑うところ</th></tr>
+<tr><td><b>表示回数</b></td><td>棚に並んだ回数</td><td>キーワード／カテゴリー／タイトル</td></tr>
+<tr><td><b>クリック率</b></td><td>表紙とタイトルで選ばれたか</td><td><b>表紙</b>。競合の棚に並べて浮いているか</td></tr>
+<tr><td><b>購入・読み放題の開始</b></td><td>内容紹介と試し読みで納得されたか</td><td><b>内容紹介と目次</b></td></tr>
+<tr><td><b>KENP（読まれたページ数）</b></td><td>最後まで読まれたか</td><td><b>本文の構成。</b>途中で止まっている</td></tr>
+</table></div>
+<div class="win">
+<b>数字は「どこを直すか」を教えてくれます。</b><br>
+売れないときに全部を作り直すのではなく、<b>止まっている場所だけ</b>を直してください。
+表示されていないのに表紙を直しても、何も変わりません。
+</div>
+
+<h2>4. シリーズにする</h2>
+<div class="alert">
+<b>1冊で終わらせないでください。</b>
+2冊目3冊目があると、1冊読んだ人が次を買います。<b>本が本を売る</b>状態になります。
+</div>
+<ul>
+<li><b>表紙は型でそろえ、色を巻ごとに変える。</b>並んだときにシリーズだと分かる</li>
+<li>タイトルの型をそろえる（「〇〇の△△」など）</li>
+<li>巻末で次の巻に触れる。ただし宣伝くさくしない</li>
+<li>同じ読者に向けて出す。<b>読者を変えるとシリーズにならない</b></li>
+</ul>
+
+<h2>5. ジャンルをずらしていく</h2>
+<p>同じジャンルで3冊出したら、少しずつずらしてみてください。</p>
+<ul>
+<li><b>最初の一歩を変える</b>（読者の入口を変える）</li>
+<li><b>キーワードをずらす</b>（同じテーマでも検索する言葉は複数ある）</li>
+<li><b>ジャンルそのものを変えてみる</b>（当たりを探す）</li>
+</ul>
+<div class="quote">当たるジャンルは、やってみないと分かりません。
+<b>3冊は同じジャンルで出して型を作り、そこから広げる</b>のが安全です。</div>
+
+<h2>6. 提出物</h2>
+<div class="win"><b>自分の出版フォーマット定義 ＋ 3冊目の企画。</b></div>
+<ul class="check">
+<li>1冊目・2冊目の振り返り表が埋まっている（日数・費用・苦痛だった工程・数字）</li>
+<li>3冊目以降の形を1つ選んだ（文章だけ／＋挿絵／＋漫画／全編漫画）</li>
+<li>選んだ理由が「続けられるかどうか」で説明できる</li>
+<li>3冊目のテーマ・読者・キーワード7つが決まっている</li>
+<li>シリーズにするなら、表紙の型とタイトルの型が決まっている</li>
+</ul>
+
+<h2>7. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第12回 自分のフォーマットを決める ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

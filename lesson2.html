@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第2回 目次を作る</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 02</p>
+<h1>第2回　目次を作る</h1>
+<p>本文を書き始める前に、ここで悩みきってください。書いてから直すと、全章の書き直しになります。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>目次を見ただけで、読者が「これは自分の悩みの本だ」と分かる状態。</b></p>
+<p>本文はまだ1文字も書きません。この回で作るのは「設計図」です。家を建てる前の図面と同じで、
+ここが曲がっていると、あとで全部やり直しになります。</p>
+</div>
+
+<div class="alert">
+<b>この回でいちばん大事なこと。</b><br>
+<b>本文を書き始めてから目次を直すと、全章の書き直しになります。</b>
+「とりあえず書きながら考える」は、いちばん時間とお金を溶かすやり方です。
+今日のうちに、気持ち悪いところを全部つぶしてください。
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l2">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l2"></span></div>
+  <div id="termsmsg_l2"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l2";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. なぜ目次で決まるのか</h2>
+<p>読者がKindleでやることを、順番に思い出してください。</p>
+<ol>
+<li>検索する</li>
+<li>表紙を見る</li>
+<li>タイトルを読む</li>
+<li><b>「試し読み」を押して、目次を見る</b></li>
+<li>買う／買わない を決める</li>
+</ol>
+<p><b>目次は、買う直前に必ず見られます。</b>ここで「自分の話だ」と思えなければ、
+どれだけ本文が良くても読まれません。</p>
+
+<div class="quote">
+目次は「章の名前の一覧」ではありません。<b>読者への約束の一覧</b>です。
+1行ずつが「あなたのこの悩みに、この本はこう答えます」という宣言になっているかで見てください。
+</div>
+
+<h2>2. 章と節の作り方</h2>
+
+<div class="stepbox">
+<h3><span class="n">STEP 1</span>第1回で決めた「悩み」を並べる</h3>
+<p>テーマ設計シートに書いた <b>⑧⑨⑩の悩み3つ</b>と、<b>⑫の「夜、眠れなくなるとき」</b>を横に並べてください。
+章はここから生まれます。ゼロから考えないでください。</p>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 2</span>章を5〜7章にする</h3>
+<p>少なすぎると薄く、多すぎると散ります。<b>5〜7章</b>が読みやすい範囲です。</p>
+<div class="scroll"><table>
+<tr><th>章</th><th>その章の役割</th></tr>
+<tr><td>第1章</td><td><b>共感</b>。読者の今の状態を言葉にする。「なんで分かるの」と思わせる</td></tr>
+<tr><td>第2章</td><td><b>原因</b>。なぜそうなっているのか。読者が悪いのではないと示す</td></tr>
+<tr><td>第3章</td><td><b>方法（基本）</b>。いちばん簡単な一歩</td></tr>
+<tr><td>第4章</td><td><b>方法（応用）</b>。うまくいきだしたら次にやること</td></tr>
+<tr><td>第5章</td><td><b>つまずき対策</b>。ここで折れる人が多い、という話</td></tr>
+<tr><td>第6章</td><td><b>その先</b>。続けたらどうなるか。読者の未来を見せる</td></tr>
+</table></div>
+<p class="trap"><b>やりがちな失敗：</b>1章からいきなり方法を教えてしまう。
+読者はまだ「自分ごと」だと思っていないので、読み飛ばされます。<b>共感が先、方法は後。</b></p>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 3</span>1章につき3節にする</h3>
+<p>5〜7章 × 3節 ＝ <b>15〜21節</b>。1節あたり1,200〜1,700字で、本文は約25,000字になります。
+1冊目はこの規模で十分です。</p>
+</div>
+
+<div class="stepbox">
+<h3><span class="n">STEP 4</span>各節に「答える疑問」を1行そえる</h3>
+<p>これがこの回のいちばん大事な作業です。節のタイトルの下に、
+<b>その節が読者のどの疑問に答えるか</b>を1行で書いてください。</p>
+<div class="scroll"><table>
+<tr><th>節タイトル</th><th>答える疑問（1行）</th></tr>
+<tr><td>1-1 気づけば同じ1年を5回くり返していた</td><td>「なぜ毎年同じことを言っているのに何も変わらないのか？」</td></tr>
+<tr><td>3-2 まず15分だけ、AIに話しかけてみる</td><td>「忙しくて時間がない自分でも、今日できることは何か？」</td></tr>
+</table></div>
+<p>書けない節は、<b>まだ中身が無い節</b>です。消すか、隣の節と合体させてください。</p>
+</div>
+
+<h2>3. 感情の流れを設計する</h2>
+<p>平坦な本は読み終わりません。読者の気持ちが動く順番を、目次の段階で作ります。</p>
+<div class="scroll"><table>
+<tr><th>位置</th><th>読者の気持ち</th><th>置くもの</th></tr>
+<tr><td>1章（上げ）</td><td>「分かってくれてる」</td><td>読者の現状をそのまま言葉にする</td></tr>
+<tr><td>2章（落とし）</td><td>「このままだとまずい」</td><td>放っておいたらどうなるか。ただし脅しすぎない</td></tr>
+<tr><td>3〜4章（上げ）</td><td>「これならできそう」</td><td>いちばん小さい一歩から</td></tr>
+<tr><td>5章（ピーク）</td><td>「うまくいくかも」</td><td>変わった人の具体例・つまずきの乗り越え方</td></tr>
+<tr><td>6章（着地）</td><td>「やってみよう」</td><td>読み終わった直後にやる1つだけを指定する</td></tr>
+</table></div>
+<div class="win"><b>着地でやること。</b>最後の節では、読者に<b>やることを1つだけ</b>渡してください。
+3つ渡すと0になります。「今日、これだけやってください」と1つに絞れている本は、感想が届きます。</div>
+
+<h2>4. キーワード7つを目次に効かせる</h2>
+<p>第1回で決めたキーワード7つを思い出してください。あれは飾りではありません。</p>
+<ul>
+<li><b>章タイトルか節タイトルの中に、キーワードを自然に入れる。</b>読者が検索した言葉が目次にあると「当たりだ」と思われます</li>
+<li><b>ただし詰め込まない。</b>不自然な日本語になった時点で逆効果です。7つのうち3〜4つ入れば十分</li>
+<li>入らなかったキーワードは、<b>本文の見出しや小見出しで使う</b></li>
+</ul>
+<div class="trap"><b>やってはいけないこと。</b>
+検索に引っかけるためだけに、中身と関係ないキーワードをタイトルに入れる行為は
+<b>KDPの規約違反</b>です（誤解を招く表現）。「やってはいけない集」を読んでから作業してください。</div>
+
+<h2>5. 巻末ページと特典をここで決める</h2>
+<p>本文を書いてから考えると、必ず取ってつけたようになります。目次と同時に決めます。</p>
+<div class="scroll"><table>
+<tr><th>ページ</th><th>中身</th><th>必須か</th></tr>
+<tr><td>おわりに</td><td>読者への手紙。1ページ。「ここまで読んでくれてありがとう」＋やることを1つ</td><td>おすすめ</td></tr>
+<tr><td>著者プロフィール</td><td>あなたが誰で、なぜこの本を書いたか。<b>実績を盛らない</b></td><td>おすすめ</td></tr>
+<tr><td>特典の案内</td><td>読者に渡すもの＋受け取り方（LINEなど）。<b>特典キーワードもここで決める</b></td><td>任意</td></tr>
+<tr><td>著作権表示</td><td>© 発行年 著者名／無断転載を禁じます</td><td><b>必須</b></td></tr>
+</table></div>
+<div class="alert"><b>実績を盛らない。</b>
+まだ達成していないことを「達成しました」と書くのは、規約の問題であると同時に、
+読者との信頼の問題です。<b>1冊目の著者プロフィールは「これから」で構いません。</b>
+「40代の会社員です。同じところで止まっていた自分に向けて書きました」で十分に伝わります。</div>
+
+<h2>6. 提出物</h2>
+<div class="win">
+<b>提出するのは「目次シート」1枚だけです。</b><br>
+章・節・各節が答える疑問。この3つが埋まっていれば完成です。
+</div>
+<ul class="check">
+<li>章が5〜7つある</li>
+<li>1章につき3節ある</li>
+<li>すべての節に「答える疑問」が1行ついている</li>
+<li>1章が共感から始まっている（いきなり方法になっていない）</li>
+<li>最後の節で、読者にやることを1つだけ渡している</li>
+<li>キーワードが3〜4つ、自然な形で入っている</li>
+<li>巻末に何を置くか決まっている（著作権表示は必須）</li>
+</ul>
+
+<h2>6. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第2回 目次を作る ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

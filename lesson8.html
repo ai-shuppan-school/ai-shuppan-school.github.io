@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第8回 漫画を設計する</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 08</p>
+<h1>第8回　漫画を設計する</h1>
+<p>AI漫画が読まれないのは、絵が下手だからではありません。漫画としての設計が無いからです。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>20ページ分のネーム（コマ割りとセリフ）が完成し、生成前チェックを通っている状態。</b></p>
+<p><b>この回だけは、丁寧に時間をかけてください。</b>
+ここが雑だと、あとの工程が全部やり直しになります。</p>
+</div>
+
+<div class="alert">
+<b>★書いてから直すと、全ページ作り直しになります。書く前にこのページを最後まで読んでください。</b><br>
+画像生成には費用がかかります。費用は「枚数 × やり直した回数」で効きます。
+<b>1回で通すことが、最大の節約です。</b>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l8">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l8"></span></div>
+  <div id="termsmsg_l8"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l8";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. なぜAI漫画は読まれないのか</h2>
+<p>絵の質ではありません。読まれない漫画には、共通して次が抜けています。</p>
+<ul>
+<li><b>フリが無い。</b>いきなり結論のコマが来る</li>
+<li><b>ページの最後に引きが無い。</b>次をめくる理由が無い</li>
+<li><b>全部のコマにキャラの顔がある。</b>目が滑る</li>
+<li><b>セリフが長い。</b>吹き出しからはみ出して読めない</li>
+</ul>
+<div class="quote">絵を良くするより、<b>この4つを直すほうが読了率は上がります。</b></div>
+
+<h2>2. キャラクターを先に固定する</h2>
+<div class="alert"><b>キャラが曖昧だと、途中で別人になります。</b>
+「30代の男性会社員」だけでは足りません。次を全部決めてから始めてください。</div>
+<div class="scroll"><table>
+<tr><th>決めること</th><th>なぜ必要か</th></tr>
+<tr><td>外見（髪型・髪色・服・体型・眼鏡の有無）</td><td>ここが曖昧だと、ページごとに顔が変わる</td></tr>
+<tr><td>年齢と立場</td><td>読者が自分を重ねられるかが決まる</td></tr>
+<tr><td>口調（一人称・語尾・敬語かどうか）</td><td>セリフの一貫性。ここが揺れると別人に見える</td></tr>
+<tr><td>いま何に困っているか</td><td>読者と同じ悩みから始めるため</td></tr>
+<tr><td>物語の中でどう変わるか</td><td>変化が無い主人公の話は読まれない</td></tr>
+</table></div>
+<p>登場は<b>2〜3人まで</b>。多いと読者が覚えられません。</p>
+
+<h2>3. フリ・ウケ・キメ</h2>
+<div class="win">
+<b>フリ（予兆）→ ウケ（本体）→ キメ（結果）。</b>この3拍子で1つの場面が成立します。
+</div>
+<div class="scroll"><table>
+<tr><th></th><th>役割</th><th>例</th></tr>
+<tr><td><b>フリ</b></td><td>これから何か起きる、と読者に予感させる</td><td>いつもの朝。同じ電車。同じ景色</td></tr>
+<tr><td><b>ウケ</b></td><td>実際に起きる</td><td>後輩が先に昇進したと聞かされる</td></tr>
+<tr><td><b>キメ</b></td><td>その結果、主人公がどうなったか</td><td>帰り道、何も考えられずに立ち止まる</td></tr>
+</table></div>
+<div class="alert">
+<b>AIは最短距離でまとめようとして、必ず「フリ」を削ります。</b>
+出てきたネームを見て、<b>いきなりウケから始まっていたら、フリを人間が足してください。</b>
+ここが読了率にいちばん効きます。
+</div>
+
+<h2>4. 引きとめくり</h2>
+<p>Kindleは<b>1ページごとが離脱の判定単位</b>です。ページの最後で読むのをやめられます。</p>
+<ul>
+<li><b>ページの最後のコマに、疑問を残す。</b>答えを次のページで出す</li>
+<li>「え、なんで？」「どうなるの？」と思わせて終わる</li>
+<li>ページの最後を、話のまとめにしない（そこで読み終われてしまう）</li>
+</ul>
+
+<h2>5. 目滑りを防ぐ</h2>
+<div class="alert">
+<b>2ページに1コマは「キャラが主役でないコマ」を入れてください。</b>
+背景・小物・手元・空。これを<b>設計の段階で配置</b>します。あとから足すのは大変です。
+</div>
+<p>顔ばかりが続くと、読者の目が滑って内容が頭に入りません。
+「間」を作るコマが、読むリズムを作ります。</p>
+
+<h2>6. カメラを変える</h2>
+<ul>
+<li>正面バストアップばかりにしない</li>
+<li><b>俯瞰・煽り・引き・肩越し・足元</b>を混ぜる</li>
+<li><b>PC画面を見せるコマは「肩越しカメラ」で指定する。</b>
+そう書かないと、キャラが画面の裏側（蓋の裏）を見ている絵になります。
+画面に映す文字も、指定して固定してください</li>
+</ul>
+
+<h2>7. 物語の型</h2>
+<p>ヒーローズジャーニーで組みます。<b>読者と同じ悩みから始める</b>のが鉄則です。</p>
+<div class="scroll"><table>
+<tr><th>ページ</th><th>段階</th><th>中身</th></tr>
+<tr><td>1〜3</td><td>日常</td><td>読者と同じ状態の主人公。ここで「自分だ」と思わせる</td></tr>
+<tr><td>4〜6</td><td>事件</td><td>放っておけない出来事。どん底</td></tr>
+<tr><td>7〜9</td><td>出会い</td><td>方法を知る。半信半疑</td></tr>
+<tr><td>10〜14</td><td>試練</td><td>やってみる。うまくいかない。工夫する</td></tr>
+<tr><td>15〜18</td><td>変化</td><td>小さな成功。周りの反応が変わる</td></tr>
+<tr><td>19〜20</td><td>着地</td><td>読者へのバトン。「あなたにもできる」</td></tr>
+</table></div>
+
+<h2>8. 生成前に必ず全部つぶすルール</h2>
+<div class="alert">
+<b>1つでも残っていたら、1枚も生成しないでください。</b>
+生成してから直すと、全ページ作り直しになります。
+</div>
+<div class="scroll"><table>
+<tr><th>ルール</th><th>理由</th></tr>
+<tr><td><b>セリフに句読点（、。）を入れない</b><br>読点は全角スペース、句点は削除</td><td>吹き出しの中で句読点は使わないのが漫画の書式。入っていると一気に素人っぽくなる</td></tr>
+<tr><td><b>1吹き出し25文字以内</b><br>（英単語混じりでも30文字まで）</td><td>超えると吹き出しからはみ出す・字が小さくなって読めない。超えたら<b>吹き出しを分割</b></td></tr>
+<tr><td><b>カラーは1ページ3〜4コマ</b></td><td>5コマ以上は情報量が多すぎて読めない</td></tr>
+<tr><td><b>2ページに1コマはキャラが主役でないコマ</b></td><td>目滑り防止</td></tr>
+<tr><td><b>正面バストアップの連続を避ける</b></td><td>単調になり、めくる手が止まる</td></tr>
+<tr><td><b>PC画面は肩越しカメラで指定</b></td><td>指定しないと蓋の裏を見る絵になる</td></tr>
+</table></div>
+
+<h2>9. 提出物</h2>
+<div class="win"><b>キャラクター設定表 ＋ 20ページ分のネーム。</b></div>
+<ul class="check">
+<li>キャラの外見・口調・変化が全部決まっている</li>
+<li>20ページ分のコマ割りとセリフが書けている</li>
+<li>すべてのセリフに句読点が入っていない</li>
+<li>すべての吹き出しが25文字以内（英語混じりでも30文字以内）</li>
+<li>1ページのコマ数が3〜4になっている</li>
+<li>2ページに1コマ、キャラが主役でないコマがある</li>
+<li>各場面にフリがある（いきなり結論になっていない）</li>
+<li>ページの最後に引きがある</li>
+<li>PC画面のコマを肩越しで指定した</li>
+</ul>
+
+<h2>9. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第8回 漫画を設計する ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

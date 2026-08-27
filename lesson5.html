@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第5回 入稿データを作る</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 05</p>
+<h1>第5回　入稿データを作る</h1>
+<p>KDPに上げるのはEPUBです。Wordは途中の作業用で、KDPの画面には上げません。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>KDPに上げられるEPUBが手元にある状態。</b></p>
+<p>中身は書けています。ここでやるのは「Kindleで読める形に整える」ことだけです。
+ただし、<b>ここで手を抜くと審査で止まります。</b></p>
+</div>
+
+<div class="alert">
+<b>KDPに上げるのはEPUBです。Wordファイルは上げません。</b><br>
+Wordのまま上げると、Kindle側の自動変換で目次リンクが切れたり、
+画像の位置がずれたりします。<b>Wordは作業用の中間ファイル</b>と考えてください。
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l5">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l5"></span></div>
+  <div id="termsmsg_l5"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l5";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 全体の流れ</h2>
+<ol class="steps">
+<li><b>原稿を1つのファイルにまとめる</b><span>節ごとにバラバラのテキストを、章の順に1本にする</span></li>
+<li><b>見出しのレベルをそろえる</b><span>章＝見出し2、節＝見出し3。ここが目次のもとになる</span></li>
+<li><b>改ページを入れる</b><span>章と節の頭で必ずページを変える</span></li>
+<li><b>目次を作る（リンク付き）</b><span>タップで飛べる状態にする</span></li>
+<li><b>言語を日本語（ja）にする</b><span>ここを忘れると日本語の本として扱われない</span></li>
+<li><b>EPUBに変換する</b><span>これがKDPに上げるファイル</span></li>
+<li><b>スマホで開いて確認する</b><span>PCで見て終わりにしない</span></li>
+</ol>
+
+<h2>2. ページの並べ方</h2>
+<div class="scroll"><table>
+<tr><th>ページ</th><th>中身</th></tr>
+<tr><td>1ページ目</td><td><b>タイトルと著者名だけ。</b>ほかは何も置かない</td></tr>
+<tr><td>2ページ目</td><td><b>目次</b></td></tr>
+<tr><td>3ページ目〜</td><td>はじめに → 第1章 → …（<b>章と節の頭は必ず改ページ</b>）</td></tr>
+<tr><td>最後</td><td>おわりに → 著者プロフィール →（特典案内）→ <b>著作権表示</b></td></tr>
+</table></div>
+
+<div class="trap">
+<b>改ページの落とし穴。</b>
+Wordの「段落前で改ページ」（page break before）という設定は、
+<b>Kindleでは無視されます。</b>
+見た目はWordで改ページされていても、Kindleでは前のページの続きになります。
+<b>「改ページ」そのものを挿入</b>してください（Ctrl+Enter）。
+</div>
+
+<h2>3. 目次のリンク</h2>
+<div class="alert"><b>目次のリンク切れは、審査で問題になります。</b>
+目次を作ったら、<b>全部の項目を実際にタップして確認</b>してください。1つずつです。</div>
+<ul>
+<li>目次は<b>章と節の両方</b>を載せる（章だけだと読者が探しにくい）</li>
+<li>手で打った目次はリンクになりません。<b>見出しから自動生成</b>させる</li>
+<li>ページ番号は入れない（電子書籍にページ番号の概念がない）</li>
+</ul>
+
+<h2>4. 言語の設定（忘れると事故ります）</h2>
+<div class="alert">
+<b>文書の言語が「英語（en）」のままだと、日本語の本として正しく扱われません。</b>
+縦書き・禁則処理・検索の扱いが変わります。<b>必ず日本語（ja）にしてください。</b><br>
+特に、いったんGoogleドキュメントを経由したファイルは英語のままになりやすいです。
+</div>
+<p>確認の仕方：EPUBに変換したあと、中の設定が <code>ja</code> になっているかを見ます。
+変換ツールの言語設定を「日本語」にしておけば入ります。</p>
+
+<h2>5. 画像を入れる場合（1冊目は表紙だけでもOK）</h2>
+<p>1冊目は文章だけなので、本文に画像はありません。2冊目から必要になる知識ですが、
+先に書いておきます。</p>
+<ul>
+<li>挿絵・漫画は<b>PNGのままでよい</b>（画質重視）。JPEG必須なのは<b>表紙だけ</b></li>
+<li>本文に入れる画像の<b>幅は28cmで統一</b>し、縦横比は保つ。
+バラバラだとKindleで大きさが揃わず、素人っぽく見えます</li>
+<li>画像にキャプション（説明文）を付けない。Kindleでは位置がずれます</li>
+</ul>
+
+<h2>6. スマホで確認する（ここを飛ばさない）</h2>
+<div class="win">
+<b>PCの画面で見て終わりにしないでください。</b>
+読者の9割はスマホで読みます。実機のKindleアプリに入れて、自分で1回めくってください。
+</div>
+<ul class="check">
+<li>1ページ目にタイトルと著者名だけが出ている</li>
+<li>目次の項目を<b>全部タップして、全部飛べた</b></li>
+<li>章の頭が、前の章の続きになっていない（ちゃんとページが変わっている）</li>
+<li>変な位置で改行されていない</li>
+<li>文字化けしていない</li>
+<li>最後に著作権表示がある</li>
+</ul>
+
+<h2>7. よくある差し戻し</h2>
+<div class="scroll"><table>
+<tr><th>言われること</th><th>原因</th><th>直し方</th></tr>
+<tr><td>目次のリンクが機能しない</td><td>手打ちの目次／見出しレベルがバラバラ</td><td>見出しから自動生成しなおす</td></tr>
+<tr><td>言語設定が正しくない</td><td>enのまま</td><td>変換時に日本語を指定する</td></tr>
+<tr><td>表示が崩れている</td><td>Wordのまま入稿した</td><td>EPUBにしてから上げる</td></tr>
+<tr><td>画像の解像度が低い</td><td>縮小した画像を使った</td><td>元の大きさの画像を入れなおす</td></tr>
+</table></div>
+
+<h2>8. 提出物</h2>
+<div class="win"><b>入稿用EPUB 1ファイル。</b>（言語ja／目次リンク切れなし／スマホで確認済み）</div>
+
+<h2>8. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第5回 入稿データを作る ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

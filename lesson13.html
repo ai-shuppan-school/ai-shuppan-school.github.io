@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第13回 自動化ツールを受け取る</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 13 ／ 卒業</p>
+<h1>第13回　自動化ツールを受け取る</h1>
+<p>12回かけて手でやってきた工程が、まとめて自動で流れます。この落差を体験するために、順番を作ってあります。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>自分専用の出版エージェントを持ち、自力で回せる状態。</b></p>
+<p>ここがスクールの最終地点です。<b>「本が1冊出せた」ではなく、
+「本を出し続けられる状態になった」</b>がゴールでした。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l13">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l13"></span></div>
+  <div id="termsmsg_l13"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l13";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. なぜ最後に渡すのか</h2>
+<div class="alert">
+<b>ツールを最初に渡してはいけない理由が3つあります。</b>
+</div>
+<ol>
+<li><b>価値が伝わらない。</b>苦労を知らない人にとって、自動化ツールはただのボタンです。
+表紙のサイズで弾かれ、内容紹介の文字数で弾かれ、漫画のセリフを全部書き直した経験があって初めて、
+「これが自動で終わるのか」という驚きになります</li>
+<li><b>壊れたときに直せない。</b>中で何をやっているか分からないまま使うと、
+エラーが出た瞬間に手が止まります。手順を知っている人だけがツールを育てられます</li>
+<li><b>判断が身につかない。</b>ツールが出すのは選択肢であって、答えではありません。
+テーマが良いか、表紙が競合に勝てるか、漫画が読まれるか。<b>そこは人間が決めます</b></li>
+</ol>
+<div class="quote">だからカリキュラムは<b>「手でやる → 繰り返す → ツールを受け取る」</b>の順に組んであります。</div>
+
+<h2>2. ツールが通す工程</h2>
+<div class="scroll"><table>
+<tr><th>工程</th><th>対応する回</th></tr>
+<tr><td>テーマのリサーチ</td><td>第1回</td></tr>
+<tr><td>目次の生成</td><td>第2回</td></tr>
+<tr><td>本文の生成</td><td>第3回</td></tr>
+<tr><td>挿絵の生成と配置</td><td>第7回</td></tr>
+<tr><td>漫画のネームと生成</td><td>第8回・第9回</td></tr>
+<tr><td>表紙の生成</td><td>第4回</td></tr>
+<tr><td>A+コンテンツ</td><td>第10回</td></tr>
+<tr><td>KDP登録情報のHTML化</td><td>第6回</td></tr>
+</table></div>
+<div class="win">
+<b>12回の内容が、そのまま1つずつ対応しています。</b>
+どの回で何をやったかを思い出せば、ツールのどこで何が起きているか分かります。
+</div>
+
+<h2>3. ツールの中で何が起きているか</h2>
+<p>ボタンを押すだけで使えますが、<b>中身を知らないと育てられません。</b>
+最低限、次の3つの仕組みだけ覚えてください。</p>
+<div class="scroll"><table>
+<tr><th>仕組み</th><th>役割</th><th>触るところ</th></tr>
+<tr><td><b>設定ファイル</b></td><td>読者・テーマ・キャラ・絵柄など、その本の前提</td><td>1冊ごとに書き換える</td></tr>
+<tr><td><b>ルールファイル</b></td><td>「セリフに句読点を入れない」などの決まり</td><td><b>ここを自分用に書き換えて育てる</b></td></tr>
+<tr><td><b>検査スクリプト</b></td><td>出荷していい状態かを機械で判定する</td><td>新しい失敗をしたら、検査を1行足す</td></tr>
+</table></div>
+
+<h2>4. 自分用に育てる</h2>
+<div class="win"><b>渡した時点のツールは、あくまで「型」です。</b>
+自分の絵柄・自分の口調・自分のジャンルに寄せていってください。</div>
+<ul>
+<li><b>絵柄を変える：</b>キャラの設定と絵柄の指定を書き換える</li>
+<li><b>口調を変える：</b>本文生成のルールに、自分の書き方の癖を足す</li>
+<li><b>ジャンルを変える：</b>リサーチの条件と、キーワードの決め方を書き換える</li>
+<li><b>失敗を足す：</b>審査で落ちたら、<b>まず検査スクリプトに1行足す。</b>
+ドキュメントに書くだけでは必ず忘れます</li>
+</ul>
+<div class="alert">
+<b>★失敗は資産です。</b>
+落ちた理由をメモして終わりにせず、<b>「二度と同じことが起きない仕掛け」</b>まで作ってください。
+それが積み上がったツールは、他の誰も持っていないものになります。
+</div>
+
+<h2>5. 詰まったときの切り分け</h2>
+<div class="scroll"><table>
+<tr><th>症状</th><th>まず見るところ</th></tr>
+<tr><td>途中で止まった</td><td><b>出力フォルダの更新日時。</b>どこまで出来たかを確認して、残りだけ流す</td></tr>
+<tr><td>変なものが出てくる</td><td>設定ファイル。読者やキャラの指定が抜けていないか</td></tr>
+<tr><td>ルールが守られていない</td><td>ルールファイル。生成前の検査が通っているか</td></tr>
+<tr><td>エラーで動かない</td><td>エラーの<b>最後の3行</b>をそのままAIに貼る。全部貼らなくていい</td></tr>
+</table></div>
+<div class="trap">
+<b>長時間のジョブが動いている間は、そのジョブが使うファイルを触らないでください。</b>
+途中でプロセスが落ちて、それまでの分がむだになります。直したいことはメモして、終わってからやる。
+</div>
+
+<h2>6. ここから先</h2>
+<div class="win">
+<b>12回かけて手でやってきた工程が、まとめて自動で流れます。</b><br>
+この落差を体験できるように、あえて順番を作ってあります。<br><br>
+ここから先は、あなたのペースです。<b>月に1冊でも、3か月に1冊でも構いません。</b>
+大事なのは、止まらないことと、失敗をツールに書き足していくことです。
+</div>
+
+<h2>7. 提出物</h2>
+<div class="win"><b>ツールを使って、3冊目のKDP登録情報まで自力で出力できたこと。</b></div>
+<ul class="check">
+<li>ツールを自分の環境で動かせた</li>
+<li>設定ファイルを3冊目の内容に書き換えた</li>
+<li>ルールファイルを1か所でも自分用に書き換えた</li>
+<li>3冊目のKDP登録情報まで出力できた</li>
+<li>途中で詰まったところを記録した</li>
+</ul>
+
+<h2>7. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第13回 自動化ツールを受け取る ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

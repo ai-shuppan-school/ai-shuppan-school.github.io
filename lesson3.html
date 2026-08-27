@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第3回 本文を書く</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 03</p>
+<h1>第3回　本文を書く</h1>
+<p>1冊目は、うまく書くことより最後まで書ききることを優先します。分量ではなく完走です。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>読める日本語で、本文が最後まで書けている状態。</b></p>
+<p>名文でなくて構いません。1冊目のゴールは「出版する」です。
+書き直しは2冊目からいくらでもできます。<b>止まらないことが最優先。</b></p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l3">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l3"></span></div>
+  <div id="termsmsg_l3"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l3";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 1回で1冊分を書かせない</h2>
+<div class="alert">
+<b>「この目次で本を書いて」と1回で投げると、必ず薄い本になります。</b>
+AIは全体をまとめようとして、どの章も同じ密度の「ふつうの話」にします。
+読者が「これは自分の本だ」と思う具体は、まとめた瞬間に消えます。
+</div>
+<p>やり方はひとつです。</p>
+<div class="win"><b>1回のやりとりで、1節だけ書かせる。</b>
+15〜21節あるなら、15〜21回に分けます。遠回りに見えて、これがいちばん早いです。</div>
+
+<h2>2. 書かせる前に必ず貼るもの</h2>
+<p>新しいチャットを開いたら、本文を頼む前に<b>この2つを貼ってください。</b></p>
+<ol>
+<li><b>第1回で作った設定シート</b>（読者・悩み・キーワード7つ・1行の要約）</li>
+<li><b>第2回で作った目次</b>（章・節・各節が答える疑問）</li>
+</ol>
+<p>これを貼らずに書かせると、章ごとに読者像がブレます。
+Claudeの「プロジェクト」を使える人は、説明欄にこの2つを入れておくと毎回貼らずにすみます。</p>
+
+<h2>3. 1節ぶんの書き方</h2>
+<div class="stepbox">
+<h3><span class="n">STEP 1</span>節の材料を先に出す</h3>
+<p>いきなり本文を書かせない。まず<b>その節に入れる具体を並べさせます。</b>
+場面・数字・読者が実際に言いそうなセリフ。ここが薄いと、本文も薄くなります。</p>
+</div>
+<div class="stepbox">
+<h3><span class="n">STEP 2</span>材料に自分の話を足す</h3>
+<p><b>ここがあなたにしかできない作業です。</b>
+AIが出した材料に、あなたが実際に経験したこと・見たこと・言われたことを足してください。
+1節につき1つで構いません。これが入っているかどうかで、本の説得力が変わります。</p>
+</div>
+<div class="stepbox">
+<h3><span class="n">STEP 3</span>本文を書かせる（1,200〜1,700字）</h3>
+<p>材料がそろってから書かせます。文字数を必ず指定してください。指定しないと短くなります。</p>
+</div>
+<div class="stepbox">
+<h3><span class="n">STEP 4</span>その場で読み返して、違うところを言い返す</h3>
+<p><b>「そこは違う」と言い返した回数だけ、あなたのClaudeはこの本のことを覚えます。</b>
+黙って受け取ると、最後まで他人の本のままです。</p>
+</div>
+
+<h2>4. 事実の確認（ここは絶対に飛ばさない）</h2>
+<div class="alert">
+<b>AIは、自信満々に事実を間違えます。</b>
+制度の名前・金額・統計・年号・法律。それらしい数字を作ることがあります。
+<b>数字が出てきたら全部疑ってください。</b>
+</div>
+<div class="scroll"><table>
+<tr><th>出てきたもの</th><th>やること</th></tr>
+<tr><td>制度名・金額（〇〇制度で年間◯◯円）</td><td>公式サイトで確認する。確認できなければ<b>書かない</b></td></tr>
+<tr><td>統計（〇%の人が…）</td><td>出典を確認する。出典が言えないものは「〜と言われています」にせず、<b>削る</b></td></tr>
+<tr><td>他社サービスの料金</td><td>変わるので、金額を書かず「有料プランがあります」にする</td></tr>
+<tr><td>自分の実績</td><td><b>やっていないことを、やったと書かない。</b>これは規約と信用の両方の問題</td></tr>
+</table></div>
+<div class="trap"><b>濁す勇気を持ってください。</b>
+確認が取れないなら、断定せずに書けばいいだけです。
+「一般に〜と言われることが多いようです」と「〇〇制度では年51万円が支給されます」では、
+間違ったときの重さがまったく違います。</div>
+
+<h2>5. AIが書いた文章の直しどころ</h2>
+<p>読み返すときは、この5つだけ見てください。全部つぶすと、急に読める文章になります。</p>
+<div class="scroll"><table>
+<tr><th>症状</th><th>直し方</th></tr>
+<tr><td><b>「〜しましょう」の連発</b></td><td>1節に1回まで。あとは言い切るか、問いかけにする</td></tr>
+<tr><td><b>同じ言い回しの反復</b></td><td>「重要です」「大切です」が3回出たら2回消す</td></tr>
+<tr><td><b>抽象論で終わっている</b></td><td>「意識が変わります」→<b>何が、どう変わったのか</b>を場面で書く</td></tr>
+<tr><td><b>読者が誰か分からない</b></td><td>「みなさん」を全部消して、1人に話しかける文にする</td></tr>
+<tr><td><b>まとめの段落が毎節ある</b></td><td>最後の1文を消す。読者は要約を読みに来ていない</td></tr>
+</table></div>
+
+<h2>6. 本文に書いてはいけないもの</h2>
+<ul>
+<li><b>「著者について」を本文中に書かない。</b>巻末ページと重複します</li>
+<li><b>他の本や著者の名前を、宣伝目的で出さない。</b>引用は出典を明記して最小限に</li>
+<li><b>レビュー依頼を本文の途中に入れない。</b>入れるなら巻末の1か所だけ</li>
+<li><b>外部リンクを本文に散らさない。</b>特典の案内は巻末に集約する</li>
+</ul>
+
+<h2>7. 進み方の目安</h2>
+<div class="win">
+1日2節ずつ書けば、<b>8〜10日で本文が終わります。</b>
+まとめて書こうとすると、たいてい3日目で止まります。<b>毎日少しずつが、いちばん速い。</b>
+</div>
+<div class="scroll"><table>
+<tr><th></th><th>やること</th></tr>
+<tr><td>1〜3日目</td><td>1章と2章（共感と原因）。ここがいちばん時間がかかる</td></tr>
+<tr><td>4〜7日目</td><td>3章〜5章（方法）。材料出しが効いてくるので速くなる</td></tr>
+<tr><td>8〜9日目</td><td>6章と「おわりに」</td></tr>
+<tr><td>10日目</td><td>通しで1回読む。<b>ここで初めて全体を読む</b></td></tr>
+</table></div>
+
+<h2>8. 提出物</h2>
+<div class="win"><b>本文原稿一式（テキストでもWordでも構いません）。</b></div>
+<ul class="check">
+<li>目次のすべての節が書けている</li>
+<li>数字・制度・統計を全部確認した（確認できないものは削った）</li>
+<li>やっていない実績を書いていない</li>
+<li>「〜しましょう」を数えて減らした</li>
+<li>1節につき1つ、自分の具体的な話が入っている</li>
+<li>本文中に「著者について」を書いていない</li>
+<li>通しで1回、自分で読んだ</li>
+</ul>
+
+<h2>7. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第3回 本文を書く ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

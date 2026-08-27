@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第6回 KDPに登録して出版する</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 06</p>
+<h1>第6回　KDPに登録して出版する</h1>
+<p>最大の山場です。ここを越えると、あなたは「本を出したことがある人」になります。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>出版ボタンを押して、審査を通過している状態。</b></p>
+<p>ここまでで、本文・表紙・EPUBはそろっています。あとは登録画面を埋めるだけ……
+なのですが、<b>毎回ここで事故ります。</b>先に落とし穴を全部つぶしてから画面に向かいます。</p>
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l6">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l6"></span></div>
+  <div id="termsmsg_l6"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l6";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 先に用意するもの（画面を開く前に）</h2>
+<div class="win">
+KDPの画面は<b>途中で止まると入力が消えることがあります。</b>
+先に全部テキストで用意して、貼るだけの状態にしてから開いてください。
+</div>
+<div class="scroll"><table>
+<tr><th>項目</th><th>決めておくこと</th></tr>
+<tr><td>タイトル／サブタイトル</td><td>確定版。あとから変えると審査がやり直しになる</td></tr>
+<tr><td>ふりがな・ローマ字</td><td>タイトル・サブタイトル・著者名の3つぶん</td></tr>
+<tr><td>著者名</td><td>姓と名の間に<b>半角スペース1つ</b></td></tr>
+<tr><td>内容紹介</td><td>3,500〜3,950字。<b>改行を使わず &lt;br&gt; を直接書く</b></td></tr>
+<tr><td>キーワード</td><td>7つ（第1回で決めたもの）</td></tr>
+<tr><td>カテゴリー</td><td>3つ。<b>実在するものを確認してから</b></td></tr>
+<tr><td>表紙</td><td>JPEG／2,560×1,600px／300PPI／RGB</td></tr>
+<tr><td>原稿</td><td>EPUB（言語ja）</td></tr>
+</table></div>
+
+<h2>2. ふりがな・ローマ字（記号と数字が使えません）</h2>
+<div class="alert">
+<b>ふりがな欄とローマ字欄には、記号も数字も入れられません。</b>
+そのまま入れると先に進めません。<b>読み方を文字にしてください。</b>
+</div>
+<div class="scroll"><table>
+<tr><th>入れたいもの</th><th>ふりがな</th><th>ローマ字</th></tr>
+<tr><td>50代</td><td>ゴジュウダイ</td><td>Gojudai</td></tr>
+<tr><td>AI</td><td>エーアイ</td><td>Ai</td></tr>
+<tr><td>片岡 達哉</td><td>カタオカ タツヤ</td><td>Kataoka Tatsuya</td></tr>
+</table></div>
+<p>著者名は<b>姓名を分けず、間に半角スペース1つ</b>で入れます。</p>
+
+<h2>3. 内容紹介（いちばん弾かれるところ）</h2>
+<div class="alert">
+<b>KDPは、改行1つを4文字として数えます。</b><br>
+改行だらけの原稿は、見た目3,500字でも<b>4,000字を超えて弾かれます。</b>
+</div>
+<div class="win">
+<b>対策：改行キーを押さず、<code>&lt;br&gt;</code> を直接書く。</b><br>
+上限は4,000字ですが、<b>3,500〜3,950字で運用</b>してください。ぎりぎりを狙わない。
+</div>
+<h3>書く順番</h3>
+<ol>
+<li><b>読者の状況を1行で言い当てる</b>（ここで自分ごとにする）</li>
+<li>放っておくとどうなるか</li>
+<li>この本で何が変わるか</li>
+<li><b>目次（章タイトルを並べる）</b>← ここで文字数がしっかり稼げます</li>
+<li>こんな人に読んでほしい（3〜5個）</li>
+<li>著者はどういう人か（1〜2行。盛らない）</li>
+</ol>
+<div class="trap"><b>内容紹介と本文では書けるが、他ではNGなもの。</b>
+<b>金額</b>は、内容紹介と本文には本の内容として書けます。
+ただし<b>A+コンテンツ・表紙・キーワード・タイトルではNG</b>です。場所によって基準が違います。</div>
+
+<h2>4. キーワード7つ</h2>
+<div class="alert">
+<b>キーワードに入れてはいけないもの（KDPが明記しています）。</b>
+<ul>
+<li>他の著者名・他の本のタイトル（<b>売れている本の名前を借りない</b>）</li>
+<li>ブランド名・商標</li>
+<li>「Kindle Unlimited」「KDPセレクト」などの<b>プログラム名</b></li>
+<li>ランキング・受賞・「ベストセラー」などの主観的な表現</li>
+<li>本の内容と関係のない言葉</li>
+<li>引用符（" "）／わざとの誤字／単数形と複数形の書き分け</li>
+</ul>
+</div>
+<p><b>生徒さんのアカウントを守ることが最優先です。</b>
+「入れたら伸びるかも」と思った言葉ほど、規約に触れていることが多いです。迷ったら入れない。</p>
+
+<h2>5. カテゴリー3つ</h2>
+<div class="trap">
+<b>カテゴリー名は正式名称です。</b>
+「個人金融」のような直感的な名前は<b>存在しません。</b>
+「〇〇に関する自己啓発電子書籍」のような形になります。
+<b>記憶で書かず、実在するものを確認してから選んでください。</b>
+</div>
+<p>選べるのは3つです。選び方の考え方は次のとおり。</p>
+<ul>
+<li>1つ目：本のど真ん中のジャンル</li>
+<li>2つ目：読者の属性に近いジャンル（例：中高年向け）</li>
+<li>3つ目：<b>競争のゆるいところ</b>。ここで1位が取れると「ベストセラー」の表示が出ます</li>
+</ul>
+
+<h2>6. AI生成コンテンツの申告</h2>
+<div class="alert">
+<b>AIを使って作った部分がある場合、申告を「はい」で行ってください。</b>
+これは任意ではありません。<b>申告しないこと自体が規約違反</b>です。
+申告しても、出版できなくなったり、表示上不利になったりはしません。
+</div>
+
+<h2>7. 価格とKindle Unlimited</h2>
+<div class="scroll"><table>
+<tr><th></th><th>考え方</th></tr>
+<tr><td>価格</td><td>1冊目は<b>低めから入る</b>のが基本。読まれた実績のない本に高い値段をつけても止まります</td></tr>
+<tr><td>ロイヤリティ</td><td>価格帯によって選べる率が変わります。画面の説明どおりに選べば問題ありません</td></tr>
+<tr><td>Kindle Unlimited（KDPセレクト）</td><td>入れると読み放題の対象になり、読まれたページ数で収益が出ます。
+そのかわり<b>他の電子書店で売れなくなります</b>（独占）。1冊目は入れて構いません</td></tr>
+</table></div>
+<div class="trap"><b>Kindle Unlimitedのことを、キーワードやA+コンテンツに書かないでください。</b>
+プログラム名の記載は規約で禁止されています。価格や読み放題の話は、<b>登録画面の設定でやること</b>で、
+文章に書くことではありません。</div>
+
+<h2>8. 審査</h2>
+<ul>
+<li>審査は通常<b>72時間以内</b>。長いときもあるので、出版日を約束しない</li>
+<li>落ちるとメールが来ます。<b>文面をそのまま読んで、書いてある箇所だけ直す</b></li>
+<li>心当たりがないときは、内容紹介の文字数・キーワード・表紙の3つを疑う（この3つが大半）</li>
+</ul>
+
+<h2>9. 提出物</h2>
+<div class="win"><b>出版済みのASIN（AmazonのページのURLでも可）。</b></div>
+<ul class="check">
+<li>ふりがな・ローマ字に記号と数字が入っていない</li>
+<li>内容紹介が3,500〜3,950字で、改行キーを使っていない</li>
+<li>キーワード7つに、他の著者名・他の本のタイトル・プログラム名が入っていない</li>
+<li>カテゴリー3つを実在するもので確認した</li>
+<li>AI生成コンテンツの申告を「はい」にした</li>
+<li>表紙がJPEGで、規格を満たしている</li>
+<li>原稿がEPUBで、言語がjaになっている</li>
+<li>出版ボタンを押した</li>
+</ul>
+
+<div class="win" style="margin-top:26px;">
+<b>ここが1冊目のゴールです。</b><br>
+審査が通った時点で、あなたは「本を出したことがある人」になります。
+ここから先の学習は、意味がまったく変わります。
+2冊目からは<b>読まれる本にする技術</b>に入ります。
+</div>
+
+<h2>9. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第6回 KDPに登録して出版する ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>

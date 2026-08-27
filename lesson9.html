@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第9回 漫画を生成する</title>
+<style>
+:root{--ink:#1b1f24;--sub:#5b6672;--line:#e2e6ea;--soft:#f6f8fa;--accent:#c8452d;
+ --accent-soft:#fdf1ee;--warn:#b26a00;--warn-soft:#fff8e8;--ok:#0f7b57;--ok-soft:#eef8f3;
+ --blue:#1a3a6b;--blue-soft:#eef4fb;--red:#b3261e;--red-soft:#fdecea;--p1:#2f6fb5;}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);
+ font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.9;font-size:15px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 110px;}
+header{background:linear-gradient(160deg,#16202b,#2b3a4a);color:#fff;padding:48px 24px 42px;margin-bottom:40px;}
+header .inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:#9fb3c8;margin:0 0 12px;}
+header h1{font-size:27px;line-height:1.45;margin:0 0 14px;}
+header p{margin:0;color:#c6d3df;font-size:14px;}
+h2{font-size:20px;margin:52px 0 16px;padding-bottom:9px;border-bottom:2px solid var(--ink);}
+h3{font-size:16px;margin:28px 0 10px;}
+h4{font-size:14.5px;margin:18px 0 6px;color:var(--sub);}
+p{margin:0 0 14px;}
+.lead{background:var(--soft);border-left:4px solid var(--accent);padding:17px 19px;border-radius:0 8px 8px 0;margin:0 0 22px;}
+.lead p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+th{background:var(--soft);white-space:nowrap;}
+.scroll{overflow-x:auto;}
+ul,ol{margin:0 0 14px;padding-left:22px;}li{margin-bottom:7px;}
+.trap{background:var(--warn-soft);border:1px solid #f0dcae;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.trap b{color:var(--warn);}
+.note{background:var(--accent-soft);border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win{background:var(--ok-soft);border:1px solid #bfe3d3;border-radius:8px;padding:14px 17px;font-size:14px;margin:16px 0;}
+.win b{color:var(--ok);}
+.alert{background:var(--red-soft);border:1px solid #f3c6c1;border-radius:8px;padding:15px 18px;font-size:14px;margin:16px 0;}
+.alert b{color:var(--red);}
+.quote{border-left:3px solid var(--p1);background:var(--blue-soft);padding:12px 16px;margin:12px 0;
+ font-size:14px;color:#26405f;border-radius:0 6px 6px 0;}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:13px;}
+.steps{counter-reset:st;list-style:none;padding-left:0;}
+.steps>li{counter-increment:st;position:relative;padding-left:46px;margin-bottom:20px;}
+.steps>li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;
+ background:var(--p1);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ font-size:14px;font-weight:700;}
+.steps>li b{display:block;margin-bottom:2px;}
+.steps>li span{font-size:13.5px;color:var(--sub);}
+.check{list-style:none;padding-left:0;}
+.check li{padding-left:30px;position:relative;margin-bottom:10px;}
+.check li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;
+ border:1.5px solid var(--sub);border-radius:4px;}
+.stepbox{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:18px 0;}
+.stepbox>h3{margin-top:0;display:flex;align-items:baseline;gap:10px;}
+.stepbox>h3 .n{background:var(--blue);color:#fff;border-radius:6px;font-size:12px;padding:3px 10px;flex:none;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+@media print{header{background:#16202b !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.terms{border:1px solid var(--line,#e2e6ea);border-radius:10px;padding:13px 17px;margin:18px 0;
+ background:#f6f8fa;font-size:13.5px;line-height:1.85;}
+.terms b{color:#1b1f24;}
+.terms .d{font-weight:700;}
+.terms.warn{background:#fff8e8;border-color:#f0dcae;}
+.terms.stale{background:#fdecea;border-color:#f3c6c1;}
+.terms .head{font-weight:700;margin-bottom:4px;}
+.terms.warn .head,.terms.stale .head{color:#b3261e;}
+.terms ul{margin:6px 0 0;padding-left:20px;}
+.terms li{margin-bottom:3px;}
+
+</style>
+</head>
+<body>
+<div id="sitenav" style="font-size:13px;padding:10px 0 2px;"><a href="./" style="color:#0f7b57;text-decoration:none;font-weight:700;">&#8592; 教材の一覧にもどる</a></div>
+
+<header><div class="inner">
+<p class="eyebrow">LESSON 09</p>
+<h1>第9回　漫画を生成する</h1>
+<p>費用は「枚数 × やり直した回数」で効きます。1回で通すことが、最大の節約です。</p>
+</div></header>
+
+<div class="wrap">
+
+<h2>この回のゴール</h2>
+<div class="lead">
+<p><b>フルカラー漫画20ページが揃っている状態。</b></p>
+</div>
+
+<div class="alert">
+<b>ルール違反が1つでも残っているうちは、1枚も生成しないでください。</b>
+第8回の生成前チェックを、もう一度上から全部見てください。
+生成してから気づくと、その1枚だけでなく<b>前後のページも作り直し</b>になります。
+</div>
+
+<!--TERMS-->
+<div class="terms" id="terms_l9">
+  <div class="head">&#9878; この資料の規約チェック</div>
+  <div>Amazon KDPの公式ヘルプを <b class="d">2026-08-26</b> に読んで、この資料の内容と突き合わせています。
+  <span id="termsage_l9"></span></div>
+  <div id="termsmsg_l9"></div>
+</div>
+<script>
+(function () {
+  var CHECKED = "2026-08-26", STALE = 180, KEY = "l9";
+  var box = document.getElementById("terms_" + KEY);
+  var age = document.getElementById("termsage_" + KEY);
+  var msg = document.getElementById("termsmsg_" + KEY);
+  if (!box) return;
+  var d0 = new Date(CHECKED + "T00:00:00");
+  var days = Math.floor((Date.now() - d0.getTime()) / 86400000);
+  if (isNaN(days) || days < 0) days = 0;
+  age.innerHTML = "（今日で <b>" + days + "日</b>経っています）";
+  if (days < 90) {
+    msg.innerHTML = "";
+  } else if (days < STALE) {
+    box.className = "terms warn";
+    msg.innerHTML = "<b>★3か月以上たっています。</b>KDPの規約はときどき変わります。"
+      + "この資料のとおりに作る前に、KDPの画面に出ている案内も一度見てください。";
+  } else {
+    box.className = "terms stale";
+    msg.innerHTML = "<b>★半年以上たっています。この資料の規約の記述は、そのまま信じないでください。</b>"
+      + "<ul><li>作業に入る前に、<b>KDPの公式ヘルプで最新の内容を確認</b>してください</li>"
+      + "<li>この資料を渡してくれた人に「規約の記述を更新してください」と伝えてください</li></ul>";
+  }
+})();
+</script>
+<!--/TERMS-->
+
+<h2>1. 生成の進め方</h2>
+<ol class="steps">
+<li><b>1ページ目だけ作る</b><span>いきなり20枚投げない。まず1枚で絵柄とキャラを確定させる</span></li>
+<li><b>1ページ目を拡大して確認する</b><span>キャラの顔・服・線の太さ・色数。ここが基準になる</span></li>
+<li><b>OKが出たら、その設定を固定する</b><span>以降のページは同じ設定を使い回す</span></li>
+<li><b>1ページずつ確認しながら進める</b><span>3〜5ページごとに、前のページと並べて見る</span></li>
+<li><b>全ページ揃ったら通しで読む</b><span>1枚ずつではなく、読者と同じように連続で読む</span></li>
+</ol>
+<div class="alert"><b>まとめて20枚投げて全滅させない。</b>
+キャラが崩れていた場合、20枚全部が使えなくなります。</div>
+
+<h2>2. 長時間の生成が動いている間にやってはいけないこと</h2>
+<div class="alert">
+<b>生成が動いている間は、そのジョブが使っているファイルを触らないでください。</b>
+設定ファイルやスクリプトを書き換えると、<b>途中でプロセスが落ちます。</b><br>
+実際に、20枚のうち15枚まで進んだところで停止し、5枚分がむだになったことがあります。
+</div>
+<ul>
+<li>直したいことが出てきたら、<b>メモしておいて、終わってからやる</b></li>
+<li>急ぐなら、直した内容を<b>別のファイルに書いておいて、あとで差し替える</b></li>
+<li>PCをスリープさせない。電源設定を先に確認する</li>
+</ul>
+
+<h2>3. 途中で止まったとき</h2>
+<div class="win">
+<b>全部やり直さないでください。</b>
+まず<b>ファイルの更新日時</b>を見て、どこまで出来ているかを確認します。
+そのうえで、<b>残りのページだけ</b>を指定して流します。
+</div>
+<ol>
+<li>出力フォルダを開いて、日時の新しい順に並べる</li>
+<li>最後に出来たページ番号を確認する</li>
+<li>その次のページから、残りだけを指定して再開する</li>
+</ol>
+
+<h2>4. 出来たページの確認</h2>
+<div class="alert"><b>縮小した一覧では見落とします。1枚ずつ拡大してください。</b></div>
+<ul class="check">
+<li>キャラの顔が、前のページと同じ人に見える</li>
+<li>服・髪型・髪色が変わっていない</li>
+<li>指の本数がおかしくない</li>
+<li>吹き出しの文字が全部読める（はみ出していない・切れていない）</li>
+<li>セリフに句読点が入っていない</li>
+<li>コマの順番どおりに目が動く</li>
+<li>PC画面のコマが、肩越しになっている</li>
+<li>ページの最後のコマで、次が気になる</li>
+</ul>
+
+<h2>5. 直すか、通すかの判断</h2>
+<div class="scroll"><table>
+<tr><th>症状</th><th>どうするか</th></tr>
+<tr><td>文字が読めない・はみ出している</td><td><b>直す。</b>読めない吹き出しは致命的</td></tr>
+<tr><td>キャラが別人になっている</td><td><b>直す。</b>読者が混乱する</td></tr>
+<tr><td>指が6本ある（目立つ位置）</td><td><b>直す</b></td></tr>
+<tr><td>背景がちょっと雑</td><td><b>通す。</b>読者はそこを見ていない</td></tr>
+<tr><td>思っていた構図と少し違う</td><td><b>通す。</b>意味が通っていればよい</td></tr>
+</table></div>
+<div class="quote">1冊目の漫画で完璧を目指さないでください。<b>止まらないことのほうが大事です。</b></div>
+
+<h2>6. 費用の考え方</h2>
+<div class="win">
+<b>費用は「枚数 × やり直した回数」で効きます。</b>
+20ページを1回で通せば1回分。3回やり直せば3倍です。<br>
+だから第8回のチェックに時間をかけます。<b>設計に1時間かけるほうが、作り直すより安い。</b>
+</div>
+
+<h2>7. 提出物</h2>
+<div class="win"><b>漫画20ページ（PNG）。</b></div>
+<ul class="check">
+<li>20ページ揃っている</li>
+<li>1枚ずつ拡大して確認した</li>
+<li>キャラが最初から最後まで同じ人に見える</li>
+<li>吹き出しの文字が全部読める</li>
+<li>PNGで保存されている（JPEG必須なのは表紙だけ）</li>
+</ul>
+
+<h2>8. 質問メモ欄</h2>
+<p>やってみて分からなかったこと・迷ったことを書き出して持ってきてください。<b>迷った場所こそがいちばん大事な情報</b>です。</p>
+<div style="border:1px solid var(--line);border-radius:8px;height:150px;margin:14px 0;"></div>
+
+<footer>AI出版スクール 第9回 漫画を生成する ／ 2026-08-27 更新 ／ ツール開発/出版教育/01_カリキュラム/</footer>
+</div>
+</body>
+</html>
