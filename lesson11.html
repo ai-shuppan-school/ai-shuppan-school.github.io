@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -181,6 +207,147 @@ Amazon.co.jpでは<b>10MB以上の本に配信コストがかかりません</b>
 <div class="alert"><b>レビューの依頼には規約があります。</b>
 金銭・特典・割引と引き換えにレビューを依頼することは禁止されています。
 家族や身内に書かせるのも禁止です。<b>お願いしていいのは「読んだ感想を聞かせてください」まで。</b></div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">2冊目の登録情報と、出したあとの動きまで。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>2冊目の内容紹介を作らせる</div>
+      <div class="p-when">1冊目と違うのは「漫画付き」を目立たせる点です。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 前提
+<b>【第1回の設定シート】</b>
+<b>【第2回の目次】</b>
+確定タイトル：<b>【　】</b>
+
+# やってほしいこと
+Amazon KDPの「内容紹介」を作ってください。★この本は漫画と挿絵が入っています。
+
+# 書く順番
+1. 読者のいまの状況を1行で言い当てる
+2. ★この本が漫画で読めることを、目立つ位置で伝える
+3. 放っておくとどうなるか
+4. この本で何が変わるか
+5. 目次（章タイトルを並べる）
+6. こんな人に読んでほしい（3〜5個）
+7. 著者はどういう人か（1〜2行）
+
+# 字数の決まり
+- ★改行キーを使わず、&lt;br&gt; という文字をそのまま書いてください。
+- &lt;br&gt; も含めて3,500〜3,950字。最後に文字数を報告してください。
+
+# 入れてはいけないもの
+- ランキング・受賞・時間に関する表現・他の著者名・ブランド名・外部リンク</pre></div>
+  <div class="p-foot">★読者は文字だけの本と漫画の本を<b>読み分けています。</b>「漫画でわかる」を早い位置に書くと、クリック率が変わります。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>実機での確認リストを作らせる</div>
+      <div class="p-when">★<b>PCのプレビューでは気づけない崩れがあります。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">漫画が入ったKindle本を、スマホの実機で確認するためのリストを作ってください。
+□つきの箇条書きで、1つずつチェックできる形にしてください。
+
+# 必ず入れてほしい項目
+- 漫画のページが正しい順番で並んでいるか
+- 漫画が1ページ1枚で表示されているか（2枚が1画面に詰まっていないか）
+- 吹き出しの文字が、スマホの画面サイズで読めるか
+- 挿絵の幅がそろっているか
+- 画像のあとに変な空白ページが入っていないか
+- カラーで表示されているか
+- 目次のリンクを全部タップして全部飛べたか
+
+# ルール
+- 各項目に「どこを見れば分かるか」を1行つけてください。</pre></div>
+  <div class="p-foot">★<b>ファイル容量は日本では心配しなくて大丈夫です。</b>Amazon.co.jpでは10MB以上の本に配信コストがかかりません。画質を落とす必要はありません。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>出したあとの初動を作らせる</div>
+      <div class="p-when">出して終わりにしないための計画です。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03"># 前提
+出版した本：<b>【タイトルを貼る】</b>
+読者：<b>【第1回の設定シートの読者部分を貼る】</b>
+
+# やってほしいこと
+出版直後の1週間でやることを、日付順の計画にしてください。
+
+# 入れてほしいこと
+- SNSでの告知（出版直後・数日後・1週間後の3回。それぞれ文面も作ってください）
+- 読んでくれた人への声のかけ方
+- 巻末の導線が動いているかの確認
+- KDPのレポートで見る数字と、その読み方
+
+# ★守ってほしい規約
+- 金銭・特典・割引と引き換えにレビューを依頼することは禁止です。
+- 家族や身内にレビューを書かせることも禁止です。
+- お願いしていいのは「読んだ感想を聞かせてください」までです。
+  この線を越える文面は作らないでください。</pre></div>
+  <div class="p-foot">★レビュー依頼には規約があります。ここを越えると<b>アカウントごと危なくなります。</b></div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <h2>6. 提出物</h2>
 <div class="win"><b>2冊目のASIN ＋ A+コンテンツ申請済みの画面。</b></div>

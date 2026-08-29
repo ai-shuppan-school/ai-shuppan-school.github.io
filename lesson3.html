@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -131,7 +157,7 @@ AIは全体をまとめようとして、どの章も同じ密度の「ふつう
 </div>
 <p>やり方はひとつです。</p>
 <div class="win"><b>1回のやりとりで、1節だけ書かせる。</b>
-15〜21節あるなら、15〜21回に分けます。遠回りに見えて、これがいちばん早いです。</div>
+15節あるなら、15回に分けます。遠回りに見えて、これがいちばん早いです。</div>
 
 <h2>2. 書かせる前に必ず貼るもの</h2>
 <p>新しいチャットを開いたら、本文を頼む前に<b>この2つを貼ってください。</b></p>
@@ -155,7 +181,7 @@ AIが出した材料に、あなたが実際に経験したこと・見たこと
 1節につき1つで構いません。これが入っているかどうかで、本の説得力が変わります。</p>
 </div>
 <div class="stepbox">
-<h3><span class="n">STEP 3</span>本文を書かせる（1,200〜1,700字）</h3>
+<h3><span class="n">STEP 3</span>本文を書かせる（1節およそ1,000字）</h3>
 <p>材料がそろってから書かせます。文字数を必ず指定してください。指定しないと短くなります。</p>
 </div>
 <div class="stepbox">
@@ -201,9 +227,163 @@ AIが出した材料に、あなたが実際に経験したこと・見たこと
 <li><b>外部リンクを本文に散らさない。</b>特典の案内は巻末に集約する</li>
 </ul>
 
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">本文もAIが書きます。あなたは自分の体験を1つ足すだけ。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>1節ぶんの材料を先に出させる</div>
+      <div class="p-when">いきなり本文を書かせません。<b>まず具体を並べさせます。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 前提
+<b>【第1回の設定シート】</b>
+<b>【第2回の目次】</b>
+
+# いま書く節
+第<b>【1】</b>章 第<b>【1】</b>節「<b>【節のタイトル】</b>」
+この節が答える疑問：<b>【目次に書いた疑問】</b>
+
+# やってほしいこと
+この節の本文に入れる材料を先に並べてください。まだ本文は書かないでください。
+1. 読者が「これ自分だ」と思う場面を3つ（時間・場所・そのとき何をしていたかまで）
+2. 使える数字や事実を3つ（あとで私が裏を取るので、出典も書いてください）
+3. 読者が実際に言いそうな言葉を3つ
+4. この節でいちばん伝えたいことを1行で
+
+# ルール
+- 一般論を書かないでください。場面で書いてください。
+- 出典が言えない数字は「出典なし」と正直に書いてください。</pre></div>
+  <div class="p-foot">★<b>ここに、あなた自身が経験したことを1つ足してください。</b>それが入っているかどうかで、本の説得力がまったく変わります。ここだけはAIに作れません。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>本文を書かせる（1節1,000字）</div>
+      <div class="p-when">①の材料がそろってから使います。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">さきほどの材料を使って、この節の本文を書いてください。
+
+# 決まり
+- 1,000字前後。短くしないでください。
+- 読者1人に話しかける文体。「みなさん」は使わないでください。
+- 最初の3行で、読者が自分の話だと分かるようにしてください。
+- 私が足した実体験を必ず使ってください。
+
+# 書かないでほしいこと
+- 「〜しましょう」は1節に1回まで。
+- 節の最後に、その節のまとめを置かないでください。読者は要約を読みに来ていません。
+- 「著者について」は書かないでください（巻末に別で置きます）。
+- 確認が取れない数字は書かないでください。書くなら「〜と言われています」ではなく、削ってください。</pre></div>
+  <div class="p-foot">出てきた文章を読んで、<b>違うところは必ず言い返してください。</b>「そこは違う」と言った回数だけ、AIはこの本のことを覚えます。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>書けた本文を直させる</div>
+      <div class="p-when">②のあと、同じチャットで続けて使います。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03">いま書いた本文を、次の5点で点検して直してください。
+
+1. 「〜しましょう」が2回以上出ていないか
+2. 同じ言い回しが3回以上出ていないか（「重要です」「大切です」など）
+3. 抽象的なまま終わっている段落がないか（あれば場面に書き換える）
+4. 読者が誰か分からなくなっている場所がないか
+5. 節の最後がまとめで終わっていないか
+
+# 出し方
+- 直した本文を全文出してください。
+- そのあとに「どこをどう直したか」を箇条書きで書いてください。</pre></div>
+  <div class="p-foot">この5つを全部つぶすと、<b>急に読める文章になります。</b></div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">④</span>数字と制度の裏を取る</div>
+      <div class="p-when">★<b>ここは絶対に飛ばさないでください。</b>AIは自信満々に事実を間違えます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt04">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt04">いま書いた本文から、事実確認が必要な箇所をすべて抜き出してください。
+
+# 抜き出すもの
+- 制度の名前と、それにまつわる金額
+- 統計（〇%、〇人など）
+- 年号・法律の名前
+- 他社サービスの料金や仕様
+- 私の実績として書かれていること
+
+# 出し方
+表にしてください。列は次の4つです。
+| 本文の記述 | 種類 | 確認する場所（公式サイト名など） | 確認が取れなかった場合の書き換え案 |
+
+# ルール
+- 「確認しました」と言わないでください。あなたは確認できません。
+- 私が自分で確かめるための場所だけを示してください。</pre></div>
+  <div class="p-foot">確認が取れないものは<b>書かないでください。</b>「制度では年51万円が支給されます」と「一般に〜と言われることが多いようです」では、間違ったときの重さがまったく違います。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
+
 <h2>7. 進み方の目安</h2>
 <div class="win">
-1日2節ずつ書けば、<b>8〜10日で本文が終わります。</b>
+1日2節ずつ書けば、<b>8日ほどで本文が終わります</b>（15節）。
 まとめて書こうとすると、たいてい3日目で止まります。<b>毎日少しずつが、いちばん速い。</b>
 </div>
 <div class="scroll"><table>

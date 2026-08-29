@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -188,6 +214,147 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 </ul>
 <div class="quote">当たるジャンルは、やってみないと分かりません。
 <b>3冊は同じジャンルで出して型を作り、そこから広げる</b>のが安全です。</div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">数字を見せれば、どこを直すべきかAIが教えてくれます。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>2冊の振り返りを整理させる</div>
+      <div class="p-when">感覚ではなく、実際に起きたことで判断します。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 私の2冊のデータ
+1冊目（文字だけ）
+・かかった日数：<b>【　】</b>／かかった費用：<b>【　】</b>
+・いちばん時間を食った工程：<b>【　】</b>／いちばん苦痛だった工程：<b>【　】</b>
+・30日の売上：<b>【　】</b>／KENP（読まれたページ数）：<b>【　】</b>
+
+2冊目（漫画入り）
+・かかった日数：<b>【　】</b>／かかった費用：<b>【　】</b>
+・いちばん時間を食った工程：<b>【　】</b>／いちばん苦痛だった工程：<b>【　】</b>
+・30日の売上：<b>【　】</b>／KENP：<b>【　】</b>
+
+# やってほしいこと
+1. 2冊を比べて、数字の上で何が言えるかを整理してください。
+2. ★「苦痛だった工程」に注目して、私が続けられそうな形を判断してください。
+3. 3冊目以降の形を、次の4つから1つ推薦してください。
+   全編漫画／文章＋漫画＋挿絵／文章＋挿絵／文章だけ
+4. 推薦する理由を「続けられるかどうか」の観点で説明してください。
+
+# ルール
+- ★「いちばん良い形」ではなく「私が続けられる形」を選んでください。
+- 苦痛だった工程が毎回来る形は、推薦しないでください。</pre></div>
+  <div class="p-foot">★選ぶ基準はひとつです。<b>「続けられるか」。</b>続かない形を選ぶと、3冊目で止まります。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>数字の読み方を教えさせる</div>
+      <div class="p-when">どこを直せばいいかを、数字から判断します。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02"># 私の本の数字
+・表示回数：<b>【　】</b>
+・クリック率：<b>【　】</b>
+・購入または読み放題の開始数：<b>【　】</b>
+・KENP（読まれたページ数）：<b>【　】</b>
+
+# やってほしいこと
+1. この数字から、どこで読者が離れているかを判定してください。
+2. ★いちばん先に直すべき1か所★だけを指摘してください。
+3. その1か所を直すための具体的な作業を、3つまで提案してください。
+
+# 判断の基準
+- 表示回数が低い → キーワード・カテゴリー・タイトル
+- クリック率が低い → 表紙
+- 購入が低い → 内容紹介と目次
+- KENPが低い → 本文の構成（途中で止まっている）
+
+# ルール
+- 全部を直せと言わないでください。止まっている場所だけを指摘してください。</pre></div>
+  <div class="p-foot">★売れないときに<b>全部を作り直さないでください。</b>表示されていないのに表紙を直しても、何も変わりません。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>3冊目の企画を作らせる</div>
+      <div class="p-when">①②を踏まえて、次の1冊を決めます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03"># 前提
+<b>【①で決めた自分のフォーマット】</b>
+<b>【1冊目と2冊目のテーマ】</b>
+
+# やってほしいこと
+3冊目の企画を作ってください。
+
+1. 1冊目・2冊目と同じ読者に向けた、次のテーマを3案。
+2. 3案それぞれについて、1冊目2冊目とどうつながるか（シリーズとしての流れ）。
+3. シリーズにする場合の、表紙の型とタイトルの型の決め方。
+4. 検索キーワード7つ（★第1回⑤の禁止リストを守ってください）。
+
+# ルール
+- ★読者を変えないでください。読者を変えるとシリーズになりません。
+- 3冊目までは同じジャンルで型を作り、そこから広げるのが安全です。</pre></div>
+  <div class="p-foot">★<b>1冊で終わらせないでください。</b>2冊目3冊目があると、1冊読んだ人が次を買います。本が本を売る状態になります。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <h2>6. 提出物</h2>
 <div class="win"><b>自分の出版フォーマット定義 ＋ 3冊目の企画。</b></div>

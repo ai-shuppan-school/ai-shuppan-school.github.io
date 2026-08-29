@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -201,6 +227,169 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 ここから先は、あなたのペースです。<b>月に1冊でも、3か月に1冊でも構いません。</b>
 大事なのは、止まらないことと、失敗をツールに書き足していくことです。
 </div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">ここまでのプロンプトを1本につないで、自動化します。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>自分のプロンプトを1本につなげる</div>
+      <div class="p-when">★<b>自動化の第一歩。</b>ここまで使ってきたプロンプトを、1つの流れにまとめます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01">これまでこの本を作るのに使ってきたプロンプトを、全部つなげて1本の手順書にしてください。
+
+# つなげる順番
+1. テーマ → ターゲットとキーワードを出す
+2. 読者を1人に絞る
+3. 目次を作る（5章×3節）
+4. 節ごとに本文を書く
+5. キャラクターとMBTIと相関図を作る
+6. 20ページのストーリーとネームを作る
+7. 挿絵と漫画の生成指示を作る
+8. 表紙のコンセプトと生成指示を作る
+9. A+コンテンツの4カードを作る
+10. KDP登録情報（内容紹介・キーワード・カテゴリー・ふりがな）を作る
+
+# 出し方
+- 各ステップについて「入力（前のステップの何を渡すか）」と「出力（何が出てくるか）」を明記してください。
+- ★受け渡すものが途中で切れていないかを確認して、切れていたら指摘してください。
+
+# ルール
+- 私が実際に使ってきたプロンプトの文面を、勝手に短くしないでください。</pre></div>
+  <div class="p-foot">★これが<b>あなた専用のツールの設計図</b>になります。人によって順番も中身も違っていいものです。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>Claude Codeのスキルにする</div>
+      <div class="p-when">★AICの受講生がいちばんつまずくところです。<b>この手順書ごと貼ってください。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">Claude Code で使う「スキル」を作りたいです。はじめてスキルを作る人に向けて、教えてください。
+
+# やりたいこと
+<b>【①で作った手順書をここに貼る】</b>
+これを Claude Code に覚えさせて、1冊分をまとめて作れるようにしたいです。
+
+# 教えてほしいこと（1つずつ順番に、画面のどこを押すかまで）
+1. スキルを置くフォルダはどこか
+2. スキルのファイルはどういう形式で、何を書くのか
+3. 上の手順書を、スキルの形にどう書き換えるのか（実際に書いて見せてください）
+4. 作ったスキルをどう呼び出すのか
+5. うまく動かないときに、どこを見ればいいのか
+
+# ルール
+- ★パソコンが得意でない人向けに書いてください。専門用語は使わないでください。
+- 各手順に「うまくいったかどうかの確認の仕方」を1行つけてください。
+- いっぺんに全部やらせないでください。1つずつ、確認しながら進める形にしてください。</pre></div>
+  <div class="p-foot">★AICのチャットでも「<b>スキルの使い方が全然わからない</b>」「自動化できるのはわかるが使い方が難しすぎる」という声が出ています。ここは1人で悩まず、このプロンプトでAIに1つずつ聞いてください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>自分用に育てる</div>
+      <div class="p-when">渡された型を、自分の絵柄・口調・ジャンルに寄せます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03"># 前提
+<b>【いま使っているスキルの中身を貼る】</b>
+
+# やってほしいこと
+このスキルを、私用に書き換えたいです。次のどれを変えたいか私が選ぶので、
+それぞれについて「どのファイルの、どの行を、どう書き換えるか」を教えてください。
+
+1. 絵柄を変える（キャラの見た目・線・色数）
+2. 文章の口調を変える（私の書き方の癖に寄せる）
+3. ジャンルを変える（リサーチの条件とキーワードの決め方）
+4. 章の数や文字数を変える
+
+# ルール
+- 書き換える前と後を、必ず並べて示してください。
+- ★1か所ずつにしてください。いっぺんに変えると、何が効いたか分からなくなります。</pre></div>
+  <div class="p-foot">★渡した時点のツールは<b>あくまで型</b>です。自分の絵柄・口調・ジャンルに寄せていくほど、他の誰も持っていないものになります。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">④</span>失敗を検査に足す</div>
+      <div class="p-when">★<b>失敗は資産です。</b>同じことを二度やらないための仕掛けを作ります。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt04">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt04">出版で問題が起きました。同じことが二度と起きないようにしたいです。
+
+# 起きたこと
+<b>【何が起きたか。審査に落ちた／絵が崩れた／文字が読めなかった など】</b>
+<b>【言われた理由や、気づいたきっかけ】</b>
+
+# やってほしいこと
+1. 原因を、思い込みでなく事実から特定してください。分からない部分は「不明」と書いてください。
+2. ★これを「作る前に機械で見つける」にはどうすればいいかを提案してください。
+3. その検査を、いま使っているスキルのどこに足すかを具体的に書いてください。
+4. 検査がちゃんと動くか確かめるために、わざと壊したデータの例も作ってください。
+
+# ルール
+- ★「気をつける」で終わらせないでください。次も必ず忘れます。
+- 文章のメモではなく、機械が判定できる形にしてください。</pre></div>
+  <div class="p-foot">★<b>ドキュメントに書くだけでは必ず忘れます。</b>検査に1行足すところまでやって、はじめて「二度と起きない」になります。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <h2>7. 提出物</h2>
 <div class="win"><b>ツールを使って、3冊目のKDP登録情報まで自力で出力できたこと。</b></div>

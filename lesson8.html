@@ -70,6 +70,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms li{margin-bottom:3px;}
 
 
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
+
 .sheetbox{border:2px solid #0f7b57;border-radius:12px;padding:20px 22px;margin:26px 0;background:#f4fbf8;}
 .sheetbox-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
 .sheetbox-title{font-weight:700;font-size:16px;color:#0f7b57;}
@@ -274,6 +300,231 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 <tr><td><b>PC画面は肩越しカメラで指定</b></td><td>指定しないと蓋の裏を見る絵になる</td></tr>
 </table></div>
 
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">キャラもMBTIも相関図もストーリーも、AIに出させます。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>キャラクターを作らせる（MBTI付き）</div>
+      <div class="p-when">★<b>この回の出発点。</b>キャラが曖昧だと、ページごとに別人になります。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 前提
+<b>【第1回の設定シート】</b>
+<b>【第2回の目次】</b>
+
+# やってほしいこと
+この本の漫画に出すキャラクターを3人作ってください。
+
+# 1人につき必ず書くこと
+1. 名前（読みやすい日本語の名前）
+2. 年齢・職業・立場
+3. ★MBTIタイプ（16タイプから1つ）と、そう判断した理由
+4. 外見（髪型・髪色・服・体型・眼鏡の有無）★あとで全ページに貼るので具体的に
+5. 口調（一人称・語尾・敬語を使う相手）
+6. いま困っていること
+7. 物語の中でどう変わるか
+8. その人が言いそうなセリフを3つ（きれいにまとめず、生の言葉で）
+
+# 3人の役割
+- 主人公：読者と同じ悩みを持っている人
+- 導く人：先に答えを知っている人
+- もう1人：主人公と同じ立場だが、別の反応をする人
+
+# ルール
+- ★MBTIは飾りではありません。「このタイプだからこう反応する」が、
+  6と7と8に必ず表れるようにしてください。
+- 3人のMBTIは、わざと違うタイプにしてください。</pre></div>
+  <div class="p-foot">★<b>MBTIを入れると、キャラの行動がブレなくなります。</b>「なんでこの人はここで怒るのか」に理由がつくからです。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>相関図を作らせる</div>
+      <div class="p-when">①で3人が決まったら、関係を決めます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02"># 前提
+<b>【①で作った3人のキャラクター設定を貼る】</b>
+
+# やってほしいこと
+3人の相関図を、文章と図の両方で作ってください。
+
+1. 誰から誰へ、どんな気持ちが向いているか（矢印の向きと、その気持ちの言葉）
+2. 3人が初めて出会った経緯
+3. 物語の最初の時点での関係
+4. 物語の最後の時点での関係（★ここが変わっていないと話になりません）
+5. 3人のあいだにある、まだ言えていないこと
+
+# 出し方
+- 図はテキストで（矢印と短い言葉で）描いてください。
+- そのあとに、変化の表を作ってください。列は「誰から誰へ｜最初｜最後｜変わったきっかけ」。
+
+# ルール
+- 「仲が良い」「尊敬している」で終わらせないでください。
+  なぜそう思っているのか、きっかけの出来事まで書いてください。</pre></div>
+  <div class="p-foot">★<b>最初と最後で関係が変わっていない漫画は、読み終わっても何も残りません。</b>ここで変化を作っておいてください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>20ページのストーリーを作らせる</div>
+      <div class="p-when">①②を貼ってから。ヒーローズジャーニーの型で組みます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03"># 前提
+<b>【①のキャラクター設定】</b>
+<b>【②の相関図と変化の表】</b>
+<b>【第2回の目次】</b>
+
+# やってほしいこと
+20ページの漫画のストーリーを作ってください。
+
+# 型
+P1〜3　日常　　… 読者と同じ状態の主人公。「これ自分だ」と思わせる
+P4〜6　事件　　… 放っておけない出来事。どん底
+P7〜9　出会い　… 方法を知る。半信半疑
+P10〜14 試練　　… やってみる。うまくいかない。工夫する
+P15〜18 変化　　… 小さな成功。周りの反応が変わる
+P19〜20 着地　　… 読者へのバトン
+
+# 1ページごとに書くこと
+1. そのページで起きること（1〜2行）
+2. ★このページの最後で読者に残す疑問（次のページをめくる理由）
+3. 使うキャラと、そのときの気持ち
+
+# ルール
+- ★各場面に「フリ」を必ず入れてください。
+  フリ（予兆）→ ウケ（本体）→ キメ（結果）の3拍子です。
+  いきなり結論のコマから始めないでください。
+- ★本文の内容と対応させてください。漫画だけ別の話にしないでください。</pre></div>
+  <div class="p-foot">★<b>AIは最短距離でまとめようとして、必ず「フリ」を削ります。</b>出てきたものを見て、いきなり結論から始まっていたら、フリを足すよう言い返してください。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">④</span>ネーム（コマ割りとセリフ）を作らせる</div>
+      <div class="p-when">③のストーリーができたら、1ページずつ。<b>ここが最後の砦です。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt04">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt04"># 前提
+<b>【①のキャラクター設定】</b>
+<b>【③のストーリー】</b>
+
+# 作るページ
+P<b>【1】</b>
+
+# やってほしいこと
+このページのネーム（コマ割りとセリフ）を作ってください。
+
+# 絶対に守る決まり
+- コマ数は3〜4コマ。★5コマ以上にしないでください。情報量が多すぎて読めません。
+- ★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。
+- ★1つの吹き出しは25文字以内（英単語混じりでも30文字まで）。
+  超えるときは文を縮めず、吹き出しを分けてください。
+- ★2ページに1コマは「キャラが主役でないコマ」を入れてください（背景・小物・手元・空）。
+- 正面バストアップを続けないでください。俯瞰・煽り・引き・肩越し・足元を混ぜてください。
+- ★パソコンの画面を見せるコマは「肩越しカメラ」と指定してください。
+  そう書かないと、キャラが画面の裏側を見ている絵になります。
+- ★横並びのコマは、必ず右側が先のコマ、左側が後のコマです。
+
+# 出し方
+コマごとに次を書いてください。
+1. カメラ（俯瞰／煽り／引き／肩越し／足元／バストアップ）
+2. 誰が何をしているか
+3. セリフ（吹き出しごとに分けて。文字数も数えて書いてください）
+4. このコマが主役キャラなしのコマかどうか
+
+最後に、ページの最後のコマが「次が気になる形」になっているか自己判定してください。</pre></div>
+  <div class="p-foot">★<b>書いてから直すと、全ページ作り直しになります。</b>生成にかかる費用は「枚数 × やり直した回数」です。ここで時間をかけるほうが安いです。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">⑤</span>生成前の最終チェックをさせる</div>
+      <div class="p-when">★<b>1つでも違反が残っていたら、1枚も生成しないでください。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt05">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt05">これから貼る20ページ分のネームを、次のルールで全部点検してください。
+
+<b>【20ページ分のネームを貼る】</b>
+
+# 点検するルール
+1. セリフに句読点（、。）が入っていないか
+2. 1つの吹き出しが25文字以内か（英語混じりは30文字以内）
+3. 1ページのコマ数が3〜4コマか
+4. 2ページに1コマ、キャラが主役でないコマがあるか
+5. 各場面にフリがあるか（いきなり結論になっていないか）
+6. ページの最後に引きがあるか
+7. 正面バストアップが3コマ以上続いていないか
+8. パソコン画面のコマが肩越しで指定されているか
+
+# 出し方
+- ページ番号ごとに、違反があるものだけを列挙してください。
+- 違反ゼロのページは「OK」とだけ書いてください。
+- 最後に「違反の合計件数」を書いてください。
+- ★違反が1件でもあるうちは「生成してよい」と言わないでください。</pre></div>
+  <div class="p-foot">★AICの受講生でも、ここを飛ばして<b>80%を手で直すことになった</b>人がいます。点検は面倒ですが、作り直しよりはるかに軽いです。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
+
 <!--SHEET-->
 <div class="sheetbox">
   <div class="sheetbox-head">
@@ -324,7 +575,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 (function () {
   var KEY = "E38090E7ACAC38";
   var XNAME = "【第8回 宿題】漫画ネームシート.xlsx", CNAME = "【第8回 宿題】漫画ネームシート.csv";
-  var CSV = "【第8回 宿題】漫画ネームシート,,\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。,,\n,▼ ここに書いてください,記入例（見本）\n1　キャラクター設定（先に固定する）,,\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。,,\n① 主人公の名前,,田中 亮\n② 年齢・立場,,42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）,,短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）,,一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか,,後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか,,何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）,,森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）,,\n2　20ページの流れ（ネーム）,,\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。,,\nP1〜　日常,,\nP1　コマ割り（3〜4コマ）,,①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）,,また今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）,,スマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）,,\nP2　セリフ（1吹き出し25字以内・句読点なし）,,\nP2　最後のコマの引き（次が気になるか）,,\nP3　コマ割り（3〜4コマ）,,\nP3　セリフ（1吹き出し25字以内・句読点なし）,,\nP3　最後のコマの引き（次が気になるか）,,\nP4〜　事件（どん底）,,\nP4　コマ割り（3〜4コマ）,,\nP4　セリフ（1吹き出し25字以内・句読点なし）,,\nP4　最後のコマの引き（次が気になるか）,,\nP5　コマ割り（3〜4コマ）,,\nP5　セリフ（1吹き出し25字以内・句読点なし）,,\nP5　最後のコマの引き（次が気になるか）,,\nP6　コマ割り（3〜4コマ）,,\nP6　セリフ（1吹き出し25字以内・句読点なし）,,\nP6　最後のコマの引き（次が気になるか）,,\nP7〜　出会い,,\nP7　コマ割り（3〜4コマ）,,\nP7　セリフ（1吹き出し25字以内・句読点なし）,,\nP7　最後のコマの引き（次が気になるか）,,\nP8　コマ割り（3〜4コマ）,,\nP8　セリフ（1吹き出し25字以内・句読点なし）,,\nP8　最後のコマの引き（次が気になるか）,,\nP9　コマ割り（3〜4コマ）,,\nP9　セリフ（1吹き出し25字以内・句読点なし）,,\nP9　最後のコマの引き（次が気になるか）,,\nP10〜　試練,,\nP10　コマ割り（3〜4コマ）,,\nP10　セリフ（1吹き出し25字以内・句読点なし）,,\nP10　最後のコマの引き（次が気になるか）,,\nP11　コマ割り（3〜4コマ）,,\nP11　セリフ（1吹き出し25字以内・句読点なし）,,\nP11　最後のコマの引き（次が気になるか）,,\nP12　コマ割り（3〜4コマ）,,\nP12　セリフ（1吹き出し25字以内・句読点なし）,,\nP12　最後のコマの引き（次が気になるか）,,\nP13　コマ割り（3〜4コマ）,,\nP13　セリフ（1吹き出し25字以内・句読点なし）,,\nP13　最後のコマの引き（次が気になるか）,,\nP14　コマ割り（3〜4コマ）,,\nP14　セリフ（1吹き出し25字以内・句読点なし）,,\nP14　最後のコマの引き（次が気になるか）,,\nP15〜　変化,,\nP15　コマ割り（3〜4コマ）,,\nP15　セリフ（1吹き出し25字以内・句読点なし）,,\nP15　最後のコマの引き（次が気になるか）,,\nP16　コマ割り（3〜4コマ）,,\nP16　セリフ（1吹き出し25字以内・句読点なし）,,\nP16　最後のコマの引き（次が気になるか）,,\nP17　コマ割り（3〜4コマ）,,\nP17　セリフ（1吹き出し25字以内・句読点なし）,,\nP17　最後のコマの引き（次が気になるか）,,\nP18　コマ割り（3〜4コマ）,,\nP18　セリフ（1吹き出し25字以内・句読点なし）,,\nP18　最後のコマの引き（次が気になるか）,,\nP19〜　着地,,\nP19　コマ割り（3〜4コマ）,,\nP19　セリフ（1吹き出し25字以内・句読点なし）,,\nP19　最後のコマの引き（次が気になるか）,,\nP20　コマ割り（3〜4コマ）,,\nP20　セリフ（1吹き出し25字以内・句読点なし）,,\nP20　最後のコマの引き（次が気になるか）,,\n3　生成前チェック（1つでも×なら生成しない）,,\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。,,\n⑨ すべてのセリフに句読点が入っていない,,確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）,,確認した\n⑪ 1ページのコマ数が3〜4になっている,,確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）,,確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）,,確認した\n⑭ ページの最後に引きがある,,確認した\n⑮ 正面バストアップの連続になっていない,,確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した,,確認した", TSV = "【第8回 宿題】漫画ネームシート\t\t\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\n1　キャラクター設定（先に固定する）\t\t\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。\t\t\n① 主人公の名前\t\t田中 亮\n② 年齢・立場\t\t42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）\t\t短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）\t\t一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか\t\t後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか\t\t何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）\t\t森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）\t\t\n2　20ページの流れ（ネーム）\t\t\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。\t\t\nP1〜　日常\t\t\nP1　コマ割り（3〜4コマ）\t\t①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）\t\tまた今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）\t\tスマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）\t\t\nP2　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP2　最後のコマの引き（次が気になるか）\t\t\nP3　コマ割り（3〜4コマ）\t\t\nP3　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP3　最後のコマの引き（次が気になるか）\t\t\nP4〜　事件（どん底）\t\t\nP4　コマ割り（3〜4コマ）\t\t\nP4　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP4　最後のコマの引き（次が気になるか）\t\t\nP5　コマ割り（3〜4コマ）\t\t\nP5　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP5　最後のコマの引き（次が気になるか）\t\t\nP6　コマ割り（3〜4コマ）\t\t\nP6　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP6　最後のコマの引き（次が気になるか）\t\t\nP7〜　出会い\t\t\nP7　コマ割り（3〜4コマ）\t\t\nP7　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP7　最後のコマの引き（次が気になるか）\t\t\nP8　コマ割り（3〜4コマ）\t\t\nP8　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP8　最後のコマの引き（次が気になるか）\t\t\nP9　コマ割り（3〜4コマ）\t\t\nP9　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP9　最後のコマの引き（次が気になるか）\t\t\nP10〜　試練\t\t\nP10　コマ割り（3〜4コマ）\t\t\nP10　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP10　最後のコマの引き（次が気になるか）\t\t\nP11　コマ割り（3〜4コマ）\t\t\nP11　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP11　最後のコマの引き（次が気になるか）\t\t\nP12　コマ割り（3〜4コマ）\t\t\nP12　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP12　最後のコマの引き（次が気になるか）\t\t\nP13　コマ割り（3〜4コマ）\t\t\nP13　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP13　最後のコマの引き（次が気になるか）\t\t\nP14　コマ割り（3〜4コマ）\t\t\nP14　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP14　最後のコマの引き（次が気になるか）\t\t\nP15〜　変化\t\t\nP15　コマ割り（3〜4コマ）\t\t\nP15　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP15　最後のコマの引き（次が気になるか）\t\t\nP16　コマ割り（3〜4コマ）\t\t\nP16　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP16　最後のコマの引き（次が気になるか）\t\t\nP17　コマ割り（3〜4コマ）\t\t\nP17　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP17　最後のコマの引き（次が気になるか）\t\t\nP18　コマ割り（3〜4コマ）\t\t\nP18　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP18　最後のコマの引き（次が気になるか）\t\t\nP19〜　着地\t\t\nP19　コマ割り（3〜4コマ）\t\t\nP19　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP19　最後のコマの引き（次が気になるか）\t\t\nP20　コマ割り（3〜4コマ）\t\t\nP20　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP20　最後のコマの引き（次が気になるか）\t\t\n3　生成前チェック（1つでも×なら生成しない）\t\t\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。\t\t\n⑨ すべてのセリフに句読点が入っていない\t\t確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）\t\t確認した\n⑪ 1ページのコマ数が3〜4になっている\t\t確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）\t\t確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）\t\t確認した\n⑭ ページの最後に引きがある\t\t確認した\n⑮ 正面バストアップの連続になっていない\t\t確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した\t\t確認した", B64 = "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";
+  var CSV = "【第8回 宿題】漫画ネームシート,,\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。,,\n,▼ ここに書いてください,記入例（見本）\n1　キャラクター設定（先に固定する）,,\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。,,\n① 主人公の名前,,田中 亮\n② 年齢・立場,,42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）,,短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）,,一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか,,後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか,,何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）,,森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）,,\n2　20ページの流れ（ネーム）,,\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。,,\nP1〜　日常,,\nP1　コマ割り（3〜4コマ）,,①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）,,また今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）,,スマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）,,\nP2　セリフ（1吹き出し25字以内・句読点なし）,,\nP2　最後のコマの引き（次が気になるか）,,\nP3　コマ割り（3〜4コマ）,,\nP3　セリフ（1吹き出し25字以内・句読点なし）,,\nP3　最後のコマの引き（次が気になるか）,,\nP4〜　事件（どん底）,,\nP4　コマ割り（3〜4コマ）,,\nP4　セリフ（1吹き出し25字以内・句読点なし）,,\nP4　最後のコマの引き（次が気になるか）,,\nP5　コマ割り（3〜4コマ）,,\nP5　セリフ（1吹き出し25字以内・句読点なし）,,\nP5　最後のコマの引き（次が気になるか）,,\nP6　コマ割り（3〜4コマ）,,\nP6　セリフ（1吹き出し25字以内・句読点なし）,,\nP6　最後のコマの引き（次が気になるか）,,\nP7〜　出会い,,\nP7　コマ割り（3〜4コマ）,,\nP7　セリフ（1吹き出し25字以内・句読点なし）,,\nP7　最後のコマの引き（次が気になるか）,,\nP8　コマ割り（3〜4コマ）,,\nP8　セリフ（1吹き出し25字以内・句読点なし）,,\nP8　最後のコマの引き（次が気になるか）,,\nP9　コマ割り（3〜4コマ）,,\nP9　セリフ（1吹き出し25字以内・句読点なし）,,\nP9　最後のコマの引き（次が気になるか）,,\nP10〜　試練,,\nP10　コマ割り（3〜4コマ）,,\nP10　セリフ（1吹き出し25字以内・句読点なし）,,\nP10　最後のコマの引き（次が気になるか）,,\nP11　コマ割り（3〜4コマ）,,\nP11　セリフ（1吹き出し25字以内・句読点なし）,,\nP11　最後のコマの引き（次が気になるか）,,\nP12　コマ割り（3〜4コマ）,,\nP12　セリフ（1吹き出し25字以内・句読点なし）,,\nP12　最後のコマの引き（次が気になるか）,,\nP13　コマ割り（3〜4コマ）,,\nP13　セリフ（1吹き出し25字以内・句読点なし）,,\nP13　最後のコマの引き（次が気になるか）,,\nP14　コマ割り（3〜4コマ）,,\nP14　セリフ（1吹き出し25字以内・句読点なし）,,\nP14　最後のコマの引き（次が気になるか）,,\nP15〜　変化,,\nP15　コマ割り（3〜4コマ）,,\nP15　セリフ（1吹き出し25字以内・句読点なし）,,\nP15　最後のコマの引き（次が気になるか）,,\nP16　コマ割り（3〜4コマ）,,\nP16　セリフ（1吹き出し25字以内・句読点なし）,,\nP16　最後のコマの引き（次が気になるか）,,\nP17　コマ割り（3〜4コマ）,,\nP17　セリフ（1吹き出し25字以内・句読点なし）,,\nP17　最後のコマの引き（次が気になるか）,,\nP18　コマ割り（3〜4コマ）,,\nP18　セリフ（1吹き出し25字以内・句読点なし）,,\nP18　最後のコマの引き（次が気になるか）,,\nP19〜　着地,,\nP19　コマ割り（3〜4コマ）,,\nP19　セリフ（1吹き出し25字以内・句読点なし）,,\nP19　最後のコマの引き（次が気になるか）,,\nP20　コマ割り（3〜4コマ）,,\nP20　セリフ（1吹き出し25字以内・句読点なし）,,\nP20　最後のコマの引き（次が気になるか）,,\n3　生成前チェック（1つでも×なら生成しない）,,\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。,,\n⑨ すべてのセリフに句読点が入っていない,,確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）,,確認した\n⑪ 1ページのコマ数が3〜4になっている,,確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）,,確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）,,確認した\n⑭ ページの最後に引きがある,,確認した\n⑮ 正面バストアップの連続になっていない,,確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した,,確認した", TSV = "【第8回 宿題】漫画ネームシート\t\t\n書いてから直すと全ページ作り直しになります。埋め終わったら、いちばん下のチェックを全部通してから生成してください。\t\t\n\t▼ ここに書いてください\t記入例（見本）\n1　キャラクター設定（先に固定する）\t\t\n★ここが曖昧だと、ページごとに顔が変わります。登場は2〜3人までにしてください。\t\t\n① 主人公の名前\t\t田中 亮\n② 年齢・立場\t\t42歳・中堅メーカーの係長\n③ 外見（髪型・髪色・服・体型・眼鏡）\t\t短髪・黒・グレーのスーツ・中肉中背・眼鏡なし\n④ 口調（一人称・語尾・敬語かどうか）\t\t一人称は「俺」。ぶっきらぼう。敬語は上司にだけ\n⑤ いま何に困っているか\t\t後輩に先を越された。このままでいいのか分からない\n⑥ 物語の中でどう変わるか\t\t何もできないと思っていた自分が、小さく1つ動き出す\n⑦ 2人目のキャラ（名前・外見・役割）\t\t森田 さやか・30代・後輩・先に動いた人\n⑧ 3人目のキャラ（いれば）\t\t\n2　20ページの流れ（ネーム）\t\t\n★セリフに句読点（、。）を入れないでください。読点は全角スペース、句点は削除です。1吹き出し25文字以内（英語混じりでも30文字まで）。超えたら吹き出しを分けます。カラーは1ページ3〜4コマ。5コマ以上は読めません。\t\t\nP1〜　日常\t\t\nP1　コマ割り（3〜4コマ）\t\t①電車の窓　②主人公の横顔　③スマホの通知　④手が止まる\nP1　セリフ（1吹き出し25字以内・句読点なし）\t\tまた今日も同じ景色だな\nP1　最後のコマの引き（次が気になるか）\t\tスマホに知らない名前の通知が出る\nP2　コマ割り（3〜4コマ）\t\t\nP2　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP2　最後のコマの引き（次が気になるか）\t\t\nP3　コマ割り（3〜4コマ）\t\t\nP3　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP3　最後のコマの引き（次が気になるか）\t\t\nP4〜　事件（どん底）\t\t\nP4　コマ割り（3〜4コマ）\t\t\nP4　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP4　最後のコマの引き（次が気になるか）\t\t\nP5　コマ割り（3〜4コマ）\t\t\nP5　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP5　最後のコマの引き（次が気になるか）\t\t\nP6　コマ割り（3〜4コマ）\t\t\nP6　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP6　最後のコマの引き（次が気になるか）\t\t\nP7〜　出会い\t\t\nP7　コマ割り（3〜4コマ）\t\t\nP7　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP7　最後のコマの引き（次が気になるか）\t\t\nP8　コマ割り（3〜4コマ）\t\t\nP8　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP8　最後のコマの引き（次が気になるか）\t\t\nP9　コマ割り（3〜4コマ）\t\t\nP9　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP9　最後のコマの引き（次が気になるか）\t\t\nP10〜　試練\t\t\nP10　コマ割り（3〜4コマ）\t\t\nP10　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP10　最後のコマの引き（次が気になるか）\t\t\nP11　コマ割り（3〜4コマ）\t\t\nP11　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP11　最後のコマの引き（次が気になるか）\t\t\nP12　コマ割り（3〜4コマ）\t\t\nP12　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP12　最後のコマの引き（次が気になるか）\t\t\nP13　コマ割り（3〜4コマ）\t\t\nP13　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP13　最後のコマの引き（次が気になるか）\t\t\nP14　コマ割り（3〜4コマ）\t\t\nP14　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP14　最後のコマの引き（次が気になるか）\t\t\nP15〜　変化\t\t\nP15　コマ割り（3〜4コマ）\t\t\nP15　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP15　最後のコマの引き（次が気になるか）\t\t\nP16　コマ割り（3〜4コマ）\t\t\nP16　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP16　最後のコマの引き（次が気になるか）\t\t\nP17　コマ割り（3〜4コマ）\t\t\nP17　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP17　最後のコマの引き（次が気になるか）\t\t\nP18　コマ割り（3〜4コマ）\t\t\nP18　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP18　最後のコマの引き（次が気になるか）\t\t\nP19〜　着地\t\t\nP19　コマ割り（3〜4コマ）\t\t\nP19　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP19　最後のコマの引き（次が気になるか）\t\t\nP20　コマ割り（3〜4コマ）\t\t\nP20　セリフ（1吹き出し25字以内・句読点なし）\t\t\nP20　最後のコマの引き（次が気になるか）\t\t\n3　生成前チェック（1つでも×なら生成しない）\t\t\n★ここを通さずに生成すると、全ページ作り直しになります。費用は「枚数 × やり直した回数」で効きます。\t\t\n⑨ すべてのセリフに句読点が入っていない\t\t確認した\n⑩ すべての吹き出しが25文字以内（英語混じりは30文字以内）\t\t確認した\n⑪ 1ページのコマ数が3〜4になっている\t\t確認した\n⑫ 2ページに1コマ、キャラが主役でないコマがある（背景・小物・手元・空）\t\t確認した\n⑬ 各場面にフリがある（いきなり結論になっていない）\t\t確認した\n⑭ ページの最後に引きがある\t\t確認した\n⑮ 正面バストアップの連続になっていない\t\t確認した\n⑯ PC画面のコマを「肩越しカメラ」で指定した\t\t確認した", B64 = "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";
   var dl = document.getElementById("dl_" + KEY);
   var cp = document.getElementById("cp_" + KEY);
   var msg = document.getElementById("msg_" + KEY);

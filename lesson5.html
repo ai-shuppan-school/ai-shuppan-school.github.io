@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -207,6 +233,139 @@ Wordの「段落前で改ページ」（page break before）という設定は�
 <tr><td>表示が崩れている</td><td>Wordのまま入稿した</td><td>EPUBにしてから上げる</td></tr>
 <tr><td>画像の解像度が低い</td><td>縮小した画像を使った</td><td>元の大きさの画像を入れなおす</td></tr>
 </table></div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">整え方が分からなくなったら、AIに聞いてください。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>原稿を1本にまとめる指示</div>
+      <div class="p-when">節ごとにバラバラの原稿を、章の順に1本にします。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01">これから節ごとの原稿を順番に貼ります。次の形に整えて、1本の原稿にしてください。
+
+# 構成
+1ページ目：タイトルと著者名だけ
+2ページ目：目次
+3ページ目以降：はじめに → 第1章 → …（章と節の頭で必ずページを変える）
+最後：おわりに → 著者プロフィール →（特典の案内）→ 著作権表示
+
+# 見出しの決まり
+- 章 → 見出し2
+- 節 → 見出し3
+- ★見出しは必ずこのレベルにそろえてください。目次はここから自動で作ります。
+
+# やってほしいこと
+- 節と節のつなぎが不自然なところを直してください。
+- 同じ話が2か所に出てきたら、片方を削って教えてください。
+- 全体の文字数を最後に報告してください。</pre></div>
+  <div class="p-foot">まだ貼っていない節があっても構いません。<b>順番に貼っていけば大丈夫です。</b></div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>Googleドキュメントでの整え方を聞く</div>
+      <div class="p-when">★AICはGoogleドキュメントで原稿を仕上げます。<b>つまずいたらこれを聞いてください。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">Googleドキュメントで、Kindle出版用の原稿を整えたいです。
+はじめてやる人に向けて、次を1つずつ順番に教えてください。画面のどこを押すかまで書いてください。
+
+1. 文書の言語を日本語にする方法
+   （★英語のままKDPにアップするとエラーになると聞きました。ここは必ず教えてください）
+2. 章と節の頭で改ページを入れる方法
+   （★「段落前で改ページ」の設定ではなく、改ページそのものを入れる方法を教えてください）
+3. 見出しスタイル（見出し2・見出し3）を設定する方法
+4. 見出しから目次を自動で作る方法と、目次を置く位置
+5. 画像を入れて、幅をそろえる方法
+6. KDPにアップロードできる形式で書き出す方法
+
+# ルール
+- パソコンが得意でない人向けに書いてください。専門用語は使わないでください。
+- 各手順に「うまくいったかどうかの確認の仕方」を1行つけてください。</pre></div>
+  <div class="p-foot">★<b>言語が英語のままだとKDPでエラーが出ます。</b>これはAICの教材でもはっきり注意されている、いちばん多いつまずきです。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>入稿前の最終チェックリストを作らせる</div>
+      <div class="p-when">アップロードする直前に。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03">Kindleに入稿する直前の確認リストを作ってください。
+私が1つずつチェックできる形（□つきの箇条書き）にしてください。
+
+# 必ず入れてほしい項目
+- 1ページ目がタイトルと著者名だけになっているか
+- 目次のリンクを全部タップして、全部飛べたか
+- 章の頭が前の章の続きになっていないか
+- 文書の言語が日本語になっているか
+- 画像の幅がそろっているか
+- 最後に著作権表示があるか
+- スマホの実機で最初から最後までめくったか
+
+# ルール
+- 「たぶん大丈夫」で通せない書き方にしてください。
+  各項目に「どうやって確かめるか」を必ず添えてください。</pre></div>
+  <div class="p-foot">★<b>目次のリンク切れは審査で問題になります。</b>1つずつ実際にタップして確かめてください。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <h2>8. 提出物</h2>
 <div class="win"><b>入稿用EPUB 1ファイル。</b>（言語ja／目次リンク切れなし／スマホで確認済み）</div>

@@ -125,6 +125,32 @@ footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -475,6 +501,115 @@ iCloudやGoogleフォトが「いっぱいです」と出ている状態だと�
 
 <div class="note"><b>4つ目は、まとまっていなくて大丈夫です。</b><br>
 「40代で転職を考えている人の役に立ちたい」くらいのざっくりしたもので構いません。<b>第1回は、それを一緒に分解して、売れる形に組み替えるところから始めます。</b>むしろ、うまく書こうとしないでください。</div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">まずはAIに聞く練習から。ここから全部この形で進みます。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>AIに「聞く練習」をする</div>
+      <div class="p-when">★<b>いちばん最初にこれを1回やってください。</b>これから全部この形で進みます。まずは道具に慣れるのが目的です。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01">あなたはKindle電子書籍の出版をサポートする担当者です。
+私はこれから、はじめてKindleで本を出します。
+
+# 私のこと
+・パソコンの得意さ：<b>【メールとネットくらいなら使える】</b>
+・AIを使ったことが：<b>【ほとんどない】</b>
+・使える時間：<b>【平日は30分、土日は2時間くらい】</b>
+
+# やってほしいこと
+1. Kindleで1冊出すまでに、私が通る作業を順番に並べてください。
+2. その中で「はじめての人がいちばん止まりやすい場所」を3つ教えてください。
+3. その3つについて、止まったときに私があなたに聞けばいい質問文を、
+   そのままコピーできる形で書いてください。
+
+# ルール
+- 専門用語を使わないでください。使うときは必ず言い換えを添えてください。
+- 私を励まさなくて構いません。事実だけ教えてください。</pre></div>
+  <div class="p-foot">★これが<b>この講座のやり方そのもの</b>です。考えるのはあなた、ひねり出すのはAI。以降の回も全部この形で進みます。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>詰まったときに使う（万能）</div>
+      <div class="p-when">★どの回でも使えます。<b>手が止まったらこれ。</b></div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02"><b>【　　　　　】</b>が分かりません。
+
+# 私の状況
+・いまやろうとしていること：<b>【　】</b>
+・やってみたこと：<b>【　】</b>
+・そのとき出た画面やメッセージ：<b>【　】</b>
+
+# やってほしいこと
+1. いま何が起きているのかを、やさしい日本語で説明してください。
+2. 直す手順を、1つずつ順番に書いてください。画面のどこを押すかまで書いてください。
+3. 各手順に「うまくいったかどうかの確かめ方」を1行つけてください。
+4. 同じことを次に起こさないために、私が覚えておくことを1つだけ教えてください。
+
+# ルール
+- はじめてやる人に向けて書いてください。専門用語は使わないでください。
+- いっぺんに全部やらせないでください。1つずつ、確認しながら進む形にしてください。</pre></div>
+  <div class="p-foot">★このプロンプトを<b>メモ帳に保存しておいてください。</b>これから何度も使います。詰まった内容を【　】に入れるだけです。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <!--SHEET-->
 <div class="sheetbox">

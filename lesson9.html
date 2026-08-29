@@ -69,6 +69,32 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -192,6 +218,163 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-si
 20ページを1回で通せば1回分。3回やり直せば3倍です。<br>
 だから第8回のチェックに時間をかけます。<b>設計に1時間かけるほうが、作り直すより安い。</b>
 </div>
+
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">生成の指示文もAIに作らせます。1枚ずつ確認して進めます。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>1ページ目の生成指示を作らせる</div>
+      <div class="p-when">★<b>いきなり20枚投げないでください。</b>まず1枚で絵柄とキャラを確定させます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 前提
+<b>【第8回①のキャラクター設定】</b>
+<b>【第8回④のP1のネーム】</b>
+
+# やってほしいこと
+P1を画像生成AIで作るための指示文を作ってください。
+
+# 指示文に必ず入れること
+1. ★<b>【絶対最優先】</b>キャラクター外見 … 全キャラの外見を漏れなく。ここを毎ページ貼ります
+2. 絵柄の指定（フルカラー・線の太さ・色数）
+3. コマ割り（何コマか、どの位置に何を置くか）
+   ★横並びのコマは、右側が先のコマ、左側が後のコマです
+4. コマごとのカメラ位置
+5. コマごとのセリフ（吹き出しの中の文字を「」で正確に）
+6. 縦長のページサイズ
+
+# 出し方
+- そのままコピーして貼れる1つの文章として出してください。
+- 説明や前置きはつけないでください。</pre></div>
+  <div class="p-foot">★出てきた指示文の<b>キャラクター外見の部分は保存してください。</b>2ページ目以降、毎回この部分を先頭に貼ります。ここを省くと別人になります。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>2ページ目以降を作らせる</div>
+      <div class="p-when">1ページ目でOKが出たら、同じ設定を使い回します。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02"># 前提
+キャラクター外見（毎回貼る）：<b>【①で確定した外見の部分を貼る】</b>
+絵柄の指定：<b>【①で確定した絵柄の部分を貼る】</b>
+
+# 作るページ
+P<b>【2】</b>のネーム：<b>【第8回④で作ったネームを貼る】</b>
+
+# やってほしいこと
+P1と同じ形式で、このページの生成指示文を作ってください。
+★キャラクター外見と絵柄の指定は、1文字も変えずに先頭に入れてください。
+
+# 出し方
+- そのままコピーして貼れる1つの文章として。前置き不要。</pre></div>
+  <div class="p-foot">3〜5ページごとに、<b>前のページと並べて見てください。</b>少しずつ顔が変わっていくことがあります。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>できたページを点検させる</div>
+      <div class="p-when">1枚ずつ拡大して、画像を貼ってから使います。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03">この漫画のページを点検してください。
+
+# 見てほしいところ
+1. キャラの顔が、前のページと同じ人に見えるか
+2. 服・髪型・髪色が変わっていないか
+3. 指の本数がおかしくないか
+4. 吹き出しの文字が全部読めるか（はみ出し・切れがないか）
+5. セリフに句読点が入っていないか
+6. コマの順番どおりに目が動くか（右上→左下の流れ）
+7. ページの最後のコマで、次が気になるか
+
+# 出し方
+- 各項目を「問題なし／要修正」で判定。
+- 要修正があれば、直すか通すかの判断も書いてください。
+  ★文字が読めない・キャラが別人・指が目立って変 → 直す
+  ★背景が雑・構図が思ったのと少し違う → 通す</pre></div>
+  <div class="p-foot">★1冊目の漫画で完璧を目指さないでください。<b>止まらないことのほうが大事です。</b></div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">④</span>途中で止まったときに使う</div>
+      <div class="p-when">★<b>全部やり直さないでください。</b>残りだけ流します。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt04">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt04">漫画の生成が途中で止まりました。どこまでできているかを確認して、残りだけ作り直したいです。
+
+# 状況
+- 作る予定：20ページ
+- 出力フォルダにできているファイル：<b>【ファイル名を貼る。日時順で並べてください】</b>
+
+# やってほしいこと
+1. どのページまで完成しているかを判定してください。
+2. 次に作るべきページ番号を教えてください。
+3. 残りのページだけを流すための手順を、1つずつ書いてください。
+
+# ルール
+- ★できているページを作り直させないでください。費用がむだになります。</pre></div>
+  <div class="p-foot">★<b>長時間の生成が動いている間は、そのジョブが使うファイルを触らないでください。</b>途中でプロセスが落ちて、それまでの分がむだになります。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
 
 <h2>7. 提出物</h2>
 <div class="win"><b>漫画20ページ（PNG）。</b></div>

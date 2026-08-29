@@ -74,6 +74,32 @@ footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--line);font-si
 .terms ul{margin:6px 0 0;padding-left:20px;}
 .terms li{margin-bottom:3px;}
 
+
+.pk{border:2px solid #2f6fb5;border-radius:12px;background:#f3f8fd;padding:22px 24px;margin:28px 0;}
+.pk-h{font-size:17px;font-weight:700;color:#1f4d80;margin:0 0 8px;}
+.pk-lead{font-size:14px;margin:0 0 4px;}
+.pk-rule{background:#fff;border:1px solid #cfe0f2;border-radius:9px;padding:14px 16px;margin:14px 0 4px;font-size:13.5px;}
+.pk-rule b{color:#1f4d80;}
+.pk-rule ol{margin:8px 0 0;padding-left:20px;}
+.pk-rule li{margin-bottom:6px;}
+.p{background:#fff;border:1px solid #d5e2ef;border-radius:10px;margin:16px 0;overflow:hidden;}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ background:#eaf2fb;padding:13px 16px;border-bottom:1px solid #d5e2ef;}
+.p-no{display:inline-block;background:#2f6fb5;color:#fff;font-size:12px;font-weight:700;
+ border-radius:5px;padding:2px 9px;margin-right:9px;vertical-align:2px;}
+.p-title{font-size:15px;font-weight:700;color:#16324f;}
+.p-when{font-size:12.5px;color:#5b6672;margin-top:5px;line-height:1.7;}
+.p-btn{background:#2f6fb5;color:#fff;border:none;border-radius:8px;padding:10px 18px;
+ font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
+.p-btn:hover{background:#255a95;}
+.p-btn:focus-visible{outline:3px solid #a8cbef;outline-offset:2px;}
+.p-body pre{margin:0;padding:16px 18px;font-size:12.5px;line-height:1.9;white-space:pre-wrap;
+ word-break:break-word;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",monospace;
+ background:#fbfdff;max-height:340px;overflow:auto;}
+.p-body pre b{background:#fff1cd;font-weight:700;padding:0 2px;border-radius:3px;}
+.p-foot{font-size:12.5px;color:#5b6672;padding:11px 18px;border-top:1px solid #eef3f8;background:#fff;line-height:1.8;}
+.p-foot b{color:#c8452d;}
+
 </style>
 </head>
 <body>
@@ -358,6 +384,137 @@ KDPの品質ガイドが、表紙のよくある問題として
 <span style="font-size:13px;">出典：<a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G200952510" target="_blank" rel="noopener">KDP公式・Kindleコンテンツの品質ガイド</a>
 ／ <a href="https://kdp.amazon.co.jp/ja_JP/help/topic/G200645690" target="_blank" rel="noopener">表紙画像の必要条件</a></span></div>
 
+<!--PROMPTS-->
+<h2 id="prompts">この回のプロンプト（コピーして貼るだけ）</h2>
+<div class="pk">
+<p class="pk-h">表紙の絵もAIが作ります。文字だけ自分で乗せます。</p>
+<p class="pk-lead">考えるのは「決めること」だけ。ひねり出す作業はAIにやらせます。<br><b>プロンプトは完成した状態で置いてあります。コピーして、【　】を自分のことに書き換えて、AIに貼る。それだけです。</b></p>
+<div class="pk-rule">
+<b>使い方（ここだけは先に読んでください）</b>
+<ol>
+<li><b>プロンプトは全部こちらで用意してあります。</b>ゼロから考えるところは1つもありません。「プロンプトをコピー」を押して、AIに貼るだけです。</li>
+<li><b>直すのは【　】の中だけ</b>です。かっこごと消して、自分のことに書き換えてください。書き換えるのはたいてい1〜3か所です。</li>
+<li>プロンプトは<b>上から順番に</b>使ってください。前のプロンプトの答えを、次でそのまま貼って使います。</li>
+<li><b>この本のためのチャットを1つ作って、そこで続けてください。</b>毎回新しいチャットにすると、AIが前の話を忘れて、また最初から説明することになります。</li>
+<li>出てきた答えは<b>そのまま採用しないでください。</b>「そこは違う」と言い返すほど、あなたの本に近づきます。</li>
+<li><b>無料のClaude・ChatGPT・Geminiで足ります。</b>有料プランは要りません。</li>
+</ol>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">①</span>表紙のコンセプトを決めさせる</div>
+      <div class="p-when">絵を作る前に、何を目立たせるかを決めます。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt01">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt01"># 前提
+<b>【第1回の設定シート】</b>
+確定したタイトル：<b>【　】</b>
+サブタイトル：<b>【　】</b>
+
+# やってほしいこと
+この本の表紙のコンセプトを3案出してください。1案につき次を書いてください。
+1. いちばん大きく出す言葉（10文字以内）
+2. 2番目に大きく出す言葉
+3. 中央に置くビジュアルの内容（1行で）
+4. 使う色3色（背景・文字・目立たせる色）
+5. この案は、棚に並んだときどう目立つか
+
+# ルール
+- 色は3色まで。4色以上は素人っぽく見えます。
+- ★次は絶対に入れないでください：金額、「特典付き」などの広告文、ランキング、受賞、
+  「今だけ」などの時間の言葉。KDPの品質ガイドで問題になります。
+- スマホの一覧（親指の爪くらいの大きさ）で読めるかを基準に考えてください。</pre></div>
+  <div class="p-foot"><b>単体で見て決めないでください。</b>Amazonで同じジャンルを検索して、その棚に並べたときに浮くかどうかで判断します。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">②</span>画像を作らせる（文字なし）</div>
+      <div class="p-when">★<b>文字は入れさせないでください。</b>AIは日本語の文字を崩します。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt02">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt02">次の条件で、Kindle電子書籍の表紙に使う画像を1枚作ってください。
+
+# 画像の内容
+<b>【①で選んだビジュアルの内容】</b>
+
+# 条件
+- 縦長（高さ2560px × 幅1600px の比率）
+- ★文字は一切入れないでください。絵だけにしてください。
+- 色は<b>【背景の色】</b><b>【主役の色】</b><b>【目立たせる色】</b>の3色を基調に。
+- 写実的すぎない、フラットで見やすい絵柄。
+- 中央から上を主役にして、下3分の1は文字を乗せるので空けてください。</pre></div>
+  <div class="p-foot">★<b>日本語の文字はAIに入れさせないでください。</b>ほぼ確実に崩れます。文字はこのあとCanvaなどで自分で乗せます。</div>
+</div>
+<div class="p">
+  <div class="p-head">
+    <div>
+      <div class="p-title"><span class="p-no">③</span>自分で作った表紙を採点させる</div>
+      <div class="p-when">できあがった表紙の画像を貼ってから使います。</div>
+    </div>
+    <button type="button" class="p-btn" data-p="pt03">プロンプトをコピー</button>
+  </div>
+  <div class="p-body"><pre id="pt03">この表紙画像を、Kindleの棚に並んだ想定で採点してください。
+
+# 採点してほしいこと（各10点）
+1. スマホの一覧サイズで、タイトルが読めるか
+2. 0.5秒で「何の本か」が伝わるか
+3. 誰向けの本かが伝わるか
+4. 色の数が多すぎないか
+5. 同じジャンルの本と並べたときに埋もれないか
+
+# 出し方
+- 点数と、その理由を1行ずつ。
+- 合計点のあとに、★いちばん先に直すべき1か所★だけを指摘してください。
+
+# 規約の確認もお願いします
+次が画像の中に入っていないか確認してください：金額、「特典付き」などの広告文、
+ランキング、受賞、時間に関する言葉、他社のブランド名。</pre></div>
+  <div class="p-foot">直すのは<b>1か所ずつ</b>。全部いっぺんに直すと、何が効いたか分からなくなります。</div>
+</div>
+</div>
+<!--/PROMPTS-->
+<script>
+(function () {
+  function copyText(t) {
+    return new Promise(function (res) {
+      function legacy() {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.top = "-1000px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta); res(ok);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () { res(true); }, legacy);
+      } else { legacy(); }
+    });
+  }
+  function selectAll(el) {
+    try {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  var btns = document.querySelectorAll(".p-btn[data-p]");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      var pre = document.getElementById(b.getAttribute("data-p"));
+      if (!pre) return;
+      copyText(pre.innerText).then(function (ok) {
+        if (ok) { b.textContent = "コピーしました"; }
+        else { b.textContent = "選択しました → Ctrl+C"; selectAll(pre); }
+        setTimeout(function () { b.textContent = "プロンプトをコピー"; }, 2400);
+      });
+    });
+  });
+})();
+</script>
+
 <h2>8. 提出物</h2>
 <ul class="check">
   <li>お手本3冊のメモ（タイトルと、何を借りたか）</li>
@@ -369,7 +526,7 @@ KDPの品質ガイドが、表紙のよくある問題として
 <h2>9. 質問メモ欄</h2>
 <div style="border:1px dashed var(--line);border-radius:8px;height:130px;margin:8px 0 0;"></div>
 
-<footer>AI出版スクール 第4回 表紙をつくる ／ 2026-08-26 更新（表紙の5要素・色・公式の必要条件） ／ 2026-08-23 ／ ツール開発/出版教育/01_カリキュラム/<br>
+<footer>AI出版スクール 第4回 表紙をつくる ／ 2026-08-30 更新（プロンプト集を追加） ／ 2026-08-23 ／ ツール開発/出版教育/01_カリキュラム/<br>
 出典：AIC講義 2026-07-24（表紙デザインの実践・モデリング手法）／KDP 電子書籍の表紙画像の必要条件</footer>
 </div>
 </body>
